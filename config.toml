@@ -2,6 +2,7 @@ baseurl = "http://jwsonic.github.io/"
 languageCode = "en-us"
 title = "John Palgut"
 theme = "purehugo"
+watch=false
 
 contentdir = "content"
 layoutdir = "layouts"
