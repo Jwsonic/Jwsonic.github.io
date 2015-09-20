@@ -1,0 +1,13 @@
+baseurl = "http://jwsonic.github.io/"
+languageCode = "en-us"
+title = "John Palgut"
+theme = "purehugo"
+
+contentdir = "content"
+layoutdir = "layouts"
+publishdir = "public"
+
+[params]
+  description = "Gamer, Coder, and Husband"
+  twitterName = "jwsonic"
+  githubName = "Jwsonic"
