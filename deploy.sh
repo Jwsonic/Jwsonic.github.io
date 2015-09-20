@@ -1,4 +1,5 @@
 #!/bin/bash
 hugo
 
-git subtree push -f --prefix public origin master
+git push origin :master
+git subtree push --prefix public origin master
