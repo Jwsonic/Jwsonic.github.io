@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>John Palgut</title>
-    <link>http://jwsonic.github.io/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on John Palgut</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 18 Sep 2015 14:47:09 -0500</lastBuildDate>
-    <atom:link href="http://jwsonic.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Marie Antoinette&#39;s Gluten-Free Bake Shoppe</title>
-      <link>http://jwsonic.github.io/posts/test/</link>
+      <link>http://localhost:1313/posts/test/</link>
       <pubDate>Fri, 18 Sep 2015 14:47:09 -0500</pubDate>
       
-      <guid>http://jwsonic.github.io/posts/test/</guid>
+      <guid>http://localhost:1313/posts/test/</guid>
       <description>&lt;p&gt;Marie Antoinette&amp;rsquo;s Gluten-Free Bake Shoppe is a gluten free bakery located in Kansas and Missouri.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Marie Antoinette&#39;s Gluten-Free Bake Shoppe</title>
-      <link>http://jwsonic.github.io/projects/maries/</link>
+      <link>http://localhost:1313/projects/maries/</link>
       <pubDate>Fri, 18 Sep 2015 14:47:09 -0500</pubDate>
       
-      <guid>http://jwsonic.github.io/projects/maries/</guid>
+      <guid>http://localhost:1313/projects/maries/</guid>
       <description>&lt;p&gt;Marie Antoinette&amp;rsquo;s Gluten-Free Bake Shoppe is a gluten free bakery located in Kansas and Missouri.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Stuff Page</title>
-      <link>http://jwsonic.github.io/stuff/</link>
+      <link>http://localhost:1313/stuff/</link>
       <pubDate>Fri, 18 Sep 2015 14:47:09 -0500</pubDate>
       
-      <guid>http://jwsonic.github.io/stuff/</guid>
+      <guid>http://localhost:1313/stuff/</guid>
       <description></description>
     </item>
     
