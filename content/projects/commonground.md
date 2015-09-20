@@ -1,7 +1,7 @@
 +++
-date = "2014-12-18T14:47:09-05:00"
+date = "2014-6-25T14:47:09-05:00"
 draft = false
-title = "Marie Antoinette's Gluten-Free Bake Shoppe"
+title = "Common Ground"
 description = "Website for Marie Antoinette's Gluten-Free Bake Shoppe built with Go and AngularJS."
 +++
 

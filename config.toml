@@ -9,6 +9,6 @@ layoutdir = "layouts"
 publishdir = "public"
 
 [params]
-  description = "Gamer, Coder, and Husband"
+  description = "Coder. Gamer. Husband."
   twitterName = "jwsonic"
   githubName = "Jwsonic"
