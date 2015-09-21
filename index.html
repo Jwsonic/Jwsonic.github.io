@@ -129,16 +129,31 @@
                         <p>The Marie Antoinette&rsquo;s site had the following requirements:</p>
 
 <ul>
-<li>Display information about the bakery</li>
+<li>Display information about the bakery(contact, hours, etc)</li>
 <li>Allow customers to browse and search the in store menu</li>
 <li>Allow customers to place online orders</li>
 <li>Have a separate menu and order placement system for vendors</li>
 <li>Admin ability to edit menu items and approve new vendors</li>
+<li>Quick development is preferable as the current site lacks functionality</li>
 </ul>
 
-<p>First I considered using an off the shelf solution such as Shopify or Magneto. Creating a content management system and
-ordering system from the ground up is quite a bit of work. Unfortunately, none of the existing systems I could find were able to
-satisfy all of the requirements.</p>
+<p>First I considered using an off the shelf solution such as Shopify or Magneto. Creating a content management system and ordering system from the ground up is quite a bit of work. Unfortunately, none of the existing systems I could find were able to satisfy all of the requirements.</p>
+
+<p>The front end was built using AngularJS and Bootstrap 3. AngularJS strength lies in its two way data binding as well as the large selection of third party libraries. Functionality such as filtering a list of menu items based on a query or by type is fairly trivial to do with AngularJS. Coupling AngularJS with Bootstrap allowed me to rapidly set up, try out, and iterate the front end. Bootstrap is also created to be customizable out of the box, so changing how everything looked was no problem.</p>
+
+<p>For the back end I chose to use the <a href="http://golang.org/">Go</a> programming language. I had been using Go in my side projects for a while and I had come to appreciate its strengths:</p>
+
+<ul>
+<li>A robust standard library</li>
+<li>Easy to deploy to a variety of platforms, I chose <a href="https://www.heroku.com/">Heroku</a></li>
+<li>Excellent performance</li>
+<li>Built in concurrency</li>
+<li>Official library support for <a href="https://stripe.com/">Stripe</a>(our payment processor)</li>
+</ul>
+
+<p>I chose to use the <a href="http://martini.codegangsta.io/">Martini</a> web framework after hearing about in on the <a href="https://changelog.com/117/">Changelog Podcast</a>. Martini has several upgrades the from the built in Go web framework including improved routing and middleware support. I also chose to use <a href="https://github.com/jinzhu/gorm">GORM</a> to connect to the database. Using an ORM library over manual SQL queries made sense here since development speed was more important than raw performance.</p>
+
+<p>The site is still up and running today! You can check it out <a href="https://www.mariesglutenfree.com">here</a>.</p>
 
                     </div>
                 </section>
