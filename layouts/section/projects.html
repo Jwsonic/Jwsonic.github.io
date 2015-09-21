@@ -30,6 +30,12 @@
                     <div class="post-description">
                         {{ .Description }}
                     </div>
+
+                    <div class="tags">
+                      {{ range .Params.tags }}
+                      <span class="tag">{{ . }}</span>
+                      {{ end }}
+                    </div>
                 </section>
                 {{ end }}
             </div>
