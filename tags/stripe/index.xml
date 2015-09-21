@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Stripe on John Palgut</title>
-    <link>http://localhost:1313/tags/stripe/</link>
+    <link>http://jwsonic.github.io/tags/stripe/</link>
     <description>Recent content in Stripe on John Palgut</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 18 Dec 2014 14:47:09 -0500</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/stripe/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://jwsonic.github.io/tags/stripe/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Marie Antoinette&#39;s Gluten-Free Bake Shoppe</title>
-      <link>http://localhost:1313/projects/maries/</link>
+      <link>http://jwsonic.github.io/projects/maries/</link>
       <pubDate>Thu, 18 Dec 2014 14:47:09 -0500</pubDate>
       
-      <guid>http://localhost:1313/projects/maries/</guid>
+      <guid>http://jwsonic.github.io/projects/maries/</guid>
       <description>&lt;p&gt;The Marie Antoinette&amp;rsquo;s site had the following requirements:&lt;/p&gt;
 
 &lt;ul&gt;
