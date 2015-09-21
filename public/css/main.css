@@ -6,3 +6,7 @@
   background-color:  lightblue;
   padding: 0px .5em;
 }
+
+.post-header > a {
+  color: rgb(36, 151, 171);
+}

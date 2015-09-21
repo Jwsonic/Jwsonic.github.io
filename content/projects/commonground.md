@@ -1,9 +1,9 @@
 +++
-date = "2014-6-25T14:47:09-05:00"
+date = "2014-06-25T14:47:09-05:00"
 draft = false
 title = "Common Ground"
 description = "Website for Marie Antoinette's Gluten-Free Bake Shoppe built with Go and AngularJS."
-tags = ["Go", "AngularJS", "Bootstrap", "Heroku"]
+categories = ["HTML", "Go", "AngularJS", "Bootstrap", "Heroku"]
 +++
 
 

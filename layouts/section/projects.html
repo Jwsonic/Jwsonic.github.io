@@ -8,7 +8,7 @@
         <div>
             <!-- A wrapper for all the blog posts -->
             <div class="posts">
-                {{ range .Paginator.Pages }}
+                {{ range sort .Paginator.Pages }}
                 <!-- <h1 class="content-subhead">{{ .Date.Format "02 Jan 2006, 15:04" }}</h1> -->
                 <section class="post">
                     <header class="post-header">
@@ -20,7 +20,6 @@
                                 By <strong class="post-author">{{ . }}</strong>
                             {{ end }}
                             {{ if isset .Params "categories" }}
-                                under
                                 {{ $baseUrl := .Site.BaseURL }}
                                 {{ range .Params.categories }}<a class="post-category post-category-{{ . }}" href="{{ $baseUrl }}/categories/{{ . | urlize }}">{{ . }}</a>{{ end }}
                             {{ end }}
@@ -29,12 +28,6 @@
 
                     <div class="post-description">
                         {{ .Description }}
-                    </div>
-
-                    <div class="tags">
-                      {{ range .Params.tags }}
-                      <span class="tag">{{ . }}</span>
-                      {{ end }}
                     </div>
                 </section>
                 {{ end }}

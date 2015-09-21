@@ -3,19 +3,19 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Playbook &middot; John Palgut</title>
+    <title>The Playbook &middot; John Palgut</title>
 
-    <meta name="description" content="Website for Marie Antoinette&#39;s Gluten-Free Bake Shoppe built with Go and AngularJS.">
+    <meta name="description" content="Webapp for teachers to share and create lessons based on the Growth Mindset.">
 
     <meta name="generator" content="Hugo 0.15-DEV" />
     <meta name="twitter:card" content="summary">
     
-    <meta name="twitter:title" content="Playbook &middot; John Palgut">
-    <meta name="twitter:description" content="Website for Marie Antoinette&#39;s Gluten-Free Bake Shoppe built with Go and AngularJS.">
+    <meta name="twitter:title" content="The Playbook &middot; John Palgut">
+    <meta name="twitter:description" content="Webapp for teachers to share and create lessons based on the Growth Mindset.">
 
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Playbook &middot; John Palgut">
-    <meta property="og:description" content="Website for Marie Antoinette&#39;s Gluten-Free Bake Shoppe built with Go and AngularJS.">
+    <meta property="og:title" content="The Playbook &middot; John Palgut">
+    <meta property="og:description" content="Webapp for teachers to share and create lessons based on the Growth Mindset.">
 
     <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Oxygen:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css">
@@ -26,11 +26,11 @@
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-min.css">
     <!--<![endif]-->
 
-    <link rel="stylesheet" href="http://jwsonic.github.io//css/all.min.css">
-    <link rel="stylesheet" href="http://jwsonic.github.io//css/main.css">
+    <link rel="stylesheet" href="http://localhost:1313//css/all.min.css">
+    <link rel="stylesheet" href="http://localhost:1313//css/main.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
-    <link rel="alternate" type="application/rss+xml" title="John Palgut" href="http://jwsonic.github.io//index.xml" />
+    <link rel="alternate" type="application/rss+xml" title="John Palgut" href="http://localhost:1313//index.xml" />
 </head>
 <body>
 
@@ -39,7 +39,7 @@
     <div class="sidebar pure-u-1 pure-u-md-1-4">
     <div class="header">
         <hgroup>
-            <h1 class="brand-title"><a href="http://jwsonic.github.io/">John Palgut</a></h1>
+            <h1 class="brand-title"><a href="http://localhost:1313/">John Palgut</a></h1>
             <h2 class="brand-tagline"> Coder. Gamer. Husband. </h2>
         </hgroup>
 
@@ -77,33 +77,40 @@
         <div>
             
             <div class="posts">
-                <h1 class="content-subhead">18 Dec 2014, 14:47</h1>
+                <h1 class="content-subhead">07 Jul 2015</h1>
                 <section class="post">
                     <header class="post-header">
 
-                        <a href="http://jwsonic.github.io/projects/playbook/" class="post-title">Playbook</a>
+                        <a href="http://localhost:1313/projects/playbook/" class="post-title">The Playbook</a>
 
                         <p class="post-meta">
                             
                             
+                                under
+                                
+                                <a class="post-category post-category-HTML" href="http://localhost:1313//categories/html">HTML</a><a class="post-category post-category-React" href="http://localhost:1313//categories/react">React</a><a class="post-category post-category-webpack" href="http://localhost:1313//categories/webpack">webpack</a><a class="post-category post-category-ES6" href="http://localhost:1313//categories/es6">ES6</a><a class="post-category post-category-Parse" href="http://localhost:1313//categories/parse">Parse</a><a class="post-category post-category-Bootstrap" href="http://localhost:1313//categories/bootstrap">Bootstrap</a>
+                            
                         </p>
                     </header>
 
-                    
                     <div class="post-description">
-                        <p>The Marie Antoinette&rsquo;s site had the following requirements:</p>
+                        <p>The Playbook is a webapp I worked on for <a href="http://pomegranatelab.com/">Pomegranate Lab</a> with the purpose of helping teachers create and find lesson plans based on the <a href="http://mindsetonline.com/whatisit/about/">Growth Mindset</a>. Development for The Playbook needed to begin quickly and to be in a semi usable state as fast as possible because Pomegranate Lab wanted it to help enhance their coaching sessions with teachers. Due to the expidited nature of the project I decided to give <a href="https://www.parse.com/">Parse</a> a try. In simplified terms Parse handles back end functionality for your app so you only have code the front end. Database tables, User functionality, emails, and hosting are all handled by Parse. Parse provides libraries for several platforms are frameworks that allow you to interact with your app&rsquo;s &ldquo;back end&rdquo;. In terms of The Playbook I would write a <a href="https://en.wikipedia.org/wiki/Single-page_application">Single Page Application</a> that then load the proper Parse data when the page was created.</p>
 
-<ul>
-<li>Display information about the bakery</li>
-<li>Allow customers to browse and search the in store menu</li>
-<li>Allow customers to place online orders</li>
-<li>Have a separate menu and order placement system for vendors</li>
-<li>Admin ability to edit menu items and approve new vendors</li>
-</ul>
+<p>To build the front end I decided to use <a href="https://facebook.github.io/react/">React</a>. React is an excellent JavaScript library for building UIs. It encourages you to separate functionality into &lsquo;components&rsquo; which are used used like traditional HTML tags. Since code is treated as separate units, this makes code easier to organize and very easy for humans to read. For example the collapsible menu for the site was only:</p>
 
-<p>First I considered using an off the shelf solution such as Shopify or Magneto. Creating a content management system and
-ordering system from the ground up is quite a bit of work. Unfortunately, none of the existing systems I could find were able to
-satisfy all of the requirements.</p>
+<pre><code>&lt;SlideMenu&gt;
+  &lt;MenuItems&gt;&lt;/MenuItems&gt;
+  &lt;MenuPanel &gt;{this.props.children}&lt;/MenuPanel&gt;
+&lt;/SlideMenu&gt;
+</code></pre>
+
+<p>But it rendered as:</p>
+
+<p><img src="/img/menu-demo.gif" alt="Menu Image" /></p>
+
+<p>Unfortunately most browsers don&rsquo;t support the newest JavaScript functionality out of the box, and there are same <a href="https://github.com/lukehoban/es6features">great improvements</a> coming in future versions ofJavaScript. With this in mind, I decided to use the <a href="https://babeljs.io/">Babel</a> transpiler to write the new ES6 JavaScript for The Playbook and convert it the current JavaScript that most browsers expect. The let me use modern JavaScript features such as promises, lambdas, and classes. Since the entire front end was essentially a single page JavaScript webapp, I used <a href="https://webpack.github.io/">webpack</a> to bundle all the assets into static files that could be served from the Parse servers.</p>
+
+<p><a href="https://playbook.parseapp.com">The Playbook</a> is still in use, however it is in closed beta for teachers.</p>
 
                     </div>
                     
@@ -116,7 +123,7 @@ satisfy all of the requirements.</p>
         </ul>
     </div>
 </div>
-<script src="http://jwsonic.github.io//js/all.min.js"></script>
+<script src="http://localhost:1313//js/all.min.js"></script>
         </div>
     </div>
 </div>
@@ -133,5 +140,8 @@ ga('send', 'pageview');
 
 </script>
 
-</body>
+<script data-no-instant>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
 </html>

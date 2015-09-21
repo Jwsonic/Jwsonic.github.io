@@ -1,9 +1,9 @@
 +++
-date = "2014-1-10T14:47:09-05:00"
+date = "2014-01-10T14:47:09-05:00"
 draft = false
 title = "Inscribe"
 description = "Website for Marie Antoinette's Gluten-Free Bake Shoppe built with Go and AngularJS."
-tags = ["Python", "AngularJS", "Bootstrap", "Heroku"]
+categories = ["HTML", "Python", "AngularJS", "Bootstrap", "Heroku"]
 +++
 
 

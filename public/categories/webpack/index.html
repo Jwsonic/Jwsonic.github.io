@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpack &middot; John Palgut</title>
+
+    <meta name="description" content="Coder. Gamer. Husband.">
+
+    <meta name="generator" content="Hugo 0.15-DEV" />
+    <meta name="twitter:card" content="summary">
+    
+    <meta name="twitter:title" content="Webpack &middot; John Palgut">
+    <meta name="twitter:description" content="Coder. Gamer. Husband.">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Webpack &middot; John Palgut">
+    <meta property="og:description" content="Coder. Gamer. Husband.">
+
+    <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Oxygen:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css">
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-min.css">
+    <!--<![endif]-->
+
+    <link rel="stylesheet" href="http://localhost:1313//css/all.min.css">
+    <link rel="stylesheet" href="http://localhost:1313//css/main.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link rel="alternate" type="application/rss+xml" title="John Palgut" href="http://localhost:1313//index.xml" />
+</head>
+<body>
+
+
+<div id="layout" class="pure-g">
+    <div class="sidebar pure-u-1 pure-u-md-1-4">
+    <div class="header">
+        <hgroup>
+            <h1 class="brand-title"><a href="http://localhost:1313/">John Palgut</a></h1>
+            <h2 class="brand-tagline"> Coder. Gamer. Husband. </h2>
+        </hgroup>
+
+        <nav class="nav">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a class="pure-button" href="/resume"><i class="fa fa-file-text-o"></i> Resume</a>
+                </li>
+                <li class="nav-item">
+                    <a class="pure-button" href="/projects"><i class="fa fa-folder-open-o"></i> Projects</a>
+                </li>
+            </ul>
+        </nav>
+
+        <nav class="nav">
+            <ul class="nav-list">
+                
+                <li class="nav-item">
+                    <a class="pure-button" target="_blank" href="https://twitter.com/jwsonic"><i class="fa fa-twitter"></i> Twitter</a>
+                </li>
+                
+                
+                <li class="nav-item">
+                    <a class="pure-button" target="_blank" href="https://github.com/Jwsonic "><i class="fa fa-github-alt"></i> github</a>
+                </li>
+                
+                
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+    <div class="content pure-u-1 pure-u-md-3-4">
+        <div>
+            
+            <div class="posts">
+                
+                <h1 class="content-subhead">07 Jul 2015, 14:47</h1>
+                <section class="post">
+                    <header class="post-header">
+
+                        <a href="http://localhost:1313/projects/playbook/" class="post-title">The Playbook</a>
+
+                        <p class="post-meta">
+                            
+                            
+                                under
+                                
+                                <a class="post-category post-category-HTML" href="http://localhost:1313//categories/html">HTML</a><a class="post-category post-category-React" href="http://localhost:1313//categories/react">React</a><a class="post-category post-category-webpack" href="http://localhost:1313//categories/webpack">webpack</a><a class="post-category post-category-ES6" href="http://localhost:1313//categories/es6">ES6</a><a class="post-category post-category-Parse" href="http://localhost:1313//categories/parse">Parse</a><a class="post-category post-category-Bootstrap" href="http://localhost:1313//categories/bootstrap">Bootstrap</a>
+                            
+                        </p>
+                    </header>
+
+                    <div class="post-description">
+                        <p>The Playbook is a webapp I worked on for <a href="http://pomegranatelab.com/">Pomegranate Lab</a> with the purpose of helping teachers create and find lesson plans based on the <a href="http://mindsetonline.com/whatisit/about/">Growth Mindset</a>. Development for The Playbook needed to begin quickly and to be in a semi usable state as fast as possible because Pomegranate Lab wanted it to help enhance their coaching sessions with teachers. Due to the expidited nature of the project I decided to give <a href="https://www.parse.com/">Parse</a> a try. In simplified terms Parse handles back end functionality for your app so you only have code the front end. Database tables, User functionality, emails, and hosting are all handled by Parse. Parse provides libraries for several platforms are frameworks that allow you to interact with your app&rsquo;s &ldquo;back end&rdquo;. In terms of The Playbook I would write a <a href="https://en.wikipedia.org/wiki/Single-page_application">Single Page Application</a> that then load the proper Parse data when the page was created.</p>
+
+<p>To build the front end I decided to use <a href="https://facebook.github.io/react/">React</a>. React is an excellent JavaScript library for building UIs. It encourages you to separate functionality into &lsquo;components&rsquo; which are used used like traditional HTML tags. Since code is treated as separate units, this makes code easier to organize and very easy for humans to read. For example the collapsible menu for the site was only:</p>
+
+<pre><code>&lt;SlideMenu&gt;
+  &lt;MenuItems&gt;&lt;/MenuItems&gt;
+  &lt;MenuPanel &gt;{this.props.children}&lt;/MenuPanel&gt;
+&lt;/SlideMenu&gt;
+</code></pre>
+
+<p>But it rendered as:</p>
+
+<p><img src="/img/menu-demo.gif" alt="Menu Image" /></p>
+
+<p>Unfortunately most browsers don&rsquo;t support the newest JavaScript functionality out of the box, and there are same <a href="https://github.com/lukehoban/es6features">great improvements</a> coming in future versions ofJavaScript. With this in mind, I decided to use the <a href="https://babeljs.io/">Babel</a> transpiler to write the new ES6 JavaScript for The Playbook and convert it the current JavaScript that most browsers expect. The let me use modern JavaScript features such as promises, lambdas, and classes. Since the entire front end was essentially a single page JavaScript webapp, I used <a href="https://webpack.github.io/">webpack</a> to bundle all the assets into static files that could be served from the Parse servers.</p>
+
+<p><a href="https://playbook.parseapp.com">The Playbook</a> is still in use, however it is in closed beta for teachers.</p>
+
+                    </div>
+                </section>
+                
+            </div>
+            
+
+            <div class="footer">
+    <div class="pure-menu pure-menu-horizontal pure-menu-open">
+        <ul>
+            <li>Powered by <a class="hugo" href="http://hugo.spf13.com/" target="_blank">hugo</a></li>
+        </ul>
+    </div>
+</div>
+<script src="http://localhost:1313//js/all.min.js"></script>
+        </div>
+    </div>
+</div>
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', '', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+<script data-no-instant>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
+</html>

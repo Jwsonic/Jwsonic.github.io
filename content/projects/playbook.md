@@ -1,20 +1,26 @@
 +++
-date = "2014-12-18T14:47:09-05:00"
+date = "2015-07-07T14:47:09-05:00"
 draft = false
-title = "Playbook"
-description = "Website for Marie Antoinette's Gluten-Free Bake Shoppe built with Go and AngularJS."
-tags = ["React", "ES6", "Parse"]
+title = "The Playbook"
+description = "Webapp for teachers to share and create lessons based on the Growth Mindset."
+categories = ["HTML", "React", "webpack", "ES6", "Parse", "Bootstrap"]
 +++
 
+The Playbook is a webapp I worked on for [Pomegranate Lab](http://pomegranatelab.com/) with the purpose of helping teachers create and find lesson plans based on the [Growth Mindset](http://mindsetonline.com/whatisit/about/). Development for The Playbook needed to begin quickly and to be in a semi usable state as fast as possible because Pomegranate Lab wanted it to help enhance their coaching sessions with teachers. Due to the expidited nature of the project I decided to give [Parse](https://www.parse.com/) a try. In simplified terms Parse handles back end functionality for your app so you only have code the front end. Database tables, User functionality, emails, and hosting are all handled by Parse. Parse provides libraries for several platforms are frameworks that allow you to interact with your app's "back end". In terms of The Playbook I would write a [Single Page Application](https://en.wikipedia.org/wiki/Single-page_application) that then load the proper Parse data when the page was created.
 
-The Marie Antoinette's site had the following requirements:
+To build the front end I decided to use [React](https://facebook.github.io/react/). React is an excellent JavaScript library for building UIs. It encourages you to separate functionality into 'components' which are used used like traditional HTML tags. Since code is treated as separate units, this makes code easier to organize and very easy for humans to read. For example the collapsible menu for the site was only:
 
-* Display information about the bakery
-* Allow customers to browse and search the in store menu
-* Allow customers to place online orders
-* Have a separate menu and order placement system for vendors
-* Admin ability to edit menu items and approve new vendors
+```
+<SlideMenu>
+  <MenuItems></MenuItems>
+  <MenuPanel >{this.props.children}</MenuPanel>
+</SlideMenu>
+```
 
-First I considered using an off the shelf solution such as Shopify or Magneto. Creating a content management system and
-ordering system from the ground up is quite a bit of work. Unfortunately, none of the existing systems I could find were able to
-satisfy all of the requirements.
+But it rendered as:
+
+![Menu Image](/img/menu-demo.gif)
+
+Unfortunately most browsers don't support the newest JavaScript functionality out of the box, and there are same [great improvements](https://github.com/lukehoban/es6features) coming in future versions ofJavaScript. With this in mind, I decided to use the [Babel](https://babeljs.io/) transpiler to write the new ES6 JavaScript for The Playbook and convert it the current JavaScript that most browsers expect. The let me use modern JavaScript features such as promises, lambdas, and classes. Since the entire front end was essentially a single page JavaScript webapp, I used [webpack](https://webpack.github.io/) to bundle all the assets into static files that could be served from the Parse servers.
+
+[The Playbook](https://playbook.parseapp.com) is still in use, however it is in closed beta for teachers.
