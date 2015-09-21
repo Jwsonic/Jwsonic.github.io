@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>John Palgut</title>
-    <link>http://localhost:1313/</link>
+    <link>http://jwsonic.github.io/</link>
     <description>Recent content on John Palgut</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 18 Sep 2015 14:47:09 -0500</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://jwsonic.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Marie Antoinette&#39;s Gluten-Free Bake Shoppe</title>
-      <link>http://localhost:1313/posts/test/</link>
+      <link>http://jwsonic.github.io/posts/test/</link>
       <pubDate>Fri, 18 Sep 2015 14:47:09 -0500</pubDate>
       
-      <guid>http://localhost:1313/posts/test/</guid>
+      <guid>http://jwsonic.github.io/posts/test/</guid>
       <description>&lt;p&gt;Marie Antoinette&amp;rsquo;s Gluten-Free Bake Shoppe is a gluten free bakery located in Kansas and Missouri.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Stuff Page</title>
-      <link>http://localhost:1313/stuff/</link>
+      <link>http://jwsonic.github.io/stuff/</link>
       <pubDate>Fri, 18 Sep 2015 14:47:09 -0500</pubDate>
       
-      <guid>http://localhost:1313/stuff/</guid>
+      <guid>http://jwsonic.github.io/stuff/</guid>
       <description></description>
     </item>
     
     <item>
       <title>The Playbook</title>
-      <link>http://localhost:1313/projects/playbook/</link>
+      <link>http://jwsonic.github.io/projects/playbook/</link>
       <pubDate>Tue, 07 Jul 2015 14:47:09 -0500</pubDate>
       
-      <guid>http://localhost:1313/projects/playbook/</guid>
+      <guid>http://jwsonic.github.io/projects/playbook/</guid>
       <description>&lt;p&gt;The Playbook is a webapp I worked on for &lt;a href=&#34;http://pomegranatelab.com/&#34;&gt;Pomegranate Lab&lt;/a&gt; with the purpose of helping teachers create and find lesson plans based on the &lt;a href=&#34;http://mindsetonline.com/whatisit/about/&#34;&gt;Growth Mindset&lt;/a&gt;. Development for The Playbook needed to begin quickly and to be in a semi usable state as fast as possible because Pomegranate Lab wanted it to help enhance their coaching sessions with teachers. Due to the expidited nature of the project I decided to give &lt;a href=&#34;https://www.parse.com/&#34;&gt;Parse&lt;/a&gt; a try. In simplified terms Parse handles back end functionality for your app so you only have code the front end. Database tables, User functionality, emails, and hosting are all handled by Parse. Parse provides libraries for several platforms are frameworks that allow you to interact with your app&amp;rsquo;s &amp;ldquo;back end&amp;rdquo;. In terms of The Playbook I would write a &lt;a href=&#34;https://en.wikipedia.org/wiki/Single-page_application&#34;&gt;Single Page Application&lt;/a&gt; that then load the proper Parse data when the page was created.&lt;/p&gt;
 
 &lt;p&gt;To build the front end I decided to use &lt;a href=&#34;https://facebook.github.io/react/&#34;&gt;React&lt;/a&gt;. React is an excellent JavaScript library for building UIs. It encourages you to separate functionality into &amp;lsquo;components&amp;rsquo; which are used used like traditional HTML tags. Since code is treated as separate units, this makes code easier to organize and very easy for humans to read. For example the collapsible menu for the site was only:&lt;/p&gt;
@@ -46,7 +46,7 @@
 
 &lt;p&gt;But it rendered as:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/menu-demo.gif&#34; alt=&#34;Menu Image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://jwsonic.github.io/img/menu-demo.gif&#34; alt=&#34;Menu Image&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Unfortunately most browsers don&amp;rsquo;t support the newest JavaScript functionality out of the box, and there are same &lt;a href=&#34;https://github.com/lukehoban/es6features&#34;&gt;great improvements&lt;/a&gt; coming in future versions ofJavaScript. With this in mind, I decided to use the &lt;a href=&#34;https://babeljs.io/&#34;&gt;Babel&lt;/a&gt; transpiler to write the new ES6 JavaScript for The Playbook and convert it the current JavaScript that most browsers expect. The let me use modern JavaScript features such as promises, lambdas, and classes. Since the entire front end was essentially a single page JavaScript webapp, I used &lt;a href=&#34;https://webpack.github.io/&#34;&gt;webpack&lt;/a&gt; to bundle all the assets into static files that could be served from the Parse servers.&lt;/p&gt;
 
@@ -56,10 +56,10 @@
     
     <item>
       <title>Marie Antoinette&#39;s Gluten-Free Bake Shoppe</title>
-      <link>http://localhost:1313/projects/maries/</link>
+      <link>http://jwsonic.github.io/projects/maries/</link>
       <pubDate>Thu, 18 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/projects/maries/</guid>
+      <guid>http://jwsonic.github.io/projects/maries/</guid>
       <description>&lt;p&gt;The Marie Antoinette&amp;rsquo;s site had the following requirements:&lt;/p&gt;
 
 &lt;ul&gt;
@@ -93,10 +93,10 @@
     
     <item>
       <title>Common Ground</title>
-      <link>http://localhost:1313/projects/commonground/</link>
+      <link>http://jwsonic.github.io/projects/commonground/</link>
       <pubDate>Wed, 25 Jun 2014 14:47:09 -0500</pubDate>
       
-      <guid>http://localhost:1313/projects/commonground/</guid>
+      <guid>http://jwsonic.github.io/projects/commonground/</guid>
       <description>&lt;p&gt;The Marie Antoinette&amp;rsquo;s site had the following requirements:&lt;/p&gt;
 
 &lt;ul&gt;
@@ -115,10 +115,10 @@ satisfy all of the requirements.&lt;/p&gt;
     
     <item>
       <title>Inscribe</title>
-      <link>http://localhost:1313/projects/inscribe/</link>
+      <link>http://jwsonic.github.io/projects/inscribe/</link>
       <pubDate>Fri, 10 Jan 2014 14:47:09 -0500</pubDate>
       
-      <guid>http://localhost:1313/projects/inscribe/</guid>
+      <guid>http://jwsonic.github.io/projects/inscribe/</guid>
       <description>&lt;p&gt;The Marie Antoinette&amp;rsquo;s site had the following requirements:&lt;/p&gt;
 
 &lt;ul&gt;
