@@ -4,21 +4,39 @@
     {{ partial "sidebar.html" . }}
 
     <div class="content pure-u-1 pure-u-md-3-4">
-        <div class="stuff">
-            <div class="about-me">
-              Hello! My name is John Palgut and I am a software developer. I recenlty married my best friend, Jesyka Palmer,
-              and we currently live with our two cats in Austin, TX.
-              <br />
-              I enjoy building things, solving interesting problems, and learning about cool new technogy.
-              <br />
-              I'm an avid gamer in my spare time, particularly when it comes to DOTA 2.
+        <h1 class="project-header">Projects</h1>
+        <div>
+            <!-- A wrapper for all the blog posts -->
+            <div class="posts">
+                {{ range sort .Paginator.Pages }}
+                <h1 class="content-subhead">{{ .Date.Format "02 Jan 2006" }}</h1>
+                <section class="post">
+                    <header class="post-header">
+
+                        <a href="{{ .Permalink }}" class="post-title">{{ .Title }}</a>
+
+                        <p class="post-meta">
+                            {{ with .Params.author }}
+                                By <strong class="post-author">{{ . }}</strong>
+                            {{ end }}
+                            {{ if isset .Params "categories" }}
+                                {{ $baseUrl := .Site.BaseURL }}
+                                {{ range .Params.categories }}<a class="post-category post-category-{{ . }}" href="{{ $baseUrl }}/categories/{{ . | urlize }}">{{ . }}</a>{{ end }}
+                            {{ end }}
+                        </p>
+                    </header>
+
+                    <div class="post-description">
+                        {{ .Description }}
+                    </div>
+                </section>
+                {{ end }}
             </div>
             {{ partial "pagination.html" . }}
             {{ partial "footer.html" . }}
         </div>
     </div>
 </div>
-
 {{ partial "analytics.html" . }}
 </body>
 </html>

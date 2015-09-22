@@ -34,7 +34,34 @@ The core idea behind Redux is that your application state is stored as a read on
 (state, action) => newState
 ```
 
+A sample state for file grabber could look something like:
+
+```
+{
+  ui: {
+    deleteModal: {
+      open: true,
+      fileName: 'photo.jpg'
+    }
+  },
+  fileData: {
+    files: [{
+      name: 'photo.jpg',
+      size: 100000
+      modTime: 19219319191,
+      isDir: false
+      }],
+    path: '/'
+  },
+  server: {
+    connected: true
+  }
+}
+```
+
 ## Talking to the backend
+
+In order to get updates in real time, File Grabber utilizes [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API)
 
 ## Deploying a single binary
 
