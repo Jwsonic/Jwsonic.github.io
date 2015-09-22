@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Es6 on John Palgut</title>
-    <link>http://localhost:1313/categories/es6/</link>
-    <description>Recent content in Es6 on John Palgut</description>
+    <title>Node.Js on John Palgut</title>
+    <link>http://localhost:1313/categories/node/index.js/</link>
+    <description>Recent content in Node.Js on John Palgut</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 07 Jul 2015 14:47:09 -0500</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/es6/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/node.js/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>The Playbook</title>
