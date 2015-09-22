@@ -35,7 +35,7 @@ For the back end I chose to use the [Go](http://golang.org/) programming languag
 * easy to deploy to a variety of platforms (I chose [Heroku](https://www.heroku.com/))
 * excellent performance
 * built in concurrency
-* official library support for [Stripe](https://stripe.com/)(our payment processor)
+* official library support for [Stripe](https://stripe.com/) (our payment processor)
 
 I chose to use the [Martini](http://martini.codegangsta.io/) web framework after hearing about in on the [Changelog Podcast](https://changelog.com/117/). Martini has several upgrades the from the built-in Go web framework that the Marie's site would rely on. These include:
 
