@@ -6,8 +6,54 @@
     <description>Recent content in React on John Palgut</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 07 Jul 2015 14:47:09 -0500</lastBuildDate>
+    <lastBuildDate>Tue, 01 Sep 2015 14:47:09 -0500</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/react/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>File Grabber</title>
+      <link>http://localhost:1313/projects/filegrabber/</link>
+      <pubDate>Tue, 01 Sep 2015 14:47:09 -0500</pubDate>
+      
+      <guid>http://localhost:1313/projects/filegrabber/</guid>
+      <description>
+
+&lt;h2 id=&#34;the-why:5d4b5b538fe8b07ed03522cce78aaef9&#34;&gt;The Why&lt;/h2&gt;
+
+&lt;p&gt;My wife, Jesyka, and I have a small server in our apartment that we back up photos and documents to. The server runs Ubuntu and its pretty easy to access our files through FTP or SSH. However, sometimes we like to download photos or files to our phones and most Android FTP clients are cumbersome or lacking features. After looking around I found &lt;a href=&#34;https://github.com/itang/gohttp&#34;&gt;gohttp&lt;/a&gt; which is very close to what I wanted. I took this as an opportunity to build a webapp similar to gohttp that would fit our exact needs and let me learn some new tricks along the way.&lt;/p&gt;
+
+&lt;h2 id=&#34;requirements:5d4b5b538fe8b07ed03522cce78aaef9&#34;&gt;Requirements&lt;/h2&gt;
+
+&lt;p&gt;The initial requirements for File Grabber were:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Ability to view, download, and delete files and folders.&lt;/li&gt;
+&lt;li&gt;Real time updates(ie if a file is deleted on the server, it is immediately removed from the browser)&lt;/li&gt;
+&lt;li&gt;Single binary installation like gohttp&lt;/li&gt;
+&lt;li&gt;Be fully &lt;a href=&#34;https://en.wikipedia.org/wiki/Responsive_web_design&#34;&gt;responsive&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;behind-every-good-developer-is-a-designer:5d4b5b538fe8b07ed03522cce78aaef9&#34;&gt;Behind every good developer is a designer&lt;/h2&gt;
+
+&lt;p&gt;Jes designed stuff. Show design mocks here.&lt;/p&gt;
+
+&lt;h2 id=&#34;front-end-with-react-and-redux:5d4b5b538fe8b07ed03522cce78aaef9&#34;&gt;Front end with React and Redux&lt;/h2&gt;
+
+&lt;p&gt;After using &lt;a href=&#34;https://facebook.github.io/react/&#34;&gt;React&lt;/a&gt; to build &lt;a href=&#34;http://localhost:1313/projects/playbook/#using-react-for-an-easy-to-understand-ui:ae2e17d81343b352e5f8570697d79589&#34;&gt;The Playbook&lt;/a&gt; it has quickly become my favorite way to build webapp front ends. One thing React is not designed for is managing your application state. Facebook(the creator of React) recommends using the &lt;a href=&#34;https://facebook.github.io/flux/&#34;&gt;Flux&lt;/a&gt; architecture for React apps. When I did more research on Flux, I found out that there are &lt;a href=&#34;https://github.com/voronianski/flux-comparison&#34;&gt;many flux implementations&lt;/a&gt; to choose from. Eventually I decided to use a method similar to Flux called &lt;a href=&#34;http://rackt.github.io/redux/&#34;&gt;Redux&lt;/a&gt;. Redux in its own words is &amp;ldquo;&lt;a href=&#34;http://rackt.github.io/redux/&#34;&gt;&amp;hellip;a predictable state container for JavaScript apps.&lt;/a&gt;&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;The core idea behind Redux is that your application state is stored as a read only data structure. Updates to application state are done via &lt;a href=&#34;https://en.wikipedia.org/wiki/Pure_function&#34;&gt;pure functions&lt;/a&gt; called reducers. Reducers take a state and an action as parameters and return an updated application state:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(state, action) =&amp;gt; newState
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;talking-to-the-backend:5d4b5b538fe8b07ed03522cce78aaef9&#34;&gt;Talking to the backend&lt;/h2&gt;
+
+&lt;h2 id=&#34;deploying-a-single-binary:5d4b5b538fe8b07ed03522cce78aaef9&#34;&gt;Deploying a single binary&lt;/h2&gt;
+
+&lt;h2 id=&#34;check-out-the-code:5d4b5b538fe8b07ed03522cce78aaef9&#34;&gt;Check out the code&lt;/h2&gt;
+
+&lt;p&gt;The code for file grabber is available on &lt;a href=&#34;https://github.com/Jwsonic/file-grabber&#34;&gt;github&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>The Playbook</title>
@@ -70,7 +116,11 @@
 
 &lt;p&gt;With this in mind, I decided to use the &lt;a href=&#34;https://babeljs.io/&#34;&gt;Babel&lt;/a&gt; transpiler to write the front end code The Playbook in ES6 JavaScript. Babel takes your ES6 JavaScript code and converts in into ES5(the current standard) JavaScript that browsers today expect. This let me use modern JavaScript features such as promises, lambdas, and classes in the development of The Playbook.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://webpack.github.io/&#34;&gt;webpack&lt;/a&gt; is a module bundler that bundles all your webapp&amp;rsquo;s files and condenses them into static files for easy hosting. JavaScript is converted and minified into as single js file that is loaded by a main.html file. webpack gives you the ability to install npm dependencies and use them in your front end. It also plays well with font end only libraries, React and Parse in our case, trimming unused code and shrinking your overall project size.&lt;/p&gt;
+&lt;h2 id=&#34;putting-it-all-together-with-webpack:ae2e17d81343b352e5f8570697d79589&#34;&gt;Putting it all together with webpack&lt;/h2&gt;
+
+&lt;p&gt;Building a single page webapp with JavaScript is a bit different that building a traditional webapp. You have lots of small(mostly js) files that cause pages to load slowly since it starts a new request for each file. Ideally you could combine files of similar types during your build process and make your webapp load much faster. This is where webpack comes in.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://webpack.github.io/&#34;&gt;webpack&lt;/a&gt; is a module bundler that bundles all your webapp&amp;rsquo;s files and condenses them into static files for easy hosting. JavaScript is concatenated and minified(most whitespace and newlines are removed) into as single js file that is loaded by a main.html file. webpack also gives you the ability to install npm libraries as project dependencies and use them in your front end. It also plays well with font end only libraries, React and Parse in our case, trimming unused code and shrinking your overall project size.&lt;/p&gt;
 
 &lt;p&gt;Configuring webpack can be a bit of a challenge the first time, but once set up the build process for The Playbook was very simple:&lt;/p&gt;
 
@@ -82,15 +132,6 @@
 
 &lt;p&gt;&lt;a href=&#34;https://playbook.parseapp.com&#34;&gt;The Playbook&lt;/a&gt; is still in use, however it is in closed beta for teachers.&lt;/p&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>File Grabber</title>
-      <link>http://localhost:1313/projects/filegrabber/</link>
-      <pubDate>Mon, 10 Nov 2014 14:47:09 -0500</pubDate>
-      
-      <guid>http://localhost:1313/projects/filegrabber/</guid>
-      <description></description>
     </item>
     
   </channel>

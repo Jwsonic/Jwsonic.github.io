@@ -99,19 +99,31 @@
 
 <h2 id="the-fiber-dream:c60e498790513456114e62949061e65e">The Fiber dream</h2>
 
-<p>When my wife told me she got a job at IBM in Austin, TX my first thought was: <strong>CONGRATUALTIONS!</strong> My second thought was: <strong>My friends are going to be super jealous when I tell them I&rsquo;m getting Google Fiber.</strong></p>
+<p>When my wife, Jesyka, told me she got a job at IBM in Austin, TX my first thought was: <strong>CONGRATUALTIONS!</strong> My second thought was: <strong>My friends are going to be super jealous when I tell them I&rsquo;m getting Google Fiber.</strong></p>
 
 <h2 id="the-fiber-reality:c60e498790513456114e62949061e65e">The Fiber reality</h2>
 
-<p>After scouring apartment listings in Austin and doing a bit of research it became clear that Google Fiber rollout was only starting in specific zip-codes, and it was moving rather slowly. Google provided an excellent <a href="https://fiber.google.com/cities/austin/apartments/">map of Fiber listings</a> in Austin but there was no way to actually tell how often the listings were updated, if at all&hellip; So, I decided to write a webapp to track new Fiber listings, as they were added.</p>
+<p>After scouring apartment listings in Austin and doing a bit of research it became clear that there were a few problems with my Google Fiber dream:</p>
+
+<ul>
+<li>Roll-out is only scheduled for specific areas of Austin</li>
+<li>None of these areas is a reasonable commute distance from where Jesyka&rsquo;s would be working</li>
+<li>New areas were being added slowly</li>
+</ul>
+
+<p>Google provides an excellent <a href="https://fiber.google.com/cities/austin/apartments/">map of Fiber listings</a> in Austin but there was no way to actually tell how often the listings were updated, if at all. Not to be deterred, I decided to write a webapp to track new Fiber listings, as they were added.</p>
 
 <h2 id="reverse-engineering-google-fiber-listings:c60e498790513456114e62949061e65e">Reverse engineering Google Fiber listings</h2>
 
-<p>I used Chrome developer tools to uncover how the Fiber map worked and discovered that the data for all Fiber enabled apartments was being stored in a JSON file that the site uses to build an apartment map on load. I wrote a Go tool to fetch, parse, and store apartment data in a separate database on <a href="https://www.heroku.com/">Heroku</a>. The tool would run about once an hour to check for new listings.</p>
+<p>Using Chrome developer tools I was able to check network traffic on Google map and discovered that the data for all Fiber enabled apartments was being stored in a JSON file. This JSON file was used by Google to build the apartment map on page load.</p>
 
-<p>I then created a front end for the new apartments in AngularJS. The site loads apartment data from the Heroku database and also lists important apartment information such as the name, address, and time the listing was added. The site works perfectly, and now we&rsquo;re now up to date with new Fiber listings in our area.</p>
+<p>Rather than use <a href="https://en.wikipedia.org/wiki/Inline_linking">inline linking</a> for my webapp, I wrote a Go tool to fetch, parse, and store apartment data in a separate database on <a href="https://www.heroku.com/">Heroku</a>. This prevented page loads from my app causing additional traffic on Google servers. Heroku&rsquo;s background job scheduler runs the tool a few times a day, to avoid being the server stress mentioned earlier.</p>
 
-<p>The current Austin Fiber site is still up <a href="https://austin-fiber.herokuapp.com/#/">here</a>. Check out the code on <a href="https://github.com/Jwsonic/fiber">Github</a>.</p>
+<p>For the front end of the webapp I used AngularJS. The front end uses an ajax request to query the Heroku back end for JSON apartment data. The apartment data is then loaded into a table listing important information such as the name, address, and time the listing was added. Using AngulaJs&rsquo; built in data filtering, users can search for listings by name or address.</p>
+
+<h2 id="check-it-out:c60e498790513456114e62949061e65e">Check it out</h2>
+
+<p>The Austin Fiber site is still up <a href="https://austin-fiber.herokuapp.com/#/">here</a>. The code is also available on <a href="https://github.com/Jwsonic/fiber">Github</a>.</p>
 
                     </div>
                 </section>
@@ -154,11 +166,13 @@
 
 <h2 id="roll-your-own-or-use-a-prebuilt-solution:0f908a3ed3ef8d9a531516dfad512d4d">Roll your own or use a prebuilt solution?</h2>
 
-<p>First I considered using an off the shelf solution such as Shopify or Magneto. Creating a content management system and ordering system from the ground up is quite a bit of work. Unfortunately, none of the existing systems I could find were able to satisfy all of the requirements.</p>
+<p>First I considered using an off the shelf solution. Creating a content management system and ordering system from the ground up is quite a bit of work. I did research into existing &ldquo;shopping cart solutions&rdquo; such as Shopify or Magneto. Unfortunately, none of the existing systems I could find were able to satisfy all of the requirements. To use an off the shelf solution I would need to extend the code base with a plugin in the language chosen solution was written in. Rather than go down a rabbit hole of foreign application architecture, undocumented features, and learning a new language, I decided to build the Marie&rsquo;s site from scratch.</p>
 
-<h2 id="development-hows-and-whys:0f908a3ed3ef8d9a531516dfad512d4d">Development hows and whys</h2>
+<h2 id="front-end-structure:0f908a3ed3ef8d9a531516dfad512d4d">Front End Structure</h2>
 
-<p>The front end was built using AngularJS and Bootstrap 3. AngularJS&rsquo;s strength lies in its two-way data binding as well as the large selection of third party libraries. Functionality such as filtering a list of menu items based on a query or by type is fairly trivial to do in AngularJS. Coupling AngularJS with Bootstrap allowed me to rapidly set up, try out, and iterate the front end. Bootstrap is also created to be customizable out of the box, so changing how everything looked was no problem.</p>
+<p>The front end was built using AngularJS and Bootstrap 3. AngularJS&rsquo;s strength lies in its two-way data binding as well as its large selection of third party libraries. Functionality such as filtering a list of menu items based on a search is fairly trivial to do in AngularJS. Coupling AngularJS with Bootstrap allowed me to rapidly set up, try out, and iterate different layouts. Bootstrap is designed to be customizable out of the box, so changing how everything looked was no problem.</p>
+
+<h2 id="why-go:0f908a3ed3ef8d9a531516dfad512d4d">Why Go?</h2>
 
 <p>For the back end I chose to use the <a href="http://golang.org/">Go</a> programming language. I had been using Go in my side projects for a while and I wanted to leverage Go&rsquo;s strengths of:</p>
 
@@ -170,7 +184,15 @@
 <li>Official library support for <a href="https://stripe.com/">Stripe</a>(our payment processor)</li>
 </ul>
 
-<p>I chose to use the <a href="http://martini.codegangsta.io/">Martini</a> web framework after hearing about in on the <a href="https://changelog.com/117/">Changelog Podcast</a>. Martini has several upgrades the from the built in Go web framework including improved routing and middleware support. I also chose to use <a href="https://github.com/jinzhu/gorm">GORM</a> to connect to the database. Using an ORM library over manual SQL queries made sense here because development speed was more important than raw performance.</p>
+<p>I chose to use the <a href="http://martini.codegangsta.io/">Martini</a> web framework after hearing about in on the <a href="https://changelog.com/117/">Changelog Podcast</a>. Martini has several upgrades the from the built in Go web framework that the Maries site would rely on. These include:</p>
+
+<ul>
+<li>Middleware support for simple HTTP request/response modifications</li>
+<li>Improved routing controls, making REST API endpoints easy to write</li>
+<li>Dependency injection make sure that you always have access to the correct obejcts</li>
+</ul>
+
+<p>I also chose to use <a href="https://github.com/jinzhu/gorm">GORM</a> to connect to the database. GORM allows you to declare normal Go structs that map directly to database tables. When you make a database query with GORM, it&rsquo;s a series of methods that return an easy to use Go struct. Using an ORM library over manual SQL queries made sense for the Maries site as development speed was more important than raw performance.</p>
 
 <h2 id="still-going-strong:0f908a3ed3ef8d9a531516dfad512d4d">Still going strong</h2>
 
@@ -200,17 +222,31 @@
 
 <h2 id="teacher-centric-lesson-planning:ab757769ebbb53ad30e94bbeb44946bb">Teacher-centric lesson planning</h2>
 
-<p>Common Ground, a companion webapp to <a href="/projects/inscribe/">Inscribe</a>, enabled teachers with Inscribe accounts to create lesson plans for their current  courses. Teachers could also export their lesson plans and collaborate with other teachers on shared lesson plans.</p>
+<p>Common Ground, a companion webapp to <a href="/projects/inscribe/">Inscribe</a>, enabled teachers with Inscribe accounts to create lesson plans for their current  courses. Teachers could also export their lesson plans and collaborate with other teachers on shared lesson plans. Common Ground had the following requirements:</p>
+
+<ul>
+<li>Share login and user data with <a href="/projects/inscribe/">Inscribe</a></li>
+<li>Teachers can create lesson plans for Inscribe courses</li>
+<li>Lesson plans will show up on a calendar and are easily exportable to a variety of formats</li>
+<li>Lesson plans can be shared and edited by multiple teachers</li>
+</ul>
 
 <h2 id="talking-to-inscribe:ab757769ebbb53ad30e94bbeb44946bb">Talking to Inscribe</h2>
 
-<p>For the back end I chose to use the <a href="http://golang.org/">Go</a> programming language instead of <a href="https://www.python.org/">Python</a>, which Inscribe was written in. I had been using Go in my side projects and I had come to appreciate its strengths of speed, simplicity, and robustness. I structured the back end as a series of REST endpoints for the front end to query when it needed data.</p>
+<p>Although the back end for Common Ground was written in a different language than Inscribe(<a href="http://golang.org/">Go</a> and <a href="https://www.python.org/">Python</a> respectively) it was pretty easy to communicate over HTTPS between the two. When a user would login to Common Ground, the following process took place:</p>
 
-<p>Common Ground used Inscribe as its Single Sign-On server. User login requests were passed to Inscribe and the user would be given a <a href="https://self-issued.info/docs/draft-ietf-oauth-json-web-token.html">JSON Web Token</a> with their user information. This made it very easy to share user data across the two webapps.</p>
+<ul>
+<li>Login request sent to Common Ground</li>
+<li>Common Ground forwards the login request to Inscribe over HTTPS</li>
+<li>Inscribe checks the user&rsquo;s credentials and returns a <a href="https://self-issued.info/docs/draft-ietf-oauth-json-web-token.html">JSON Web Token</a>(JWT)</li>
+<li>Common Ground sends the JWT back to the user to be stored client side</li>
+</ul>
+
+<p>Common Ground and Inscribe shared the same JWT secret key, which is used to determine the validity of JWT claims. Sharing the JWT secret key between the two back ends made it so Common Ground could validate claims for Inscribe JWTs instead of checking with the Inscribe back end every time the user tried to do something.</p>
 
 <h2 id="front-end-lessons-from-inscribe:ab757769ebbb53ad30e94bbeb44946bb">Front end lessons from Inscribe</h2>
 
-<p>I immediately chose to use AngularJS for Common Ground&rsquo;s front end to avoid the previous pain points experienced while iterating on Inscribe&rsquo;s front end. Using the same front end framework across both Inscribe and Common Ground allowed me to reuse similar code pieces across the two projects.</p>
+<p>After the <a href="/projects/inscribe/#figuring-out-the-front-end:0eab5b6ef5fc6b3a1fc2a55d8d118484">lessons I learned from Inscribe</a>, I immediately chose to use AngularJS for Common Ground&rsquo;s front end. Using the same front end framework across both Inscribe and Common Ground had the added benefit of allowing me to reuse code across the two projects. Being able to use the same code was a boost in Common Ground up and running quickly.</p>
 
 <h2 id="iterate-early-iterate-often:ab757769ebbb53ad30e94bbeb44946bb">Iterate early, iterate often</h2>
 
@@ -244,23 +280,50 @@
 
 <h2 id="assignments-with-a-growth-mindset:0eab5b6ef5fc6b3a1fc2a55d8d118484">Assignments with a growth mindset</h2>
 
-<p>Inscribe is the first webapp I worked on for <a href="http://pomegranatelab.com/">Pomegranate Lab</a>. It&rsquo;s purpose was to help teachers connect with their students by providing in-depth feedback about the student&rsquo;s assignments and what the student could do to improve their grades.</p>
+<p>Inscribe is the first webapp I worked on for <a href="http://pomegranatelab.com/">Pomegranate Lab</a>. It&rsquo;s purpose was to help teachers connect with their students by providing in-depth feedback about the student&rsquo;s assignments and what the student could do to improve their grades. Inscribe had the following requirements:</p>
+
+<ul>
+<li>Teachers can create courses and manage which students are enrolled in their courses</li>
+<li>Teachers can create assignments from scratch or based on an existing rubric</li>
+<li>Students can complete assignments online</li>
+<li>Teachers can grade turned in student assignments and give detailed feedback on how they can improve</li>
+</ul>
 
 <h2 id="python-to-the-rescue:0eab5b6ef5fc6b3a1fc2a55d8d118484">Python to the rescue</h2>
 
-<p>Inscribe&rsquo;s back end was written in <a href="https://www.python.org/">Python</a>. Python is one of my favorite programming languages and is well suited for web development, so it was a perfect fit as there were no technical constraints for the language. I researched at several different Python web frameworks before settling on <a href="http://flask.pocoo.org/">Flask</a>. Flask is designed to be as unobtrusive as possible, meaning it gives you the tools you need to build webapps of varying sizes, but Flask never tries to force decisions on you.</p>
+<p>As Inscribe was one of the first webapps I had ever worked on I wanted to make sure I chose a language I was already familiar with as to not slow down development. <a href="https://www.python.org/">Python</a> is one of my favorite programming languages and is well equipped for web development, so it was a perfect fit.</p>
 
-<h2 id="handling-user-data:0eab5b6ef5fc6b3a1fc2a55d8d118484">Handling user data</h2>
+<p>Being new to web development, I researched at several different Python web frameworks before settling on <a href="http://flask.pocoo.org/">Flask</a>. Flask is designed to be as unobtrusive to your development process as possible. The Flask core library gives basic functionality for a webapp and extras like user authentication or database connections are implemented in easy to install plugins.</p>
 
-<p>For the database, I used <a href="http://www.postgresql.org/">PostgreSQL</a>(part of the Heroku default plan) and connected to it with the <a href="http://www.sqlalchemy.org/">SQLAlchemy</a> ORM. SQLAlchemy made development much simpler by allowing me to treat database entries as Python objects.</p>
+<h2 id="hosting-with-heroku:0eab5b6ef5fc6b3a1fc2a55d8d118484">Hosting with Heroku</h2>
 
-<p>Inscribe&rsquo;s back end handled a variety of data including user login sessions, assignment data, grades, and rubrics. Student accounts were free, but teachers were required to pay a monthly fee. User authentication was handled through <a href="https://self-issued.info/docs/draft-ietf-oauth-json-web-token.html">JSON Web Tokens</a>(JWT) sent over a HTTP header and saved client side into a cookie. I chose to use JWT, over authentication methods, since it&rsquo;s a language agnostic specification that is robust and secure.</p>
+<p>I looked at several different possible hosting solutions for Inscribe and wound up settling on <a href="https://www.heroku.com/">Heroku</a> for the following reasons:</p>
+
+<ul>
+<li>Set up was much easier than something like a VPS.</li>
+<li>Deployment was git based and I was already using git for version control.</li>
+<li>The development tier was free and would cover our initial needs. The ability to automatically scale was there if we needed more resources as well.</li>
+<li>Heroku offered easy to use add ons like databases, email services, logging, and more.</li>
+</ul>
+
+<p>For the database, I used <a href="http://www.postgresql.org/">PostgreSQL</a> with Heroku provided an excellent free tier for. Since development speed was more of a concern than raw database performance, I chose to use the <a href="http://www.sqlalchemy.org/">SQLAlchemy</a> ORM. SQLAlchemy lets you treat database entries as python objects. This allows you to keep your mental focus on Python code, rather than bouncing back and forth between SQL queries and Python.</p>
+
+<h2 id="handling-data-on-the-back-end:0eab5b6ef5fc6b3a1fc2a55d8d118484">Handling data on the back end</h2>
+
+<p>Inscribe&rsquo;s back end handled a variety of data operations including user login sessions, assignment data, grades, and rubrics.  User authentication was handled through <a href="https://self-issued.info/docs/draft-ietf-oauth-json-web-token.html">JSON Web Tokens</a>(JWT) sent over a HTTP header and saved client side into a cookie. I chose to use JWT over other authentication methods, since it&rsquo;s a language agnostic specification that is robust and secure. When a user tried to update or create data the back end could check their JWT and make sure that:</p>
+
+<ul>
+<li>They&rsquo;re a valid user</li>
+<li>They have permission to create or edit the data</li>
+</ul>
+
+<p>Student accounts for Inscribe were free, but teachers were required to pay a monthly fee. Rather than charge teacher credit cards directly, I chose to use <a href="https://stripe.com/">Stripe</a> to handle all payment processing. Credit card numbers we sent directly to Stripe servers from the browser. Stripe then returns a token that could be used to make a charge to the teacher&rsquo;s card from the Inscribe back end. While this is a bit of extra coding up front, it removed all the extra security hassle that comes with handling credit card numbers directly.</p>
 
 <h2 id="figuring-out-the-front-end:0eab5b6ef5fc6b3a1fc2a55d8d118484">Figuring out the front end</h2>
 
-<p>The front end of Inscribe went through several architecture iterations. Initially I built the front end for inscribe using <a href="http://jinja.pocoo.org/docs/dev/">Jinja2 templates</a> and <a href="https://jquery.com/">JQuery</a>. This worked well initially, however, as the site grew and the features became more complex, it became increasingly cumbersome to implement new features in JQuery alone. After researching different front end frameworks, I chose AngularJS for the next iteration of Inscribe&rsquo;s front end.</p>
+<p>The front end of Inscribe went through several different architecture iterations. Initially I built the front end for inscribe using <a href="http://jinja.pocoo.org/docs/dev/">Jinja2 templates</a> and <a href="https://jquery.com/">JQuery</a>. When a browser requested a page, the backend would load the proper data for a page from the database and generate the html based on that page&rsquo;s template file. This method worked quite well initially. However, as the site grew and the features became more complex, organizing code and keeping pages organized became complicated. After researching different solutions and consulting with the rest of Pomegranate Lab, I chose AngularJS for the next iteration of Inscribe&rsquo;s front end.</p>
 
-<p>AngularJS&rsquo;s two-way data binding makes it very easy to implement features that would have been fairly complicated to do with just JQuery. After only a couple of weeks rewriting Inscribe, the new AngularJS version was at feature parity with the old JQuery version. Additionally, rewriting the front end allowed me to simplify the back end into a series of REST API endpoints.</p>
+<p>The main feature that drew me to AngularJS&rsquo;s is its two-way data binding. Two-way data binding makes it very easy to implement features in AngularJS that would have been fairly complicated to do with just JQuery. After only a couple of weeks rewriting Inscribe, the new AngularJS version was at feature parity with the old JQuery version. Additionally, rewriting the front end allowed me to simplify the back end. No longer would the back end have to fetch data and render each page. Now the back end was for the most part a collection of REST API endpoints.</p>
 
 <h2 id="iterate-early-iterate-often:0eab5b6ef5fc6b3a1fc2a55d8d118484">Iterate early, iterate often</h2>
 

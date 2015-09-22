@@ -115,11 +115,13 @@
 
 <h2 id="roll-your-own-or-use-a-prebuilt-solution:0f908a3ed3ef8d9a531516dfad512d4d">Roll your own or use a prebuilt solution?</h2>
 
-<p>First I considered using an off the shelf solution such as Shopify or Magneto. Creating a content management system and ordering system from the ground up is quite a bit of work. Unfortunately, none of the existing systems I could find were able to satisfy all of the requirements.</p>
+<p>First I considered using an off the shelf solution. Creating a content management system and ordering system from the ground up is quite a bit of work. I did research into existing &ldquo;shopping cart solutions&rdquo; such as Shopify or Magneto. Unfortunately, none of the existing systems I could find were able to satisfy all of the requirements. To use an off the shelf solution I would need to extend the code base with a plugin in the language chosen solution was written in. Rather than go down a rabbit hole of foreign application architecture, undocumented features, and learning a new language, I decided to build the Marie&rsquo;s site from scratch.</p>
 
-<h2 id="development-hows-and-whys:0f908a3ed3ef8d9a531516dfad512d4d">Development hows and whys</h2>
+<h2 id="front-end-structure:0f908a3ed3ef8d9a531516dfad512d4d">Front End Structure</h2>
 
-<p>The front end was built using AngularJS and Bootstrap 3. AngularJS&rsquo;s strength lies in its two-way data binding as well as the large selection of third party libraries. Functionality such as filtering a list of menu items based on a query or by type is fairly trivial to do in AngularJS. Coupling AngularJS with Bootstrap allowed me to rapidly set up, try out, and iterate the front end. Bootstrap is also created to be customizable out of the box, so changing how everything looked was no problem.</p>
+<p>The front end was built using AngularJS and Bootstrap 3. AngularJS&rsquo;s strength lies in its two-way data binding as well as its large selection of third party libraries. Functionality such as filtering a list of menu items based on a search is fairly trivial to do in AngularJS. Coupling AngularJS with Bootstrap allowed me to rapidly set up, try out, and iterate different layouts. Bootstrap is designed to be customizable out of the box, so changing how everything looked was no problem.</p>
+
+<h2 id="why-go:0f908a3ed3ef8d9a531516dfad512d4d">Why Go?</h2>
 
 <p>For the back end I chose to use the <a href="http://golang.org/">Go</a> programming language. I had been using Go in my side projects for a while and I wanted to leverage Go&rsquo;s strengths of:</p>
 
@@ -131,7 +133,15 @@
 <li>Official library support for <a href="https://stripe.com/">Stripe</a>(our payment processor)</li>
 </ul>
 
-<p>I chose to use the <a href="http://martini.codegangsta.io/">Martini</a> web framework after hearing about in on the <a href="https://changelog.com/117/">Changelog Podcast</a>. Martini has several upgrades the from the built in Go web framework including improved routing and middleware support. I also chose to use <a href="https://github.com/jinzhu/gorm">GORM</a> to connect to the database. Using an ORM library over manual SQL queries made sense here because development speed was more important than raw performance.</p>
+<p>I chose to use the <a href="http://martini.codegangsta.io/">Martini</a> web framework after hearing about in on the <a href="https://changelog.com/117/">Changelog Podcast</a>. Martini has several upgrades the from the built in Go web framework that the Maries site would rely on. These include:</p>
+
+<ul>
+<li>Middleware support for simple HTTP request/response modifications</li>
+<li>Improved routing controls, making REST API endpoints easy to write</li>
+<li>Dependency injection make sure that you always have access to the correct obejcts</li>
+</ul>
+
+<p>I also chose to use <a href="https://github.com/jinzhu/gorm">GORM</a> to connect to the database. GORM allows you to declare normal Go structs that map directly to database tables. When you make a database query with GORM, it&rsquo;s a series of methods that return an easy to use Go struct. Using an ORM library over manual SQL queries made sense for the Maries site as development speed was more important than raw performance.</p>
 
 <h2 id="still-going-strong:0f908a3ed3ef8d9a531516dfad512d4d">Still going strong</h2>
 

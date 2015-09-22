@@ -98,17 +98,31 @@
 
 <h2 id="teacher-centric-lesson-planning:ab757769ebbb53ad30e94bbeb44946bb">Teacher-centric lesson planning</h2>
 
-<p>Common Ground, a companion webapp to <a href="/projects/inscribe/">Inscribe</a>, enabled teachers with Inscribe accounts to create lesson plans for their current  courses. Teachers could also export their lesson plans and collaborate with other teachers on shared lesson plans.</p>
+<p>Common Ground, a companion webapp to <a href="/projects/inscribe/">Inscribe</a>, enabled teachers with Inscribe accounts to create lesson plans for their current  courses. Teachers could also export their lesson plans and collaborate with other teachers on shared lesson plans. Common Ground had the following requirements:</p>
+
+<ul>
+<li>Share login and user data with <a href="/projects/inscribe/">Inscribe</a></li>
+<li>Teachers can create lesson plans for Inscribe courses</li>
+<li>Lesson plans will show up on a calendar and are easily exportable to a variety of formats</li>
+<li>Lesson plans can be shared and edited by multiple teachers</li>
+</ul>
 
 <h2 id="talking-to-inscribe:ab757769ebbb53ad30e94bbeb44946bb">Talking to Inscribe</h2>
 
-<p>For the back end I chose to use the <a href="http://golang.org/">Go</a> programming language instead of <a href="https://www.python.org/">Python</a>, which Inscribe was written in. I had been using Go in my side projects and I had come to appreciate its strengths of speed, simplicity, and robustness. I structured the back end as a series of REST endpoints for the front end to query when it needed data.</p>
+<p>Although the back end for Common Ground was written in a different language than Inscribe(<a href="http://golang.org/">Go</a> and <a href="https://www.python.org/">Python</a> respectively) it was pretty easy to communicate over HTTPS between the two. When a user would login to Common Ground, the following process took place:</p>
 
-<p>Common Ground used Inscribe as its Single Sign-On server. User login requests were passed to Inscribe and the user would be given a <a href="https://self-issued.info/docs/draft-ietf-oauth-json-web-token.html">JSON Web Token</a> with their user information. This made it very easy to share user data across the two webapps.</p>
+<ul>
+<li>Login request sent to Common Ground</li>
+<li>Common Ground forwards the login request to Inscribe over HTTPS</li>
+<li>Inscribe checks the user&rsquo;s credentials and returns a <a href="https://self-issued.info/docs/draft-ietf-oauth-json-web-token.html">JSON Web Token</a>(JWT)</li>
+<li>Common Ground sends the JWT back to the user to be stored client side</li>
+</ul>
+
+<p>Common Ground and Inscribe shared the same JWT secret key, which is used to determine the validity of JWT claims. Sharing the JWT secret key between the two back ends made it so Common Ground could validate claims for Inscribe JWTs instead of checking with the Inscribe back end every time the user tried to do something.</p>
 
 <h2 id="front-end-lessons-from-inscribe:ab757769ebbb53ad30e94bbeb44946bb">Front end lessons from Inscribe</h2>
 
-<p>I immediately chose to use AngularJS for Common Ground&rsquo;s front end to avoid the previous pain points experienced while iterating on Inscribe&rsquo;s front end. Using the same front end framework across both Inscribe and Common Ground allowed me to reuse similar code pieces across the two projects.</p>
+<p>After the <a href="/projects/inscribe/#figuring-out-the-front-end:0eab5b6ef5fc6b3a1fc2a55d8d118484">lessons I learned from Inscribe</a>, I immediately chose to use AngularJS for Common Ground&rsquo;s front end. Using the same front end framework across both Inscribe and Common Ground had the added benefit of allowing me to reuse code across the two projects. Being able to use the same code was a boost in Common Ground up and running quickly.</p>
 
 <h2 id="iterate-early-iterate-often:ab757769ebbb53ad30e94bbeb44946bb">Iterate early, iterate often</h2>
 
