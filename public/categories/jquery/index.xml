@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jquery on John Palgut</title>
-    <link>http://localhost:1313/categories/jquery/</link>
+    <link>http://jwsonic.github.io/categories/jquery/</link>
     <description>Recent content in Jquery on John Palgut</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 10 Oct 2013 14:47:09 -0500</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/jquery/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://jwsonic.github.io/categories/jquery/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Inscribe</title>
-      <link>http://localhost:1313/projects/inscribe/</link>
+      <link>http://jwsonic.github.io/projects/inscribe/</link>
       <pubDate>Thu, 10 Oct 2013 14:47:09 -0500</pubDate>
       
-      <guid>http://localhost:1313/projects/inscribe/</guid>
+      <guid>http://jwsonic.github.io/projects/inscribe/</guid>
       <description>
 
 &lt;h2 id=&#34;assignments-with-a-growth-mindset:0eab5b6ef5fc6b3a1fc2a55d8d118484&#34;&gt;Assignments with a growth mindset&lt;/h2&gt;
@@ -39,11 +39,11 @@
 
 &lt;h2 id=&#34;iterate-early-iterate-often:0eab5b6ef5fc6b3a1fc2a55d8d118484&#34;&gt;Iterate early, iterate often&lt;/h2&gt;
 
-&lt;p&gt;Today Inscribe is no longer in use. After extensive user testing, Pomegranate Lab determined that a different approach was needed to help teachers better connect with their students. This project later iterated into &lt;a href=&#34;http://localhost:1313/projects/playbook/&#34;&gt;The Playbook&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Today Inscribe is no longer in use. After extensive user testing, Pomegranate Lab determined that a different approach was needed to help teachers better connect with their students. This project later iterated into &lt;a href=&#34;http://jwsonic.github.io/projects/playbook/&#34;&gt;The Playbook&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;When it was around, Inscribe looked like this:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/inscribe-combined.png&#34; alt=&#34;Inscribe Img&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://jwsonic.github.io/img/inscribe-combined.png&#34; alt=&#34;Inscribe Img&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
