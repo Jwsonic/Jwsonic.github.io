@@ -19,7 +19,7 @@ The Playbook is a webapp I worked on for [Pomegranate Lab](http://pomegranatelab
 
 ## Back Ends with Parse
 
-Pomegranate Lab wanted to use the playbook for its Growth Mindset coaching sessions, so development needed to begin quickly. Due to the expedited nature of the project, I decided to use [Parse](https://www.parse.com/) a cut out a majority of the work in back end development. According to Parse's documentation: "[Our goal is to totally eliminate the need for writing server code or maintaining servers](https://www.parse.com/docs/js/guide#getting-started)".
+Pomegranate Lab wanted to use the playbook for its Growth Mindset coaching sessions, so development needed to begin quickly. Due to the expedited nature of the project, I decided to use [Parse](https://www.parse.com/) to cut out a majority of the work in back end development. According to Parse's documentation: "[Our goal is to totally eliminate the need for writing server code or maintaining servers](https://www.parse.com/docs/js/guide#getting-started)".
 
 Database tables, user authentication/permissions, emails, and hosting are all set up using the Parse configuration console. In the rare case you do need to do something special for your back end, Parse has "Cloud Code" functions. Cloud Code is in reality just a node.js environment to run your code on Parse servers. Parse provides libraries for several platforms and/or languages that allow you to interact with your app's "back end". Parse also had support for React, which will come into play later.
 
@@ -60,7 +60,9 @@ let addFive = (num) => num + 5;
 
  With this in mind, I decided to use the [Babel](https://babeljs.io/) transpiler to write the front end code The Playbook in ES6 JavaScript. Babel takes your ES6 JavaScript code and converts in into ES5(the current standard) JavaScript that browsers today expect. This let me use modern JavaScript features such as promises, lambdas, and classes in the development of The Playbook.
 
-[webpack](https://webpack.github.io/) is a module bundler that bundles all your webapp's files and condenses them into static files for easy hosting. JavaScript is converted and minified into as single js file that is loaded by a main.html file. It plays well with both React and Parse, trimming unused dependencies and shrinking your project. Configuring webpack can be a bit of a challenge the first time, but once set up the build process for The Playbook was very simple:
+[webpack](https://webpack.github.io/) is a module bundler that bundles all your webapp's files and condenses them into static files for easy hosting. JavaScript is converted and minified into as single js file that is loaded by a main.html file. webpack gives you the ability to install npm dependencies and use them in your front end. It also plays well with font end only libraries, React and Parse in our case, trimming unused code and shrinking your overall project size.
+
+Configuring webpack can be a bit of a challenge the first time, but once set up the build process for The Playbook was very simple:
 
 * Run webpack
 * Upload output files to Parse

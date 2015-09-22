@@ -26,11 +26,11 @@
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-min.css">
     <!--<![endif]-->
 
-    <link rel="stylesheet" href="http://jwsonic.github.io//css/all.min.css">
-    <link rel="stylesheet" href="http://jwsonic.github.io//css/main.css">
+    <link rel="stylesheet" href="http://localhost:1313//css/all.min.css">
+    <link rel="stylesheet" href="http://localhost:1313//css/main.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
-    <link rel="alternate" type="application/rss+xml" title="John Palgut" href="http://jwsonic.github.io//index.xml" />
+    <link rel="alternate" type="application/rss+xml" title="John Palgut" href="http://localhost:1313//index.xml" />
 </head>
 <body>
 
@@ -39,7 +39,7 @@
     <div class="sidebar pure-u-1 pure-u-md-1-4">
     <div class="header">
         <hgroup>
-            <h1 class="brand-title"><a href="http://jwsonic.github.io/">John Palgut</a></h1>
+            <h1 class="brand-title"><a href="http://localhost:1313/">John Palgut</a></h1>
             <h2 class="brand-tagline"> Coder. Gamer. Husband. </h2>
         </hgroup>
 
@@ -82,14 +82,14 @@
                 <section class="post">
                     <header class="post-header">
 
-                        <a href="http://jwsonic.github.io/projects/playbook/" class="post-title">The Playbook</a>
+                        <a href="http://localhost:1313/projects/playbook/" class="post-title">The Playbook</a>
 
                         <p class="post-meta">
                             
                             
                                 under
                                 
-                                <a class="post-category post-category-HTML" href="http://jwsonic.github.io//categories/html">HTML</a><a class="post-category post-category-React" href="http://jwsonic.github.io//categories/react">React</a><a class="post-category post-category-webpack" href="http://jwsonic.github.io//categories/webpack">webpack</a><a class="post-category post-category-JavaScript" href="http://jwsonic.github.io//categories/javascript">JavaScript</a><a class="post-category post-category-ES6" href="http://jwsonic.github.io//categories/es6">ES6</a><a class="post-category post-category-Parse" href="http://jwsonic.github.io//categories/parse">Parse</a><a class="post-category post-category-Node.js" href="http://jwsonic.github.io//categories/node.js">Node.js</a><a class="post-category post-category-npm" href="http://jwsonic.github.io//categories/npm">npm</a>
+                                <a class="post-category post-category-HTML" href="http://localhost:1313//categories/html">HTML</a><a class="post-category post-category-React" href="http://localhost:1313//categories/react">React</a><a class="post-category post-category-webpack" href="http://localhost:1313//categories/webpack">webpack</a><a class="post-category post-category-JavaScript" href="http://localhost:1313//categories/javascript">JavaScript</a><a class="post-category post-category-ES6" href="http://localhost:1313//categories/es6">ES6</a><a class="post-category post-category-Parse" href="http://localhost:1313//categories/parse">Parse</a><a class="post-category post-category-Node.js" href="http://localhost:1313//categories/node.js">Node.js</a><a class="post-category post-category-npm" href="http://localhost:1313//categories/npm">npm</a>
                             
                         </p>
                     </header>
@@ -112,7 +112,7 @@
 
 <h2 id="back-ends-with-parse:ae2e17d81343b352e5f8570697d79589">Back Ends with Parse</h2>
 
-<p>Pomegranate Lab wanted to use the playbook for its Growth Mindset coaching sessions, so development needed to begin quickly. Due to the expedited nature of the project, I decided to use <a href="https://www.parse.com/">Parse</a> a cut out a majority of the work in back end development. According to Parse&rsquo;s documentation: &ldquo;<a href="https://www.parse.com/docs/js/guide#getting-started">Our goal is to totally eliminate the need for writing server code or maintaining servers</a>&rdquo;.</p>
+<p>Pomegranate Lab wanted to use the playbook for its Growth Mindset coaching sessions, so development needed to begin quickly. Due to the expedited nature of the project, I decided to use <a href="https://www.parse.com/">Parse</a> to cut out a majority of the work in back end development. According to Parse&rsquo;s documentation: &ldquo;<a href="https://www.parse.com/docs/js/guide#getting-started">Our goal is to totally eliminate the need for writing server code or maintaining servers</a>&rdquo;.</p>
 
 <p>Database tables, user authentication/permissions, emails, and hosting are all set up using the Parse configuration console. In the rare case you do need to do something special for your back end, Parse has &ldquo;Cloud Code&rdquo; functions. Cloud Code is in reality just a node.js environment to run your code on Parse servers. Parse provides libraries for several platforms and/or languages that allow you to interact with your app&rsquo;s &ldquo;back end&rdquo;. Parse also had support for React, which will come into play later.</p>
 
@@ -150,7 +150,9 @@
 
 <p>With this in mind, I decided to use the <a href="https://babeljs.io/">Babel</a> transpiler to write the front end code The Playbook in ES6 JavaScript. Babel takes your ES6 JavaScript code and converts in into ES5(the current standard) JavaScript that browsers today expect. This let me use modern JavaScript features such as promises, lambdas, and classes in the development of The Playbook.</p>
 
-<p><a href="https://webpack.github.io/">webpack</a> is a module bundler that bundles all your webapp&rsquo;s files and condenses them into static files for easy hosting. JavaScript is converted and minified into as single js file that is loaded by a main.html file. It plays well with both React and Parse, trimming unused dependencies and shrinking your project. Configuring webpack can be a bit of a challenge the first time, but once set up the build process for The Playbook was very simple:</p>
+<p><a href="https://webpack.github.io/">webpack</a> is a module bundler that bundles all your webapp&rsquo;s files and condenses them into static files for easy hosting. JavaScript is converted and minified into as single js file that is loaded by a main.html file. webpack gives you the ability to install npm dependencies and use them in your front end. It also plays well with font end only libraries, React and Parse in our case, trimming unused code and shrinking your overall project size.</p>
+
+<p>Configuring webpack can be a bit of a challenge the first time, but once set up the build process for The Playbook was very simple:</p>
 
 <ul>
 <li>Run webpack</li>
@@ -167,14 +169,14 @@
                 <section class="post">
                     <header class="post-header">
 
-                        <a href="http://jwsonic.github.io/projects/fiber/" class="post-title">Austin Google Fiber</a>
+                        <a href="http://localhost:1313/projects/fiber/" class="post-title">Austin Google Fiber</a>
 
                         <p class="post-meta">
                             
                             
                                 under
                                 
-                                <a class="post-category post-category-HTML" href="http://jwsonic.github.io//categories/html">HTML</a><a class="post-category post-category-Go" href="http://jwsonic.github.io//categories/go">Go</a><a class="post-category post-category-AngularJS" href="http://jwsonic.github.io//categories/angularjs">AngularJS</a><a class="post-category post-category-Bootstrap" href="http://jwsonic.github.io//categories/bootstrap">Bootstrap</a><a class="post-category post-category-Heroku" href="http://jwsonic.github.io//categories/heroku">Heroku</a>
+                                <a class="post-category post-category-HTML" href="http://localhost:1313//categories/html">HTML</a><a class="post-category post-category-Go" href="http://localhost:1313//categories/go">Go</a><a class="post-category post-category-AngularJS" href="http://localhost:1313//categories/angularjs">AngularJS</a><a class="post-category post-category-Bootstrap" href="http://localhost:1313//categories/bootstrap">Bootstrap</a><a class="post-category post-category-Heroku" href="http://localhost:1313//categories/heroku">Heroku</a>
                             
                         </p>
                     </header>
@@ -205,14 +207,14 @@
                 <section class="post">
                     <header class="post-header">
 
-                        <a href="http://jwsonic.github.io/projects/maries/" class="post-title">Marie Antoinette&#39;s Gluten-Free Bake Shoppe</a>
+                        <a href="http://localhost:1313/projects/maries/" class="post-title">Marie Antoinette&#39;s Gluten-Free Bake Shoppe</a>
 
                         <p class="post-meta">
                             
                             
                                 under
                                 
-                                <a class="post-category post-category-HTML" href="http://jwsonic.github.io//categories/html">HTML</a><a class="post-category post-category-Go" href="http://jwsonic.github.io//categories/go">Go</a><a class="post-category post-category-AngularJS" href="http://jwsonic.github.io//categories/angularjs">AngularJS</a><a class="post-category post-category-Bootstrap" href="http://jwsonic.github.io//categories/bootstrap">Bootstrap</a><a class="post-category post-category-Heroku" href="http://jwsonic.github.io//categories/heroku">Heroku</a><a class="post-category post-category-Stripe" href="http://jwsonic.github.io//categories/stripe">Stripe</a>
+                                <a class="post-category post-category-HTML" href="http://localhost:1313//categories/html">HTML</a><a class="post-category post-category-Go" href="http://localhost:1313//categories/go">Go</a><a class="post-category post-category-AngularJS" href="http://localhost:1313//categories/angularjs">AngularJS</a><a class="post-category post-category-Bootstrap" href="http://localhost:1313//categories/bootstrap">Bootstrap</a><a class="post-category post-category-Heroku" href="http://localhost:1313//categories/heroku">Heroku</a><a class="post-category post-category-Stripe" href="http://localhost:1313//categories/stripe">Stripe</a>
                             
                         </p>
                     </header>
@@ -268,14 +270,14 @@
                 <section class="post">
                     <header class="post-header">
 
-                        <a href="http://jwsonic.github.io/projects/filegrabber/" class="post-title">File Grabber</a>
+                        <a href="http://localhost:1313/projects/filegrabber/" class="post-title">File Grabber</a>
 
                         <p class="post-meta">
                             
                             
                                 under
                                 
-                                <a class="post-category post-category-HTML" href="http://jwsonic.github.io//categories/html">HTML</a><a class="post-category post-category-Go" href="http://jwsonic.github.io//categories/go">Go</a><a class="post-category post-category-React" href="http://jwsonic.github.io//categories/react">React</a><a class="post-category post-category-Bootstrap" href="http://jwsonic.github.io//categories/bootstrap">Bootstrap</a><a class="post-category post-category-websockets" href="http://jwsonic.github.io//categories/websockets">websockets</a>
+                                <a class="post-category post-category-HTML" href="http://localhost:1313//categories/html">HTML</a><a class="post-category post-category-Go" href="http://localhost:1313//categories/go">Go</a><a class="post-category post-category-React" href="http://localhost:1313//categories/react">React</a><a class="post-category post-category-Bootstrap" href="http://localhost:1313//categories/bootstrap">Bootstrap</a><a class="post-category post-category-websockets" href="http://localhost:1313//categories/websockets">websockets</a>
                             
                         </p>
                     </header>
@@ -289,14 +291,14 @@
                 <section class="post">
                     <header class="post-header">
 
-                        <a href="http://jwsonic.github.io/projects/commonground/" class="post-title">Common Ground</a>
+                        <a href="http://localhost:1313/projects/commonground/" class="post-title">Common Ground</a>
 
                         <p class="post-meta">
                             
                             
                                 under
                                 
-                                <a class="post-category post-category-HTML" href="http://jwsonic.github.io//categories/html">HTML</a><a class="post-category post-category-Go" href="http://jwsonic.github.io//categories/go">Go</a><a class="post-category post-category-AngularJS" href="http://jwsonic.github.io//categories/angularjs">AngularJS</a><a class="post-category post-category-Bootstrap" href="http://jwsonic.github.io//categories/bootstrap">Bootstrap</a><a class="post-category post-category-Heroku" href="http://jwsonic.github.io//categories/heroku">Heroku</a><a class="post-category post-category-Stripe" href="http://jwsonic.github.io//categories/stripe">Stripe</a>
+                                <a class="post-category post-category-HTML" href="http://localhost:1313//categories/html">HTML</a><a class="post-category post-category-Go" href="http://localhost:1313//categories/go">Go</a><a class="post-category post-category-AngularJS" href="http://localhost:1313//categories/angularjs">AngularJS</a><a class="post-category post-category-Bootstrap" href="http://localhost:1313//categories/bootstrap">Bootstrap</a><a class="post-category post-category-Heroku" href="http://localhost:1313//categories/heroku">Heroku</a><a class="post-category post-category-Stripe" href="http://localhost:1313//categories/stripe">Stripe</a>
                             
                         </p>
                     </header>
@@ -333,14 +335,14 @@
                 <section class="post">
                     <header class="post-header">
 
-                        <a href="http://jwsonic.github.io/projects/inscribe/" class="post-title">Inscribe</a>
+                        <a href="http://localhost:1313/projects/inscribe/" class="post-title">Inscribe</a>
 
                         <p class="post-meta">
                             
                             
                                 under
                                 
-                                <a class="post-category post-category-HTML" href="http://jwsonic.github.io//categories/html">HTML</a><a class="post-category post-category-Python" href="http://jwsonic.github.io//categories/python">Python</a><a class="post-category post-category-AngularJS" href="http://jwsonic.github.io//categories/angularjs">AngularJS</a><a class="post-category post-category-JQuery" href="http://jwsonic.github.io//categories/jquery">JQuery</a><a class="post-category post-category-Bootstrap" href="http://jwsonic.github.io//categories/bootstrap">Bootstrap</a><a class="post-category post-category-Heroku" href="http://jwsonic.github.io//categories/heroku">Heroku</a><a class="post-category post-category-Stripe" href="http://jwsonic.github.io//categories/stripe">Stripe</a>
+                                <a class="post-category post-category-HTML" href="http://localhost:1313//categories/html">HTML</a><a class="post-category post-category-Python" href="http://localhost:1313//categories/python">Python</a><a class="post-category post-category-AngularJS" href="http://localhost:1313//categories/angularjs">AngularJS</a><a class="post-category post-category-JQuery" href="http://localhost:1313//categories/jquery">JQuery</a><a class="post-category post-category-Bootstrap" href="http://localhost:1313//categories/bootstrap">Bootstrap</a><a class="post-category post-category-Heroku" href="http://localhost:1313//categories/heroku">Heroku</a><a class="post-category post-category-Stripe" href="http://localhost:1313//categories/stripe">Stripe</a>
                             
                         </p>
                     </header>
@@ -389,7 +391,7 @@
         </ul>
     </div>
 </div>
-<script src="http://jwsonic.github.io//js/all.min.js"></script>
+<script src="http://localhost:1313//js/all.min.js"></script>
         </div>
     </div>
 </div>
@@ -405,5 +407,8 @@ ga('send', 'pageview');
 
 </script>
 
-</body>
+<script data-no-instant>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
 </html>

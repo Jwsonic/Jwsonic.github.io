@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Websockets on John Palgut</title>
-    <link>http://jwsonic.github.io/categories/websockets/</link>
+    <link>http://localhost:1313/categories/websockets/</link>
     <description>Recent content in Websockets on John Palgut</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 10 Nov 2014 14:47:09 -0500</lastBuildDate>
-    <atom:link href="http://jwsonic.github.io/categories/websockets/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/websockets/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>File Grabber</title>
-      <link>http://jwsonic.github.io/projects/filegrabber/</link>
+      <link>http://localhost:1313/projects/filegrabber/</link>
       <pubDate>Mon, 10 Nov 2014 14:47:09 -0500</pubDate>
       
-      <guid>http://jwsonic.github.io/projects/filegrabber/</guid>
+      <guid>http://localhost:1313/projects/filegrabber/</guid>
       <description></description>
     </item>
     
