@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jquery on John Palgut</title>
+    <link>http://localhost:1313/categories/jquery/</link>
+    <description>Recent content in Jquery on John Palgut</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Oct 2013 14:47:09 -0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/jquery/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Inscribe</title>
+      <link>http://localhost:1313/projects/inscribe/</link>
+      <pubDate>Thu, 10 Oct 2013 14:47:09 -0500</pubDate>
+      
+      <guid>http://localhost:1313/projects/inscribe/</guid>
+      <description>
+
+&lt;h2 id=&#34;assignments-with-a-growth-mindset:0eab5b6ef5fc6b3a1fc2a55d8d118484&#34;&gt;Assignments with a growth mindset&lt;/h2&gt;
+
+&lt;p&gt;Inscribe is the first webapp I worked on for &lt;a href=&#34;http://pomegranatelab.com/&#34;&gt;Pomegranate Lab&lt;/a&gt;. It&amp;rsquo;s purpose was to help teachers connect with their students by providing in-depth feedback about the student&amp;rsquo;s assignments and what the student could do to improve their grades.&lt;/p&gt;
+
+&lt;h2 id=&#34;python-to-the-rescue:0eab5b6ef5fc6b3a1fc2a55d8d118484&#34;&gt;Python to the rescue&lt;/h2&gt;
+
+&lt;p&gt;Inscribe&amp;rsquo;s back end was written in &lt;a href=&#34;https://www.python.org/&#34;&gt;Python&lt;/a&gt;. Python is one of my favorite programming languages and is well suited for web development, so it was a perfect fit as there were no technical constraints for the language. I researched at several different Python web frameworks before settling on &lt;a href=&#34;http://flask.pocoo.org/&#34;&gt;Flask&lt;/a&gt;. Flask is designed to be as unobtrusive as possible, meaning it gives you the tools you need to build webapps of varying sizes, but Flask never tries to force decisions on you.&lt;/p&gt;
+
+&lt;h2 id=&#34;handling-user-data:0eab5b6ef5fc6b3a1fc2a55d8d118484&#34;&gt;Handling user data&lt;/h2&gt;
+
+&lt;p&gt;For the database, I used &lt;a href=&#34;http://www.postgresql.org/&#34;&gt;PostgreSQL&lt;/a&gt;(part of the Heroku default plan) and connected to it with the &lt;a href=&#34;http://www.sqlalchemy.org/&#34;&gt;SQLAlchemy&lt;/a&gt; ORM. SQLAlchemy made development much simpler by allowing me to treat database entries as Python objects.&lt;/p&gt;
+
+&lt;p&gt;Inscribe&amp;rsquo;s back end handled a variety of data including user login sessions, assignment data, grades, and rubrics. Student accounts were free, but teachers were required to pay a monthly fee. User authentication was handled through &lt;a href=&#34;https://self-issued.info/docs/draft-ietf-oauth-json-web-token.html&#34;&gt;JSON Web Tokens&lt;/a&gt;(JWT) sent over a HTTP header and saved client side into a cookie. I chose to use JWT, over authentication methods, since it&amp;rsquo;s a language agnostic specification that is robust and secure.&lt;/p&gt;
+
+&lt;h2 id=&#34;figuring-out-the-front-end:0eab5b6ef5fc6b3a1fc2a55d8d118484&#34;&gt;Figuring out the front end&lt;/h2&gt;
+
+&lt;p&gt;The front end of Inscribe went through several architecture iterations. Initially I built the front end for inscribe using &lt;a href=&#34;http://jinja.pocoo.org/docs/dev/&#34;&gt;Jinja2 templates&lt;/a&gt; and &lt;a href=&#34;https://jquery.com/&#34;&gt;JQuery&lt;/a&gt;. This worked well initially, however, as the site grew and the features became more complex, it became increasingly cumbersome to implement new features in JQuery alone. After researching different front end frameworks, I chose AngularJS for the next iteration of Inscribe&amp;rsquo;s front end.&lt;/p&gt;
+
+&lt;p&gt;AngularJS&amp;rsquo;s two-way data binding makes it very easy to implement features that would have been fairly complicated to do with just JQuery. After only a couple of weeks rewriting Inscribe, the new AngularJS version was at feature parity with the old JQuery version. Additionally, rewriting the front end allowed me to simplify the back end into a series of REST API endpoints.&lt;/p&gt;
+
+&lt;h2 id=&#34;iterate-early-iterate-often:0eab5b6ef5fc6b3a1fc2a55d8d118484&#34;&gt;Iterate early, iterate often&lt;/h2&gt;
+
+&lt;p&gt;Today Inscribe is no longer in use. After extensive user testing, Pomegranate Lab determined that a different approach was needed to help teachers better connect with their students. This project later iterated into &lt;a href=&#34;http://localhost:1313/projects/playbook/&#34;&gt;The Playbook&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;When it was around, Inscribe looked like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/inscribe-combined.png&#34; alt=&#34;Inscribe Img&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
