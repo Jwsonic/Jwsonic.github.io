@@ -12,21 +12,21 @@ When my wife, Jesyka, told me she got a job at IBM in Austin, TX my first though
 
 ## The Fiber reality
 
-After scouring apartment listings in Austin and doing a bit of research it became clear that there were a few problems with my Google Fiber dream:
+After scouring apartment listings in Austin, and doing a bit of research, it became clear that there were a few problems with my Google Fiber dream:
 
-* Roll-out is only scheduled for specific areas of Austin
-* None of these areas is a reasonable commute distance from where Jesyka's would be working
+* Roll-out was only scheduled for specific areas of Austin
+* None of the areas were a reasonable commute distance from Jesyka's work
 * New areas were being added slowly
 
 Google provides an excellent [map of Fiber listings](https://fiber.google.com/cities/austin/apartments/) in Austin but there was no way to actually tell how often the listings were updated, if at all. Not to be deterred, I decided to write a webapp to track new Fiber listings, as they were added.
 
 ## Reverse engineering Google Fiber listings
 
-Using Chrome developer tools I was able to check network traffic on Google map and discovered that the data for all Fiber enabled apartments was being stored in a JSON file. This JSON file was used by Google to build the apartment map on page load.
+Using Chrome Developer Tools, I was able to check network traffic on the Google Fiber map and discovered that the data for all Fiber enabled apartments was being stored in a JSON file. This JSON file was used by Google to build the apartment map on page load.
 
-Rather than use [inline linking](https://en.wikipedia.org/wiki/Inline_linking) for my webapp, I wrote a Go tool to fetch, parse, and store apartment data in a separate database on [Heroku](https://www.heroku.com/). This prevented page loads from my app causing additional traffic on Google servers. Heroku's background job scheduler runs the tool a few times a day, to avoid being the server stress mentioned earlier.
+Rather than use [inline linking](https://en.wikipedia.org/wiki/Inline_linking) for my webapp, I wrote a Go tool to fetch, parse, and store apartment data in a separate database on [Heroku](https://www.heroku.com/). This prevents page loads from my app causing additional traffic on Google servers. Heroku's background job scheduler runs the tool a few times a day, to avoid the server stress mentioned earlier.
 
-For the front end of the webapp I used AngularJS. The front end uses an ajax request to query the Heroku back end for JSON apartment data. The apartment data is then loaded into a table listing important information such as the name, address, and time the listing was added. Using AngulaJs' built in data filtering, users can search for listings by name or address.
+For the front end of the webapp, I used AngularJS. The front end uses an AJAX request to query the Heroku back end for JSON apartment data. The apartment data is then loaded into a table, which lists important information such as the name of the apartment complex, address of the apartment, and time the listing was added. Using AngularJS' built-in data filtering, users can search for listings by apartment name or address.
 
 ## Check it out
 
