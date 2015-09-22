@@ -26,11 +26,11 @@
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-min.css">
     <!--<![endif]-->
 
-    <link rel="stylesheet" href="http://jwsonic.github.io//css/all.min.css">
-    <link rel="stylesheet" href="http://jwsonic.github.io//css/main.css">
+    <link rel="stylesheet" href="http://localhost:1313//css/all.min.css">
+    <link rel="stylesheet" href="http://localhost:1313//css/main.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
-    <link rel="alternate" type="application/rss+xml" title="John Palgut" href="http://jwsonic.github.io//index.xml" />
+    <link rel="alternate" type="application/rss+xml" title="John Palgut" href="http://localhost:1313//index.xml" />
 </head>
 <body>
 
@@ -39,7 +39,7 @@
     <div class="sidebar pure-u-1 pure-u-md-1-4">
     <div class="header">
         <hgroup>
-            <h1 class="brand-title"><a href="http://jwsonic.github.io/">John Palgut</a></h1>
+            <h1 class="brand-title"><a href="http://localhost:1313/">John Palgut</a></h1>
             <h2 class="brand-tagline"> Coder. Gamer. Husband. </h2>
         </hgroup>
 
@@ -78,39 +78,89 @@
             
             <div class="posts">
                 
-                <h1 class="content-subhead">18 Dec 2014, 00:00</h1>
+                <h1 class="content-subhead">01 Jan 2015, 14:47</h1>
                 <section class="post">
                     <header class="post-header">
 
-                        <a href="http://jwsonic.github.io/projects/maries/" class="post-title">Marie Antoinette&#39;s Gluten-Free Bake Shoppe</a>
+                        <a href="http://localhost:1313/projects/fiber/" class="post-title">Austin Google Fiber</a>
 
                         <p class="post-meta">
                             
                             
                                 under
                                 
-                                <a class="post-category post-category-HTML" href="http://jwsonic.github.io//categories/html">HTML</a><a class="post-category post-category-Go" href="http://jwsonic.github.io//categories/go">Go</a><a class="post-category post-category-AngularJS" href="http://jwsonic.github.io//categories/angularjs">AngularJS</a><a class="post-category post-category-Bootstrap" href="http://jwsonic.github.io//categories/bootstrap">Bootstrap</a><a class="post-category post-category-Heroku" href="http://jwsonic.github.io//categories/heroku">Heroku</a><a class="post-category post-category-Stripe" href="http://jwsonic.github.io//categories/stripe">Stripe</a>
+                                <a class="post-category post-category-HTML" href="http://localhost:1313//categories/html">HTML</a><a class="post-category post-category-Go" href="http://localhost:1313//categories/go">Go</a><a class="post-category post-category-AngularJS" href="http://localhost:1313//categories/angularjs">AngularJS</a><a class="post-category post-category-Bootstrap" href="http://localhost:1313//categories/bootstrap">Bootstrap</a><a class="post-category post-category-Heroku" href="http://localhost:1313//categories/heroku">Heroku</a>
                             
                         </p>
                     </header>
 
                     <div class="post-description">
-                        <p>The Marie Antoinette&rsquo;s site had the following requirements:</p>
+                        
+
+<h2 id="the-fiber-dream:c60e498790513456114e62949061e65e">The Fiber dream</h2>
+
+<p>When my wife told me she got a job at IBM in Austin, TX my first thought was: <strong>CONGRATUALTIONS!</strong> My second thought was: <strong>My friends are going to be super jealous when I tell them I&rsquo;m getting Google Fiber.</strong></p>
+
+<h2 id="the-fiber-reality:c60e498790513456114e62949061e65e">The Fiber reality</h2>
+
+<p>After scouring apartment listings in Austin and doing a bit of research it became clear that Google Fiber rollout was only starting in specific zip-codes, and it was moving rather slowly. Google provided an excellent <a href="https://fiber.google.com/cities/austin/apartments/">map of Fiber listings</a> in Austin but there was no way to actually tell how often the listings were updated, if at all&hellip; So, I decided to write a webapp to track new Fiber listings, as they were added.</p>
+
+<h2 id="reverse-engineering-google-fiber-listings:c60e498790513456114e62949061e65e">Reverse engineering Google Fiber listings</h2>
+
+<p>I used Chrome developer tools to uncover how the Fiber map worked and discovered that the data for all Fiber enabled apartments was being stored in a JSON file that the site uses to build an apartment map on load. I wrote a Go tool to fetch, parse, and store apartment data in a separate database on <a href="https://www.heroku.com/">Heroku</a>. The tool would run about once an hour to check for new listings.</p>
+
+<p>I then created a front end for the new apartments in AngularJS. The site loads apartment data from the Heroku database and also lists important apartment information such as the name, address, and time the listing was added. The site works perfectly, and now we&rsquo;re now up to date with new Fiber listings in our area.</p>
+
+<p>The current Austin Fiber site is still up <a href="https://austin-fiber.herokuapp.com/#/">here</a>. Check out the code on <a href="https://github.com/Jwsonic/fiber">Github</a>.</p>
+
+                    </div>
+                </section>
+                
+                <h1 class="content-subhead">18 Dec 2014, 00:00</h1>
+                <section class="post">
+                    <header class="post-header">
+
+                        <a href="http://localhost:1313/projects/maries/" class="post-title">Marie Antoinette&#39;s Gluten-Free Bake Shoppe</a>
+
+                        <p class="post-meta">
+                            
+                            
+                                under
+                                
+                                <a class="post-category post-category-HTML" href="http://localhost:1313//categories/html">HTML</a><a class="post-category post-category-Go" href="http://localhost:1313//categories/go">Go</a><a class="post-category post-category-AngularJS" href="http://localhost:1313//categories/angularjs">AngularJS</a><a class="post-category post-category-Bootstrap" href="http://localhost:1313//categories/bootstrap">Bootstrap</a><a class="post-category post-category-Heroku" href="http://localhost:1313//categories/heroku">Heroku</a><a class="post-category post-category-Stripe" href="http://localhost:1313//categories/stripe">Stripe</a>
+                            
+                        </p>
+                    </header>
+
+                    <div class="post-description">
+                        
+
+<h2 id="from-restaurant-to-manufacturer:0f908a3ed3ef8d9a531516dfad512d4d">From restaurant to manufacturer</h2>
+
+<p>I&rsquo;ve worked with Marie Antoinette&rsquo;s Gluten-Free Bake Shoppe, as their Lead Developer, since the company was founded. In late 2014, the company decided to shift their business strategy. The owners closed their restaurant and chose to focus and grow their manufacturing and distribution business by selling directly to vendors instead.</p>
+
+<h2 id="requirements:0f908a3ed3ef8d9a531516dfad512d4d">Requirements</h2>
+
+<p>After working with the business owners, a designer, and speaking to product vendors, the following list of requirements was created:</p>
 
 <ul>
-<li>Display information about the bakery(contact, hours, etc)</li>
-<li>Allow customers to browse and search the in store menu</li>
-<li>Allow customers to place online orders</li>
+<li>Display information about the bakery (contact, hours, etc)</li>
+<li>Allow customers to browse and search the bakery menu</li>
+<li>Allow customers to place online orders, which could be shipped or picked up</li>
 <li>Have a separate menu and order placement system for vendors</li>
-<li>Admin ability to edit menu items and approve new vendors</li>
+<li>Admin ability to edit menu items, create vendor invoices, and approve new vendor accounts</li>
 <li>Quick development is preferable as the current site lacks functionality</li>
 </ul>
 
+<h2 id="roll-your-own-or-use-a-prebuilt-solution:0f908a3ed3ef8d9a531516dfad512d4d">Roll your own or use a prebuilt solution?</h2>
+
 <p>First I considered using an off the shelf solution such as Shopify or Magneto. Creating a content management system and ordering system from the ground up is quite a bit of work. Unfortunately, none of the existing systems I could find were able to satisfy all of the requirements.</p>
 
-<p>The front end was built using AngularJS and Bootstrap 3. AngularJS strength lies in its two way data binding as well as the large selection of third party libraries. Functionality such as filtering a list of menu items based on a query or by type is fairly trivial to do with AngularJS. Coupling AngularJS with Bootstrap allowed me to rapidly set up, try out, and iterate the front end. Bootstrap is also created to be customizable out of the box, so changing how everything looked was no problem.</p>
+<h2 id="development-hows-and-whys:0f908a3ed3ef8d9a531516dfad512d4d">Development hows and whys</h2>
 
-<p>For the back end I chose to use the <a href="http://golang.org/">Go</a> programming language. I had been using Go in my side projects for a while and I had come to appreciate its strengths:</p>
+<p>The front end was built using AngularJS and Bootstrap 3. AngularJS&rsquo;s strength lies in its two-way data binding as well as the large selection of third party libraries. Functionality such as filtering a list of menu items based on a query or by type is fairly trivial to do in AngularJS. Coupling AngularJS with Bootstrap allowed me to rapidly set up, try out, and iterate the front end. Bootstrap is also created to be customizable out of the box, so changing how everything looked was no problem.</p>
+
+<p>For the back end I chose to use the <a href="http://golang.org/">Go</a> programming language. I had been using Go in my side projects for a while and I wanted to leverage Go&rsquo;s strengths of:</p>
 
 <ul>
 <li>A robust standard library</li>
@@ -120,77 +170,105 @@
 <li>Official library support for <a href="https://stripe.com/">Stripe</a>(our payment processor)</li>
 </ul>
 
-<p>I chose to use the <a href="http://martini.codegangsta.io/">Martini</a> web framework after hearing about in on the <a href="https://changelog.com/117/">Changelog Podcast</a>. Martini has several upgrades the from the built in Go web framework including improved routing and middleware support. I also chose to use <a href="https://github.com/jinzhu/gorm">GORM</a> to connect to the database. Using an ORM library over manual SQL queries made sense here since development speed was more important than raw performance.</p>
+<p>I chose to use the <a href="http://martini.codegangsta.io/">Martini</a> web framework after hearing about in on the <a href="https://changelog.com/117/">Changelog Podcast</a>. Martini has several upgrades the from the built in Go web framework including improved routing and middleware support. I also chose to use <a href="https://github.com/jinzhu/gorm">GORM</a> to connect to the database. Using an ORM library over manual SQL queries made sense here because development speed was more important than raw performance.</p>
 
-<p>The site is still up and running today! You can check it out <a href="https://www.mariesglutenfree.com">here</a>.</p>
+<h2 id="still-going-strong:0f908a3ed3ef8d9a531516dfad512d4d">Still going strong</h2>
+
+<p>The site is still up and running today with both vendors and regular customers making online orders! You can check it out <a href="https://www.mariesglutenfree.com">here</a>.</p>
 
                     </div>
                 </section>
                 
-                <h1 class="content-subhead">25 Jun 2014, 14:47</h1>
+                <h1 class="content-subhead">25 Jul 2014, 14:47</h1>
                 <section class="post">
                     <header class="post-header">
 
-                        <a href="http://jwsonic.github.io/projects/commonground/" class="post-title">Common Ground</a>
+                        <a href="http://localhost:1313/projects/commonground/" class="post-title">Common Ground</a>
 
                         <p class="post-meta">
                             
                             
                                 under
                                 
-                                <a class="post-category post-category-HTML" href="http://jwsonic.github.io//categories/html">HTML</a><a class="post-category post-category-Go" href="http://jwsonic.github.io//categories/go">Go</a><a class="post-category post-category-AngularJS" href="http://jwsonic.github.io//categories/angularjs">AngularJS</a><a class="post-category post-category-Bootstrap" href="http://jwsonic.github.io//categories/bootstrap">Bootstrap</a><a class="post-category post-category-Heroku" href="http://jwsonic.github.io//categories/heroku">Heroku</a>
+                                <a class="post-category post-category-HTML" href="http://localhost:1313//categories/html">HTML</a><a class="post-category post-category-Go" href="http://localhost:1313//categories/go">Go</a><a class="post-category post-category-AngularJS" href="http://localhost:1313//categories/angularjs">AngularJS</a><a class="post-category post-category-Bootstrap" href="http://localhost:1313//categories/bootstrap">Bootstrap</a><a class="post-category post-category-Heroku" href="http://localhost:1313//categories/heroku">Heroku</a><a class="post-category post-category-Stripe" href="http://localhost:1313//categories/stripe">Stripe</a>
                             
                         </p>
                     </header>
 
                     <div class="post-description">
-                        <p>The Marie Antoinette&rsquo;s site had the following requirements:</p>
+                        
 
-<ul>
-<li>Display information about the bakery</li>
-<li>Allow customers to browse and search the in store menu</li>
-<li>Allow customers to place online orders</li>
-<li>Have a separate menu and order placement system for vendors</li>
-<li>Admin ability to edit menu items and approve new vendors</li>
-</ul>
+<h2 id="teacher-centric-lesson-planning:ab757769ebbb53ad30e94bbeb44946bb">Teacher-centric lesson planning</h2>
 
-<p>First I considered using an off the shelf solution such as Shopify or Magneto. Creating a content management system and
-ordering system from the ground up is quite a bit of work. Unfortunately, none of the existing systems I could find were able to
-satisfy all of the requirements.</p>
+<p>Common Ground, a companion webapp to <a href="/projects/inscribe/">Inscribe</a>, enabled teachers with Inscribe accounts to create lesson plans for their current  courses. Teachers could also export their lesson plans and collaborate with other teachers on shared lesson plans.</p>
+
+<h2 id="talking-to-inscribe:ab757769ebbb53ad30e94bbeb44946bb">Talking to Inscribe</h2>
+
+<p>For the back end I chose to use the <a href="http://golang.org/">Go</a> programming language instead of <a href="https://www.python.org/">Python</a>, which Inscribe was written in. I had been using Go in my side projects and I had come to appreciate its strengths of speed, simplicity, and robustness. I structured the back end as a series of REST endpoints for the front end to query when it needed data.</p>
+
+<p>Common Ground used Inscribe as its Single Sign-On server. User login requests were passed to Inscribe and the user would be given a <a href="https://self-issued.info/docs/draft-ietf-oauth-json-web-token.html">JSON Web Token</a> with their user information. This made it very easy to share user data across the two webapps.</p>
+
+<h2 id="front-end-lessons-from-inscribe:ab757769ebbb53ad30e94bbeb44946bb">Front end lessons from Inscribe</h2>
+
+<p>I immediately chose to use AngularJS for Common Ground&rsquo;s front end to avoid the previous pain points experienced while iterating on Inscribe&rsquo;s front end. Using the same front end framework across both Inscribe and Common Ground allowed me to reuse similar code pieces across the two projects.</p>
+
+<h2 id="iterate-early-iterate-often:ab757769ebbb53ad30e94bbeb44946bb">Iterate early, iterate often</h2>
+
+<p>Today Common Ground is no longer in use. After extensive user testing, Pomegranate Lab determined that a different approach was needed to help teachers better connect with their students. This project later iterated into <a href="/projects/playbook/">The Playbook</a>.</p>
+
+<p>When it was around, Common Ground looked like this:</p>
+
+<p><img src="/img/cg-combined.png" alt="Inscribe Img" /></p>
 
                     </div>
                 </section>
                 
-                <h1 class="content-subhead">10 Jan 2014, 14:47</h1>
+                <h1 class="content-subhead">10 Oct 2013, 14:47</h1>
                 <section class="post">
                     <header class="post-header">
 
-                        <a href="http://jwsonic.github.io/projects/inscribe/" class="post-title">Inscribe</a>
+                        <a href="http://localhost:1313/projects/inscribe/" class="post-title">Inscribe</a>
 
                         <p class="post-meta">
                             
                             
                                 under
                                 
-                                <a class="post-category post-category-HTML" href="http://jwsonic.github.io//categories/html">HTML</a><a class="post-category post-category-Python" href="http://jwsonic.github.io//categories/python">Python</a><a class="post-category post-category-AngularJS" href="http://jwsonic.github.io//categories/angularjs">AngularJS</a><a class="post-category post-category-Bootstrap" href="http://jwsonic.github.io//categories/bootstrap">Bootstrap</a><a class="post-category post-category-Heroku" href="http://jwsonic.github.io//categories/heroku">Heroku</a>
+                                <a class="post-category post-category-HTML" href="http://localhost:1313//categories/html">HTML</a><a class="post-category post-category-Python" href="http://localhost:1313//categories/python">Python</a><a class="post-category post-category-AngularJS" href="http://localhost:1313//categories/angularjs">AngularJS</a><a class="post-category post-category-JQuery" href="http://localhost:1313//categories/jquery">JQuery</a><a class="post-category post-category-Bootstrap" href="http://localhost:1313//categories/bootstrap">Bootstrap</a><a class="post-category post-category-Heroku" href="http://localhost:1313//categories/heroku">Heroku</a><a class="post-category post-category-Stripe" href="http://localhost:1313//categories/stripe">Stripe</a>
                             
                         </p>
                     </header>
 
                     <div class="post-description">
-                        <p>The Marie Antoinette&rsquo;s site had the following requirements:</p>
+                        
 
-<ul>
-<li>Display information about the bakery</li>
-<li>Allow customers to browse and search the in store menu</li>
-<li>Allow customers to place online orders</li>
-<li>Have a separate menu and order placement system for vendors</li>
-<li>Admin ability to edit menu items and approve new vendors</li>
-</ul>
+<h2 id="assignments-with-a-growth-mindset:0eab5b6ef5fc6b3a1fc2a55d8d118484">Assignments with a growth mindset</h2>
 
-<p>First I considered using an off the shelf solution such as Shopify or Magneto. Creating a content management system and
-ordering system from the ground up is quite a bit of work. Unfortunately, none of the existing systems I could find were able to
-satisfy all of the requirements.</p>
+<p>Inscribe is the first webapp I worked on for <a href="http://pomegranatelab.com/">Pomegranate Lab</a>. It&rsquo;s purpose was to help teachers connect with their students by providing in-depth feedback about the student&rsquo;s assignments and what the student could do to improve their grades.</p>
+
+<h2 id="python-to-the-rescue:0eab5b6ef5fc6b3a1fc2a55d8d118484">Python to the rescue</h2>
+
+<p>Inscribe&rsquo;s back end was written in <a href="https://www.python.org/">Python</a>. Python is one of my favorite programming languages and is well suited for web development, so it was a perfect fit as there were no technical constraints for the language. I researched at several different Python web frameworks before settling on <a href="http://flask.pocoo.org/">Flask</a>. Flask is designed to be as unobtrusive as possible, meaning it gives you the tools you need to build webapps of varying sizes, but Flask never tries to force decisions on you.</p>
+
+<h2 id="handling-user-data:0eab5b6ef5fc6b3a1fc2a55d8d118484">Handling user data</h2>
+
+<p>For the database, I used <a href="http://www.postgresql.org/">PostgreSQL</a>(part of the Heroku default plan) and connected to it with the <a href="http://www.sqlalchemy.org/">SQLAlchemy</a> ORM. SQLAlchemy made development much simpler by allowing me to treat database entries as Python objects.</p>
+
+<p>Inscribe&rsquo;s back end handled a variety of data including user login sessions, assignment data, grades, and rubrics. Student accounts were free, but teachers were required to pay a monthly fee. User authentication was handled through <a href="https://self-issued.info/docs/draft-ietf-oauth-json-web-token.html">JSON Web Tokens</a>(JWT) sent over a HTTP header and saved client side into a cookie. I chose to use JWT, over authentication methods, since it&rsquo;s a language agnostic specification that is robust and secure.</p>
+
+<h2 id="figuring-out-the-front-end:0eab5b6ef5fc6b3a1fc2a55d8d118484">Figuring out the front end</h2>
+
+<p>The front end of Inscribe went through several architecture iterations. Initially I built the front end for inscribe using <a href="http://jinja.pocoo.org/docs/dev/">Jinja2 templates</a> and <a href="https://jquery.com/">JQuery</a>. This worked well initially, however, as the site grew and the features became more complex, it became increasingly cumbersome to implement new features in JQuery alone. After researching different front end frameworks, I chose AngularJS for the next iteration of Inscribe&rsquo;s front end.</p>
+
+<p>AngularJS&rsquo;s two-way data binding makes it very easy to implement features that would have been fairly complicated to do with just JQuery. After only a couple of weeks rewriting Inscribe, the new AngularJS version was at feature parity with the old JQuery version. Additionally, rewriting the front end allowed me to simplify the back end into a series of REST API endpoints.</p>
+
+<h2 id="iterate-early-iterate-often:0eab5b6ef5fc6b3a1fc2a55d8d118484">Iterate early, iterate often</h2>
+
+<p>Today Inscribe is no longer in use. After extensive user testing, Pomegranate Lab determined that a different approach was needed to help teachers better connect with their students. This project later iterated into <a href="/projects/playbook/">The Playbook</a>.</p>
+
+<p>When it was around, Inscribe looked like this:</p>
+
+<p><img src="/img/inscribe-combined.png" alt="Inscribe Img" /></p>
 
                     </div>
                 </section>
@@ -205,7 +283,7 @@ satisfy all of the requirements.</p>
         </ul>
     </div>
 </div>
-<script src="http://jwsonic.github.io//js/all.min.js"></script>
+<script src="http://localhost:1313//js/all.min.js"></script>
         </div>
     </div>
 </div>
@@ -221,5 +299,8 @@ ga('send', 'pageview');
 
 </script>
 
-</body>
+<script data-no-instant>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
 </html>

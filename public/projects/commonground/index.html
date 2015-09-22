@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Common Ground &middot; John Palgut</title>
 
-    <meta name="description" content="Website for Marie Antoinette&#39;s Gluten-Free Bake Shoppe built with Go and AngularJS.">
+    <meta name="description" content="Teacher-centric lesson planning">
 
     <meta name="generator" content="Hugo 0.15-DEV" />
     <meta name="twitter:card" content="summary">
     
     <meta name="twitter:title" content="Common Ground &middot; John Palgut">
-    <meta name="twitter:description" content="Website for Marie Antoinette&#39;s Gluten-Free Bake Shoppe built with Go and AngularJS.">
+    <meta name="twitter:description" content="Teacher-centric lesson planning">
 
     <meta property="og:type" content="article">
     <meta property="og:title" content="Common Ground &middot; John Palgut">
-    <meta property="og:description" content="Website for Marie Antoinette&#39;s Gluten-Free Bake Shoppe built with Go and AngularJS.">
+    <meta property="og:description" content="Teacher-centric lesson planning">
 
     <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Oxygen:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css">
@@ -26,11 +26,11 @@
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-min.css">
     <!--<![endif]-->
 
-    <link rel="stylesheet" href="http://jwsonic.github.io//css/all.min.css">
-    <link rel="stylesheet" href="http://jwsonic.github.io//css/main.css">
+    <link rel="stylesheet" href="http://localhost:1313//css/all.min.css">
+    <link rel="stylesheet" href="http://localhost:1313//css/main.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
-    <link rel="alternate" type="application/rss+xml" title="John Palgut" href="http://jwsonic.github.io//index.xml" />
+    <link rel="alternate" type="application/rss+xml" title="John Palgut" href="http://localhost:1313//index.xml" />
 </head>
 <body>
 
@@ -39,7 +39,7 @@
     <div class="sidebar pure-u-1 pure-u-md-1-4">
     <div class="header">
         <hgroup>
-            <h1 class="brand-title"><a href="http://jwsonic.github.io/">John Palgut</a></h1>
+            <h1 class="brand-title"><a href="http://localhost:1313/">John Palgut</a></h1>
             <h2 class="brand-tagline"> Coder. Gamer. Husband. </h2>
         </hgroup>
 
@@ -77,36 +77,46 @@
         <div>
             
             <div class="posts">
-                <h1 class="content-subhead">25 Jun 2014</h1>
+                <h1 class="content-subhead">25 Jul 2014</h1>
                 <section class="post">
                     <header class="post-header">
 
-                        <a href="http://jwsonic.github.io/projects/commonground/" class="post-title">Common Ground</a>
+                        <a href="http://localhost:1313/projects/commonground/" class="post-title">Common Ground</a>
 
                         <p class="post-meta">
                             
                             
                                 under
                                 
-                                <a class="post-category post-category-HTML" href="http://jwsonic.github.io//categories/html">HTML</a><a class="post-category post-category-Go" href="http://jwsonic.github.io//categories/go">Go</a><a class="post-category post-category-AngularJS" href="http://jwsonic.github.io//categories/angularjs">AngularJS</a><a class="post-category post-category-Bootstrap" href="http://jwsonic.github.io//categories/bootstrap">Bootstrap</a><a class="post-category post-category-Heroku" href="http://jwsonic.github.io//categories/heroku">Heroku</a>
+                                <a class="post-category post-category-HTML" href="http://localhost:1313//categories/html">HTML</a><a class="post-category post-category-Go" href="http://localhost:1313//categories/go">Go</a><a class="post-category post-category-AngularJS" href="http://localhost:1313//categories/angularjs">AngularJS</a><a class="post-category post-category-Bootstrap" href="http://localhost:1313//categories/bootstrap">Bootstrap</a><a class="post-category post-category-Heroku" href="http://localhost:1313//categories/heroku">Heroku</a><a class="post-category post-category-Stripe" href="http://localhost:1313//categories/stripe">Stripe</a>
                             
                         </p>
                     </header>
 
                     <div class="post-description">
-                        <p>The Marie Antoinette&rsquo;s site had the following requirements:</p>
+                        
 
-<ul>
-<li>Display information about the bakery</li>
-<li>Allow customers to browse and search the in store menu</li>
-<li>Allow customers to place online orders</li>
-<li>Have a separate menu and order placement system for vendors</li>
-<li>Admin ability to edit menu items and approve new vendors</li>
-</ul>
+<h2 id="teacher-centric-lesson-planning:ab757769ebbb53ad30e94bbeb44946bb">Teacher-centric lesson planning</h2>
 
-<p>First I considered using an off the shelf solution such as Shopify or Magneto. Creating a content management system and
-ordering system from the ground up is quite a bit of work. Unfortunately, none of the existing systems I could find were able to
-satisfy all of the requirements.</p>
+<p>Common Ground, a companion webapp to <a href="/projects/inscribe/">Inscribe</a>, enabled teachers with Inscribe accounts to create lesson plans for their current  courses. Teachers could also export their lesson plans and collaborate with other teachers on shared lesson plans.</p>
+
+<h2 id="talking-to-inscribe:ab757769ebbb53ad30e94bbeb44946bb">Talking to Inscribe</h2>
+
+<p>For the back end I chose to use the <a href="http://golang.org/">Go</a> programming language instead of <a href="https://www.python.org/">Python</a>, which Inscribe was written in. I had been using Go in my side projects and I had come to appreciate its strengths of speed, simplicity, and robustness. I structured the back end as a series of REST endpoints for the front end to query when it needed data.</p>
+
+<p>Common Ground used Inscribe as its Single Sign-On server. User login requests were passed to Inscribe and the user would be given a <a href="https://self-issued.info/docs/draft-ietf-oauth-json-web-token.html">JSON Web Token</a> with their user information. This made it very easy to share user data across the two webapps.</p>
+
+<h2 id="front-end-lessons-from-inscribe:ab757769ebbb53ad30e94bbeb44946bb">Front end lessons from Inscribe</h2>
+
+<p>I immediately chose to use AngularJS for Common Ground&rsquo;s front end to avoid the previous pain points experienced while iterating on Inscribe&rsquo;s front end. Using the same front end framework across both Inscribe and Common Ground allowed me to reuse similar code pieces across the two projects.</p>
+
+<h2 id="iterate-early-iterate-often:ab757769ebbb53ad30e94bbeb44946bb">Iterate early, iterate often</h2>
+
+<p>Today Common Ground is no longer in use. After extensive user testing, Pomegranate Lab determined that a different approach was needed to help teachers better connect with their students. This project later iterated into <a href="/projects/playbook/">The Playbook</a>.</p>
+
+<p>When it was around, Common Ground looked like this:</p>
+
+<p><img src="/img/cg-combined.png" alt="Inscribe Img" /></p>
 
                     </div>
                     
@@ -119,7 +129,7 @@ satisfy all of the requirements.</p>
         </ul>
     </div>
 </div>
-<script src="http://jwsonic.github.io//js/all.min.js"></script>
+<script src="http://localhost:1313//js/all.min.js"></script>
         </div>
     </div>
 </div>
@@ -136,5 +146,8 @@ ga('send', 'pageview');
 
 </script>
 
-</body>
+<script data-no-instant>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
 </html>

@@ -2,41 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>John Palgut</title>
-    <link>http://jwsonic.github.io/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on John Palgut</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 18 Sep 2015 14:47:09 -0500</lastBuildDate>
-    <atom:link href="http://jwsonic.github.io/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Marie Antoinette&#39;s Gluten-Free Bake Shoppe</title>
-      <link>http://jwsonic.github.io/posts/test/</link>
-      <pubDate>Fri, 18 Sep 2015 14:47:09 -0500</pubDate>
-      
-      <guid>http://jwsonic.github.io/posts/test/</guid>
-      <description>&lt;p&gt;Marie Antoinette&amp;rsquo;s Gluten-Free Bake Shoppe is a gluten free bakery located in Kansas and Missouri.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Stuff Page</title>
-      <link>http://jwsonic.github.io/stuff/</link>
-      <pubDate>Fri, 18 Sep 2015 14:47:09 -0500</pubDate>
-      
-      <guid>http://jwsonic.github.io/stuff/</guid>
-      <description></description>
-    </item>
+    <lastBuildDate>Tue, 07 Jul 2015 14:47:09 -0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>The Playbook</title>
-      <link>http://jwsonic.github.io/projects/playbook/</link>
+      <link>http://localhost:1313/projects/playbook/</link>
       <pubDate>Tue, 07 Jul 2015 14:47:09 -0500</pubDate>
       
-      <guid>http://jwsonic.github.io/projects/playbook/</guid>
-      <description>&lt;p&gt;The Playbook is a webapp I worked on for &lt;a href=&#34;http://pomegranatelab.com/&#34;&gt;Pomegranate Lab&lt;/a&gt; with the purpose of helping teachers create and find lesson plans based on the &lt;a href=&#34;http://mindsetonline.com/whatisit/about/&#34;&gt;Growth Mindset&lt;/a&gt;. Development for The Playbook needed to begin quickly and to be in a semi usable state as fast as possible because Pomegranate Lab wanted it to help enhance their coaching sessions with teachers. Due to the expidited nature of the project I decided to give &lt;a href=&#34;https://www.parse.com/&#34;&gt;Parse&lt;/a&gt; a try. In simplified terms Parse handles back end functionality for your app so you only have code the front end. Database tables, User functionality, emails, and hosting are all handled by Parse. Parse provides libraries for several platforms are frameworks that allow you to interact with your app&amp;rsquo;s &amp;ldquo;back end&amp;rdquo;. In terms of The Playbook I would write a &lt;a href=&#34;https://en.wikipedia.org/wiki/Single-page_application&#34;&gt;Single Page Application&lt;/a&gt; that then load the proper Parse data when the page was created.&lt;/p&gt;
+      <guid>http://localhost:1313/projects/playbook/</guid>
+      <description>
 
-&lt;p&gt;To build the front end I decided to use &lt;a href=&#34;https://facebook.github.io/react/&#34;&gt;React&lt;/a&gt;. React is an excellent JavaScript library for building UIs. It encourages you to separate functionality into &amp;lsquo;components&amp;rsquo; which are used used like traditional HTML tags. Since code is treated as separate units, this makes code easier to organize and very easy for humans to read. For example the collapsible menu for the site was only:&lt;/p&gt;
+&lt;h2 id=&#34;a-practical-guide-to-the-growth-mindset:ae2e17d81343b352e5f8570697d79589&#34;&gt;A practical guide to the Growth Mindset&lt;/h2&gt;
+
+&lt;p&gt;The Playbook is a webapp I worked on for &lt;a href=&#34;http://pomegranatelab.com/&#34;&gt;Pomegranate Lab&lt;/a&gt; with the purpose of helping teachers create and find lesson plans based on the &lt;a href=&#34;http://mindsetonline.com/whatisit/about/&#34;&gt;Growth Mindset&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;back-ends-with-parse:ae2e17d81343b352e5f8570697d79589&#34;&gt;Back Ends with Parse&lt;/h2&gt;
+
+&lt;p&gt;Development for The Playbook needed to begin quickly and to be in a semi usable state as fast as possible because Pomegranate Lab wanted it to help enhance their coaching sessions with teachers. Due to the expedited nature of the project, I decided to give &lt;a href=&#34;https://www.parse.com/&#34;&gt;Parse&lt;/a&gt; a try. In simplified terms, Parse handles back end functionality for your app so you only have code the front end. Database tables, user functionality, emails, and hosting are all handled by Parse. Parse provides libraries for several platforms and/or languages that allow you to interact with your app&amp;rsquo;s &amp;ldquo;back end&amp;rdquo;. For The Playbook I wrote a &lt;a href=&#34;https://en.wikipedia.org/wiki/Single-page_application&#34;&gt;Single Page Application&lt;/a&gt; that loaded the proper Parse data when each page opened.&lt;/p&gt;
+
+&lt;h2 id=&#34;using-react-for-an-easy-to-understand-ui:ae2e17d81343b352e5f8570697d79589&#34;&gt;Using React for an easy to understand UI&lt;/h2&gt;
+
+&lt;p&gt;To build the front end, I decided to use &lt;a href=&#34;https://facebook.github.io/react/&#34;&gt;React&lt;/a&gt;. React is an excellent JavaScript library for building UIs. It encourages you to separate functionality into &amp;lsquo;components&amp;rsquo;, which are then used like traditional HTML tags. Since code is treated as separate units, this makes code easier to organize and very easy for humans to read. For instance the HTML to display the collapsible menu is:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;&amp;lt;SlideMenu&amp;gt;
   &amp;lt;MenuItems&amp;gt;&amp;lt;/MenuItems&amp;gt;
@@ -46,7 +37,9 @@
 
 &lt;p&gt;But it rendered as:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://jwsonic.github.io/img/menu-demo.gif&#34; alt=&#34;Menu Image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/menu-demo.gif&#34; alt=&#34;Menu Image&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;es6-bringing-javascript-development-to-the-21st-century:ae2e17d81343b352e5f8570697d79589&#34;&gt;ES6 bringing JavaScript development to the 21st Century&lt;/h2&gt;
 
 &lt;p&gt;Unfortunately most browsers don&amp;rsquo;t support the newest JavaScript functionality out of the box, and there are same &lt;a href=&#34;https://github.com/lukehoban/es6features&#34;&gt;great improvements&lt;/a&gt; coming in future versions ofJavaScript. With this in mind, I decided to use the &lt;a href=&#34;https://babeljs.io/&#34;&gt;Babel&lt;/a&gt; transpiler to write the new ES6 JavaScript for The Playbook and convert it the current JavaScript that most browsers expect. The let me use modern JavaScript features such as promises, lambdas, and classes. Since the entire front end was essentially a single page JavaScript webapp, I used &lt;a href=&#34;https://webpack.github.io/&#34;&gt;webpack&lt;/a&gt; to bundle all the assets into static files that could be served from the Parse servers.&lt;/p&gt;
 
@@ -55,27 +48,65 @@
     </item>
     
     <item>
+      <title>Austin Google Fiber</title>
+      <link>http://localhost:1313/projects/fiber/</link>
+      <pubDate>Thu, 01 Jan 2015 14:47:09 -0500</pubDate>
+      
+      <guid>http://localhost:1313/projects/fiber/</guid>
+      <description>
+
+&lt;h2 id=&#34;the-fiber-dream:c60e498790513456114e62949061e65e&#34;&gt;The Fiber dream&lt;/h2&gt;
+
+&lt;p&gt;When my wife told me she got a job at IBM in Austin, TX my first thought was: &lt;strong&gt;CONGRATUALTIONS!&lt;/strong&gt; My second thought was: &lt;strong&gt;My friends are going to be super jealous when I tell them I&amp;rsquo;m getting Google Fiber.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;the-fiber-reality:c60e498790513456114e62949061e65e&#34;&gt;The Fiber reality&lt;/h2&gt;
+
+&lt;p&gt;After scouring apartment listings in Austin and doing a bit of research it became clear that Google Fiber rollout was only starting in specific zip-codes, and it was moving rather slowly. Google provided an excellent &lt;a href=&#34;https://fiber.google.com/cities/austin/apartments/&#34;&gt;map of Fiber listings&lt;/a&gt; in Austin but there was no way to actually tell how often the listings were updated, if at all&amp;hellip; So, I decided to write a webapp to track new Fiber listings, as they were added.&lt;/p&gt;
+
+&lt;h2 id=&#34;reverse-engineering-google-fiber-listings:c60e498790513456114e62949061e65e&#34;&gt;Reverse engineering Google Fiber listings&lt;/h2&gt;
+
+&lt;p&gt;I used Chrome developer tools to uncover how the Fiber map worked and discovered that the data for all Fiber enabled apartments was being stored in a JSON file that the site uses to build an apartment map on load. I wrote a Go tool to fetch, parse, and store apartment data in a separate database on &lt;a href=&#34;https://www.heroku.com/&#34;&gt;Heroku&lt;/a&gt;. The tool would run about once an hour to check for new listings.&lt;/p&gt;
+
+&lt;p&gt;I then created a front end for the new apartments in AngularJS. The site loads apartment data from the Heroku database and also lists important apartment information such as the name, address, and time the listing was added. The site works perfectly, and now we&amp;rsquo;re now up to date with new Fiber listings in our area.&lt;/p&gt;
+
+&lt;p&gt;The current Austin Fiber site is still up &lt;a href=&#34;https://austin-fiber.herokuapp.com/#/&#34;&gt;here&lt;/a&gt;. Check out the code on &lt;a href=&#34;https://github.com/Jwsonic/fiber&#34;&gt;Github&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Marie Antoinette&#39;s Gluten-Free Bake Shoppe</title>
-      <link>http://jwsonic.github.io/projects/maries/</link>
+      <link>http://localhost:1313/projects/maries/</link>
       <pubDate>Thu, 18 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://jwsonic.github.io/projects/maries/</guid>
-      <description>&lt;p&gt;The Marie Antoinette&amp;rsquo;s site had the following requirements:&lt;/p&gt;
+      <guid>http://localhost:1313/projects/maries/</guid>
+      <description>
+
+&lt;h2 id=&#34;from-restaurant-to-manufacturer:0f908a3ed3ef8d9a531516dfad512d4d&#34;&gt;From restaurant to manufacturer&lt;/h2&gt;
+
+&lt;p&gt;I&amp;rsquo;ve worked with Marie Antoinette&amp;rsquo;s Gluten-Free Bake Shoppe, as their Lead Developer, since the company was founded. In late 2014, the company decided to shift their business strategy. The owners closed their restaurant and chose to focus and grow their manufacturing and distribution business by selling directly to vendors instead.&lt;/p&gt;
+
+&lt;h2 id=&#34;requirements:0f908a3ed3ef8d9a531516dfad512d4d&#34;&gt;Requirements&lt;/h2&gt;
+
+&lt;p&gt;After working with the business owners, a designer, and speaking to product vendors, the following list of requirements was created:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Display information about the bakery(contact, hours, etc)&lt;/li&gt;
-&lt;li&gt;Allow customers to browse and search the in store menu&lt;/li&gt;
-&lt;li&gt;Allow customers to place online orders&lt;/li&gt;
+&lt;li&gt;Display information about the bakery (contact, hours, etc)&lt;/li&gt;
+&lt;li&gt;Allow customers to browse and search the bakery menu&lt;/li&gt;
+&lt;li&gt;Allow customers to place online orders, which could be shipped or picked up&lt;/li&gt;
 &lt;li&gt;Have a separate menu and order placement system for vendors&lt;/li&gt;
-&lt;li&gt;Admin ability to edit menu items and approve new vendors&lt;/li&gt;
+&lt;li&gt;Admin ability to edit menu items, create vendor invoices, and approve new vendor accounts&lt;/li&gt;
 &lt;li&gt;Quick development is preferable as the current site lacks functionality&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;h2 id=&#34;roll-your-own-or-use-a-prebuilt-solution:0f908a3ed3ef8d9a531516dfad512d4d&#34;&gt;Roll your own or use a prebuilt solution?&lt;/h2&gt;
+
 &lt;p&gt;First I considered using an off the shelf solution such as Shopify or Magneto. Creating a content management system and ordering system from the ground up is quite a bit of work. Unfortunately, none of the existing systems I could find were able to satisfy all of the requirements.&lt;/p&gt;
 
-&lt;p&gt;The front end was built using AngularJS and Bootstrap 3. AngularJS strength lies in its two way data binding as well as the large selection of third party libraries. Functionality such as filtering a list of menu items based on a query or by type is fairly trivial to do with AngularJS. Coupling AngularJS with Bootstrap allowed me to rapidly set up, try out, and iterate the front end. Bootstrap is also created to be customizable out of the box, so changing how everything looked was no problem.&lt;/p&gt;
+&lt;h2 id=&#34;development-hows-and-whys:0f908a3ed3ef8d9a531516dfad512d4d&#34;&gt;Development hows and whys&lt;/h2&gt;
 
-&lt;p&gt;For the back end I chose to use the &lt;a href=&#34;http://golang.org/&#34;&gt;Go&lt;/a&gt; programming language. I had been using Go in my side projects for a while and I had come to appreciate its strengths:&lt;/p&gt;
+&lt;p&gt;The front end was built using AngularJS and Bootstrap 3. AngularJS&amp;rsquo;s strength lies in its two-way data binding as well as the large selection of third party libraries. Functionality such as filtering a list of menu items based on a query or by type is fairly trivial to do in AngularJS. Coupling AngularJS with Bootstrap allowed me to rapidly set up, try out, and iterate the front end. Bootstrap is also created to be customizable out of the box, so changing how everything looked was no problem.&lt;/p&gt;
+
+&lt;p&gt;For the back end I chose to use the &lt;a href=&#34;http://golang.org/&#34;&gt;Go&lt;/a&gt; programming language. I had been using Go in my side projects for a while and I wanted to leverage Go&amp;rsquo;s strengths of:&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;A robust standard library&lt;/li&gt;
@@ -85,53 +116,90 @@
 &lt;li&gt;Official library support for &lt;a href=&#34;https://stripe.com/&#34;&gt;Stripe&lt;/a&gt;(our payment processor)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;I chose to use the &lt;a href=&#34;http://martini.codegangsta.io/&#34;&gt;Martini&lt;/a&gt; web framework after hearing about in on the &lt;a href=&#34;https://changelog.com/117/&#34;&gt;Changelog Podcast&lt;/a&gt;. Martini has several upgrades the from the built in Go web framework including improved routing and middleware support. I also chose to use &lt;a href=&#34;https://github.com/jinzhu/gorm&#34;&gt;GORM&lt;/a&gt; to connect to the database. Using an ORM library over manual SQL queries made sense here since development speed was more important than raw performance.&lt;/p&gt;
+&lt;p&gt;I chose to use the &lt;a href=&#34;http://martini.codegangsta.io/&#34;&gt;Martini&lt;/a&gt; web framework after hearing about in on the &lt;a href=&#34;https://changelog.com/117/&#34;&gt;Changelog Podcast&lt;/a&gt;. Martini has several upgrades the from the built in Go web framework including improved routing and middleware support. I also chose to use &lt;a href=&#34;https://github.com/jinzhu/gorm&#34;&gt;GORM&lt;/a&gt; to connect to the database. Using an ORM library over manual SQL queries made sense here because development speed was more important than raw performance.&lt;/p&gt;
 
-&lt;p&gt;The site is still up and running today! You can check it out &lt;a href=&#34;https://www.mariesglutenfree.com&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;still-going-strong:0f908a3ed3ef8d9a531516dfad512d4d&#34;&gt;Still going strong&lt;/h2&gt;
+
+&lt;p&gt;The site is still up and running today with both vendors and regular customers making online orders! You can check it out &lt;a href=&#34;https://www.mariesglutenfree.com&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
     <item>
-      <title>Common Ground</title>
-      <link>http://jwsonic.github.io/projects/commonground/</link>
-      <pubDate>Wed, 25 Jun 2014 14:47:09 -0500</pubDate>
+      <title>File Grabber</title>
+      <link>http://localhost:1313/projects/filegrabber/</link>
+      <pubDate>Mon, 10 Nov 2014 14:47:09 -0500</pubDate>
       
-      <guid>http://jwsonic.github.io/projects/commonground/</guid>
-      <description>&lt;p&gt;The Marie Antoinette&amp;rsquo;s site had the following requirements:&lt;/p&gt;
+      <guid>http://localhost:1313/projects/filegrabber/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Common Ground</title>
+      <link>http://localhost:1313/projects/commonground/</link>
+      <pubDate>Fri, 25 Jul 2014 14:47:09 -0500</pubDate>
+      
+      <guid>http://localhost:1313/projects/commonground/</guid>
+      <description>
 
-&lt;ul&gt;
-&lt;li&gt;Display information about the bakery&lt;/li&gt;
-&lt;li&gt;Allow customers to browse and search the in store menu&lt;/li&gt;
-&lt;li&gt;Allow customers to place online orders&lt;/li&gt;
-&lt;li&gt;Have a separate menu and order placement system for vendors&lt;/li&gt;
-&lt;li&gt;Admin ability to edit menu items and approve new vendors&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h2 id=&#34;teacher-centric-lesson-planning:ab757769ebbb53ad30e94bbeb44946bb&#34;&gt;Teacher-centric lesson planning&lt;/h2&gt;
 
-&lt;p&gt;First I considered using an off the shelf solution such as Shopify or Magneto. Creating a content management system and
-ordering system from the ground up is quite a bit of work. Unfortunately, none of the existing systems I could find were able to
-satisfy all of the requirements.&lt;/p&gt;
+&lt;p&gt;Common Ground, a companion webapp to &lt;a href=&#34;http://localhost:1313/projects/inscribe/&#34;&gt;Inscribe&lt;/a&gt;, enabled teachers with Inscribe accounts to create lesson plans for their current  courses. Teachers could also export their lesson plans and collaborate with other teachers on shared lesson plans.&lt;/p&gt;
+
+&lt;h2 id=&#34;talking-to-inscribe:ab757769ebbb53ad30e94bbeb44946bb&#34;&gt;Talking to Inscribe&lt;/h2&gt;
+
+&lt;p&gt;For the back end I chose to use the &lt;a href=&#34;http://golang.org/&#34;&gt;Go&lt;/a&gt; programming language instead of &lt;a href=&#34;https://www.python.org/&#34;&gt;Python&lt;/a&gt;, which Inscribe was written in. I had been using Go in my side projects and I had come to appreciate its strengths of speed, simplicity, and robustness. I structured the back end as a series of REST endpoints for the front end to query when it needed data.&lt;/p&gt;
+
+&lt;p&gt;Common Ground used Inscribe as its Single Sign-On server. User login requests were passed to Inscribe and the user would be given a &lt;a href=&#34;https://self-issued.info/docs/draft-ietf-oauth-json-web-token.html&#34;&gt;JSON Web Token&lt;/a&gt; with their user information. This made it very easy to share user data across the two webapps.&lt;/p&gt;
+
+&lt;h2 id=&#34;front-end-lessons-from-inscribe:ab757769ebbb53ad30e94bbeb44946bb&#34;&gt;Front end lessons from Inscribe&lt;/h2&gt;
+
+&lt;p&gt;I immediately chose to use AngularJS for Common Ground&amp;rsquo;s front end to avoid the previous pain points experienced while iterating on Inscribe&amp;rsquo;s front end. Using the same front end framework across both Inscribe and Common Ground allowed me to reuse similar code pieces across the two projects.&lt;/p&gt;
+
+&lt;h2 id=&#34;iterate-early-iterate-often:ab757769ebbb53ad30e94bbeb44946bb&#34;&gt;Iterate early, iterate often&lt;/h2&gt;
+
+&lt;p&gt;Today Common Ground is no longer in use. After extensive user testing, Pomegranate Lab determined that a different approach was needed to help teachers better connect with their students. This project later iterated into &lt;a href=&#34;http://localhost:1313/projects/playbook/&#34;&gt;The Playbook&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;When it was around, Common Ground looked like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/cg-combined.png&#34; alt=&#34;Inscribe Img&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Inscribe</title>
-      <link>http://jwsonic.github.io/projects/inscribe/</link>
-      <pubDate>Fri, 10 Jan 2014 14:47:09 -0500</pubDate>
+      <link>http://localhost:1313/projects/inscribe/</link>
+      <pubDate>Thu, 10 Oct 2013 14:47:09 -0500</pubDate>
       
-      <guid>http://jwsonic.github.io/projects/inscribe/</guid>
-      <description>&lt;p&gt;The Marie Antoinette&amp;rsquo;s site had the following requirements:&lt;/p&gt;
+      <guid>http://localhost:1313/projects/inscribe/</guid>
+      <description>
 
-&lt;ul&gt;
-&lt;li&gt;Display information about the bakery&lt;/li&gt;
-&lt;li&gt;Allow customers to browse and search the in store menu&lt;/li&gt;
-&lt;li&gt;Allow customers to place online orders&lt;/li&gt;
-&lt;li&gt;Have a separate menu and order placement system for vendors&lt;/li&gt;
-&lt;li&gt;Admin ability to edit menu items and approve new vendors&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h2 id=&#34;assignments-with-a-growth-mindset:0eab5b6ef5fc6b3a1fc2a55d8d118484&#34;&gt;Assignments with a growth mindset&lt;/h2&gt;
 
-&lt;p&gt;First I considered using an off the shelf solution such as Shopify or Magneto. Creating a content management system and
-ordering system from the ground up is quite a bit of work. Unfortunately, none of the existing systems I could find were able to
-satisfy all of the requirements.&lt;/p&gt;
+&lt;p&gt;Inscribe is the first webapp I worked on for &lt;a href=&#34;http://pomegranatelab.com/&#34;&gt;Pomegranate Lab&lt;/a&gt;. It&amp;rsquo;s purpose was to help teachers connect with their students by providing in-depth feedback about the student&amp;rsquo;s assignments and what the student could do to improve their grades.&lt;/p&gt;
+
+&lt;h2 id=&#34;python-to-the-rescue:0eab5b6ef5fc6b3a1fc2a55d8d118484&#34;&gt;Python to the rescue&lt;/h2&gt;
+
+&lt;p&gt;Inscribe&amp;rsquo;s back end was written in &lt;a href=&#34;https://www.python.org/&#34;&gt;Python&lt;/a&gt;. Python is one of my favorite programming languages and is well suited for web development, so it was a perfect fit as there were no technical constraints for the language. I researched at several different Python web frameworks before settling on &lt;a href=&#34;http://flask.pocoo.org/&#34;&gt;Flask&lt;/a&gt;. Flask is designed to be as unobtrusive as possible, meaning it gives you the tools you need to build webapps of varying sizes, but Flask never tries to force decisions on you.&lt;/p&gt;
+
+&lt;h2 id=&#34;handling-user-data:0eab5b6ef5fc6b3a1fc2a55d8d118484&#34;&gt;Handling user data&lt;/h2&gt;
+
+&lt;p&gt;For the database, I used &lt;a href=&#34;http://www.postgresql.org/&#34;&gt;PostgreSQL&lt;/a&gt;(part of the Heroku default plan) and connected to it with the &lt;a href=&#34;http://www.sqlalchemy.org/&#34;&gt;SQLAlchemy&lt;/a&gt; ORM. SQLAlchemy made development much simpler by allowing me to treat database entries as Python objects.&lt;/p&gt;
+
+&lt;p&gt;Inscribe&amp;rsquo;s back end handled a variety of data including user login sessions, assignment data, grades, and rubrics. Student accounts were free, but teachers were required to pay a monthly fee. User authentication was handled through &lt;a href=&#34;https://self-issued.info/docs/draft-ietf-oauth-json-web-token.html&#34;&gt;JSON Web Tokens&lt;/a&gt;(JWT) sent over a HTTP header and saved client side into a cookie. I chose to use JWT, over authentication methods, since it&amp;rsquo;s a language agnostic specification that is robust and secure.&lt;/p&gt;
+
+&lt;h2 id=&#34;figuring-out-the-front-end:0eab5b6ef5fc6b3a1fc2a55d8d118484&#34;&gt;Figuring out the front end&lt;/h2&gt;
+
+&lt;p&gt;The front end of Inscribe went through several architecture iterations. Initially I built the front end for inscribe using &lt;a href=&#34;http://jinja.pocoo.org/docs/dev/&#34;&gt;Jinja2 templates&lt;/a&gt; and &lt;a href=&#34;https://jquery.com/&#34;&gt;JQuery&lt;/a&gt;. This worked well initially, however, as the site grew and the features became more complex, it became increasingly cumbersome to implement new features in JQuery alone. After researching different front end frameworks, I chose AngularJS for the next iteration of Inscribe&amp;rsquo;s front end.&lt;/p&gt;
+
+&lt;p&gt;AngularJS&amp;rsquo;s two-way data binding makes it very easy to implement features that would have been fairly complicated to do with just JQuery. After only a couple of weeks rewriting Inscribe, the new AngularJS version was at feature parity with the old JQuery version. Additionally, rewriting the front end allowed me to simplify the back end into a series of REST API endpoints.&lt;/p&gt;
+
+&lt;h2 id=&#34;iterate-early-iterate-often:0eab5b6ef5fc6b3a1fc2a55d8d118484&#34;&gt;Iterate early, iterate often&lt;/h2&gt;
+
+&lt;p&gt;Today Inscribe is no longer in use. After extensive user testing, Pomegranate Lab determined that a different approach was needed to help teachers better connect with their students. This project later iterated into &lt;a href=&#34;http://localhost:1313/projects/playbook/&#34;&gt;The Playbook&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;When it was around, Inscribe looked like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/inscribe-combined.png&#34; alt=&#34;Inscribe Img&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
