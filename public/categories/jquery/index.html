@@ -99,23 +99,50 @@
 
 <h2 id="assignments-with-a-growth-mindset:0eab5b6ef5fc6b3a1fc2a55d8d118484">Assignments with a growth mindset</h2>
 
-<p>Inscribe is the first webapp I worked on for <a href="http://pomegranatelab.com/">Pomegranate Lab</a>. It&rsquo;s purpose was to help teachers connect with their students by providing in-depth feedback about the student&rsquo;s assignments and what the student could do to improve their grades.</p>
+<p>Inscribe is the first webapp I worked on for <a href="http://pomegranatelab.com/">Pomegranate Lab</a>. It&rsquo;s purpose was to help teachers connect with their students by providing in-depth feedback about the student&rsquo;s assignments and what the student could do to improve their grades. Inscribe had the following requirements:</p>
+
+<ul>
+<li>Teachers can create courses and manage which students are enrolled in their courses</li>
+<li>Teachers can create assignments from scratch or based on an existing rubric</li>
+<li>Students can complete assignments online</li>
+<li>Teachers can grade turned in student assignments and give detailed feedback on how they can improve</li>
+</ul>
 
 <h2 id="python-to-the-rescue:0eab5b6ef5fc6b3a1fc2a55d8d118484">Python to the rescue</h2>
 
-<p>Inscribe&rsquo;s back end was written in <a href="https://www.python.org/">Python</a>. Python is one of my favorite programming languages and is well suited for web development, so it was a perfect fit as there were no technical constraints for the language. I researched at several different Python web frameworks before settling on <a href="http://flask.pocoo.org/">Flask</a>. Flask is designed to be as unobtrusive as possible, meaning it gives you the tools you need to build webapps of varying sizes, but Flask never tries to force decisions on you.</p>
+<p>As Inscribe was one of the first webapps I had ever worked on I wanted to make sure I chose a language I was already familiar with as to not slow down development. <a href="https://www.python.org/">Python</a> is one of my favorite programming languages and is well equipped for web development, so it was a perfect fit.</p>
 
-<h2 id="handling-user-data:0eab5b6ef5fc6b3a1fc2a55d8d118484">Handling user data</h2>
+<p>Being new to web development, I researched at several different Python web frameworks before settling on <a href="http://flask.pocoo.org/">Flask</a>. Flask is designed to be as unobtrusive to your development process as possible. The Flask core library gives basic functionality for a webapp and extras like user authentication or database connections are implemented in easy to install plugins.</p>
 
-<p>For the database, I used <a href="http://www.postgresql.org/">PostgreSQL</a>(part of the Heroku default plan) and connected to it with the <a href="http://www.sqlalchemy.org/">SQLAlchemy</a> ORM. SQLAlchemy made development much simpler by allowing me to treat database entries as Python objects.</p>
+<h2 id="hosting-with-heroku:0eab5b6ef5fc6b3a1fc2a55d8d118484">Hosting with Heroku</h2>
 
-<p>Inscribe&rsquo;s back end handled a variety of data including user login sessions, assignment data, grades, and rubrics. Student accounts were free, but teachers were required to pay a monthly fee. User authentication was handled through <a href="https://self-issued.info/docs/draft-ietf-oauth-json-web-token.html">JSON Web Tokens</a>(JWT) sent over a HTTP header and saved client side into a cookie. I chose to use JWT, over authentication methods, since it&rsquo;s a language agnostic specification that is robust and secure.</p>
+<p>I looked at several different possible hosting solutions for Inscribe and wound up settling on <a href="https://www.heroku.com/">Heroku</a> for the following reasons:</p>
+
+<ul>
+<li>Set up was much easier than something like a VPS.</li>
+<li>Deployment was git based and I was already using git for version control.</li>
+<li>The development tier was free and would cover our initial needs. The ability to automatically scale was there if we needed more resources as well.</li>
+<li>Heroku offered easy to use add ons like databases, email services, logging, and more.</li>
+</ul>
+
+<p>For the database, I used <a href="http://www.postgresql.org/">PostgreSQL</a> with Heroku provided an excellent free tier for. Since development speed was more of a concern than raw database performance, I chose to use the <a href="http://www.sqlalchemy.org/">SQLAlchemy</a> ORM. SQLAlchemy lets you treat database entries as python objects. This allows you to keep your mental focus on Python code, rather than bouncing back and forth between SQL queries and Python.</p>
+
+<h2 id="handling-data-on-the-back-end:0eab5b6ef5fc6b3a1fc2a55d8d118484">Handling data on the back end</h2>
+
+<p>Inscribe&rsquo;s back end handled a variety of data operations including user login sessions, assignment data, grades, and rubrics.  User authentication was handled through <a href="https://self-issued.info/docs/draft-ietf-oauth-json-web-token.html">JSON Web Tokens</a>(JWT) sent over a HTTP header and saved client side into a cookie. I chose to use JWT over other authentication methods, since it&rsquo;s a language agnostic specification that is robust and secure. When a user tried to update or create data the back end could check their JWT and make sure that:</p>
+
+<ul>
+<li>They&rsquo;re a valid user</li>
+<li>They have permission to create or edit the data</li>
+</ul>
+
+<p>Student accounts for Inscribe were free, but teachers were required to pay a monthly fee. Rather than charge teacher credit cards directly, I chose to use <a href="https://stripe.com/">Stripe</a> to handle all payment processing. Credit card numbers we sent directly to Stripe servers from the browser. Stripe then returns a token that could be used to make a charge to the teacher&rsquo;s card from the Inscribe back end. While this is a bit of extra coding up front, it removed all the extra security hassle that comes with handling credit card numbers directly.</p>
 
 <h2 id="figuring-out-the-front-end:0eab5b6ef5fc6b3a1fc2a55d8d118484">Figuring out the front end</h2>
 
-<p>The front end of Inscribe went through several architecture iterations. Initially I built the front end for inscribe using <a href="http://jinja.pocoo.org/docs/dev/">Jinja2 templates</a> and <a href="https://jquery.com/">JQuery</a>. This worked well initially, however, as the site grew and the features became more complex, it became increasingly cumbersome to implement new features in JQuery alone. After researching different front end frameworks, I chose AngularJS for the next iteration of Inscribe&rsquo;s front end.</p>
+<p>The front end of Inscribe went through several different architecture iterations. Initially I built the front end for inscribe using <a href="http://jinja.pocoo.org/docs/dev/">Jinja2 templates</a> and <a href="https://jquery.com/">JQuery</a>. When a browser requested a page, the backend would load the proper data for a page from the database and generate the html based on that page&rsquo;s template file. This method worked quite well initially. However, as the site grew and the features became more complex, organizing code and keeping pages organized became complicated. After researching different solutions and consulting with the rest of Pomegranate Lab, I chose AngularJS for the next iteration of Inscribe&rsquo;s front end.</p>
 
-<p>AngularJS&rsquo;s two-way data binding makes it very easy to implement features that would have been fairly complicated to do with just JQuery. After only a couple of weeks rewriting Inscribe, the new AngularJS version was at feature parity with the old JQuery version. Additionally, rewriting the front end allowed me to simplify the back end into a series of REST API endpoints.</p>
+<p>The main feature that drew me to AngularJS&rsquo;s is its two-way data binding. Two-way data binding makes it very easy to implement features in AngularJS that would have been fairly complicated to do with just JQuery. After only a couple of weeks rewriting Inscribe, the new AngularJS version was at feature parity with the old JQuery version. Additionally, rewriting the front end allowed me to simplify the back end. No longer would the back end have to fetch data and render each page. Now the back end was for the most part a collection of REST API endpoints.</p>
 
 <h2 id="iterate-early-iterate-often:0eab5b6ef5fc6b3a1fc2a55d8d118484">Iterate early, iterate often</h2>
 

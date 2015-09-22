@@ -60,7 +60,11 @@ let addFive = (num) => num + 5;
 
  With this in mind, I decided to use the [Babel](https://babeljs.io/) transpiler to write the front end code The Playbook in ES6 JavaScript. Babel takes your ES6 JavaScript code and converts in into ES5(the current standard) JavaScript that browsers today expect. This let me use modern JavaScript features such as promises, lambdas, and classes in the development of The Playbook.
 
-[webpack](https://webpack.github.io/) is a module bundler that bundles all your webapp's files and condenses them into static files for easy hosting. JavaScript is converted and minified into as single js file that is loaded by a main.html file. webpack gives you the ability to install npm dependencies and use them in your front end. It also plays well with font end only libraries, React and Parse in our case, trimming unused code and shrinking your overall project size.
+## Putting it all together with webpack
+
+Building a single page webapp with JavaScript is a bit different that building a traditional webapp. You have lots of small(mostly js) files that cause pages to load slowly since it starts a new request for each file. Ideally you could combine files of similar types during your build process and make your webapp load much faster. This is where webpack comes in.
+
+[webpack](https://webpack.github.io/) is a module bundler that bundles all your webapp's files and condenses them into static files for easy hosting. JavaScript is concatenated and minified(most whitespace and newlines are removed) into as single js file that is loaded by a main.html file. webpack also gives you the ability to install npm libraries as project dependencies and use them in your front end. It also plays well with font end only libraries, React and Parse in our case, trimming unused code and shrinking your overall project size.
 
 Configuring webpack can be a bit of a challenge the first time, but once set up the build process for The Playbook was very simple:
 

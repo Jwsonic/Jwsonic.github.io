@@ -6,8 +6,54 @@
     <description>Recent content in Go on John Palgut</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 01 Jan 2015 14:47:09 -0500</lastBuildDate>
+    <lastBuildDate>Tue, 01 Sep 2015 14:47:09 -0500</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/go/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>File Grabber</title>
+      <link>http://localhost:1313/projects/filegrabber/</link>
+      <pubDate>Tue, 01 Sep 2015 14:47:09 -0500</pubDate>
+      
+      <guid>http://localhost:1313/projects/filegrabber/</guid>
+      <description>
+
+&lt;h2 id=&#34;the-why:5d4b5b538fe8b07ed03522cce78aaef9&#34;&gt;The Why&lt;/h2&gt;
+
+&lt;p&gt;My wife, Jesyka, and I have a small server in our apartment that we back up photos and documents to. The server runs Ubuntu and its pretty easy to access our files through FTP or SSH. However, sometimes we like to download photos or files to our phones and most Android FTP clients are cumbersome or lacking features. After looking around I found &lt;a href=&#34;https://github.com/itang/gohttp&#34;&gt;gohttp&lt;/a&gt; which is very close to what I wanted. I took this as an opportunity to build a webapp similar to gohttp that would fit our exact needs and let me learn some new tricks along the way.&lt;/p&gt;
+
+&lt;h2 id=&#34;requirements:5d4b5b538fe8b07ed03522cce78aaef9&#34;&gt;Requirements&lt;/h2&gt;
+
+&lt;p&gt;The initial requirements for File Grabber were:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Ability to view, download, and delete files and folders.&lt;/li&gt;
+&lt;li&gt;Real time updates(ie if a file is deleted on the server, it is immediately removed from the browser)&lt;/li&gt;
+&lt;li&gt;Single binary installation like gohttp&lt;/li&gt;
+&lt;li&gt;Be fully &lt;a href=&#34;https://en.wikipedia.org/wiki/Responsive_web_design&#34;&gt;responsive&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;behind-every-good-developer-is-a-designer:5d4b5b538fe8b07ed03522cce78aaef9&#34;&gt;Behind every good developer is a designer&lt;/h2&gt;
+
+&lt;p&gt;Jes designed stuff. Show design mocks here.&lt;/p&gt;
+
+&lt;h2 id=&#34;front-end-with-react-and-redux:5d4b5b538fe8b07ed03522cce78aaef9&#34;&gt;Front end with React and Redux&lt;/h2&gt;
+
+&lt;p&gt;After using &lt;a href=&#34;https://facebook.github.io/react/&#34;&gt;React&lt;/a&gt; to build &lt;a href=&#34;http://localhost:1313/projects/playbook/#using-react-for-an-easy-to-understand-ui:ae2e17d81343b352e5f8570697d79589&#34;&gt;The Playbook&lt;/a&gt; it has quickly become my favorite way to build webapp front ends. One thing React is not designed for is managing your application state. Facebook(the creator of React) recommends using the &lt;a href=&#34;https://facebook.github.io/flux/&#34;&gt;Flux&lt;/a&gt; architecture for React apps. When I did more research on Flux, I found out that there are &lt;a href=&#34;https://github.com/voronianski/flux-comparison&#34;&gt;many flux implementations&lt;/a&gt; to choose from. Eventually I decided to use a method similar to Flux called &lt;a href=&#34;http://rackt.github.io/redux/&#34;&gt;Redux&lt;/a&gt;. Redux in its own words is &amp;ldquo;&lt;a href=&#34;http://rackt.github.io/redux/&#34;&gt;&amp;hellip;a predictable state container for JavaScript apps.&lt;/a&gt;&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;The core idea behind Redux is that your application state is stored as a read only data structure. Updates to application state are done via &lt;a href=&#34;https://en.wikipedia.org/wiki/Pure_function&#34;&gt;pure functions&lt;/a&gt; called reducers. Reducers take a state and an action as parameters and return an updated application state:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(state, action) =&amp;gt; newState
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;talking-to-the-backend:5d4b5b538fe8b07ed03522cce78aaef9&#34;&gt;Talking to the backend&lt;/h2&gt;
+
+&lt;h2 id=&#34;deploying-a-single-binary:5d4b5b538fe8b07ed03522cce78aaef9&#34;&gt;Deploying a single binary&lt;/h2&gt;
+
+&lt;h2 id=&#34;check-out-the-code:5d4b5b538fe8b07ed03522cce78aaef9&#34;&gt;Check out the code&lt;/h2&gt;
+
+&lt;p&gt;The code for file grabber is available on &lt;a href=&#34;https://github.com/Jwsonic/file-grabber&#34;&gt;github&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Austin Google Fiber</title>
@@ -19,19 +65,31 @@
 
 &lt;h2 id=&#34;the-fiber-dream:c60e498790513456114e62949061e65e&#34;&gt;The Fiber dream&lt;/h2&gt;
 
-&lt;p&gt;When my wife told me she got a job at IBM in Austin, TX my first thought was: &lt;strong&gt;CONGRATUALTIONS!&lt;/strong&gt; My second thought was: &lt;strong&gt;My friends are going to be super jealous when I tell them I&amp;rsquo;m getting Google Fiber.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;When my wife, Jesyka, told me she got a job at IBM in Austin, TX my first thought was: &lt;strong&gt;CONGRATUALTIONS!&lt;/strong&gt; My second thought was: &lt;strong&gt;My friends are going to be super jealous when I tell them I&amp;rsquo;m getting Google Fiber.&lt;/strong&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;the-fiber-reality:c60e498790513456114e62949061e65e&#34;&gt;The Fiber reality&lt;/h2&gt;
 
-&lt;p&gt;After scouring apartment listings in Austin and doing a bit of research it became clear that Google Fiber rollout was only starting in specific zip-codes, and it was moving rather slowly. Google provided an excellent &lt;a href=&#34;https://fiber.google.com/cities/austin/apartments/&#34;&gt;map of Fiber listings&lt;/a&gt; in Austin but there was no way to actually tell how often the listings were updated, if at all&amp;hellip; So, I decided to write a webapp to track new Fiber listings, as they were added.&lt;/p&gt;
+&lt;p&gt;After scouring apartment listings in Austin and doing a bit of research it became clear that there were a few problems with my Google Fiber dream:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Roll-out is only scheduled for specific areas of Austin&lt;/li&gt;
+&lt;li&gt;None of these areas is a reasonable commute distance from where Jesyka&amp;rsquo;s would be working&lt;/li&gt;
+&lt;li&gt;New areas were being added slowly&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Google provides an excellent &lt;a href=&#34;https://fiber.google.com/cities/austin/apartments/&#34;&gt;map of Fiber listings&lt;/a&gt; in Austin but there was no way to actually tell how often the listings were updated, if at all. Not to be deterred, I decided to write a webapp to track new Fiber listings, as they were added.&lt;/p&gt;
 
 &lt;h2 id=&#34;reverse-engineering-google-fiber-listings:c60e498790513456114e62949061e65e&#34;&gt;Reverse engineering Google Fiber listings&lt;/h2&gt;
 
-&lt;p&gt;I used Chrome developer tools to uncover how the Fiber map worked and discovered that the data for all Fiber enabled apartments was being stored in a JSON file that the site uses to build an apartment map on load. I wrote a Go tool to fetch, parse, and store apartment data in a separate database on &lt;a href=&#34;https://www.heroku.com/&#34;&gt;Heroku&lt;/a&gt;. The tool would run about once an hour to check for new listings.&lt;/p&gt;
+&lt;p&gt;Using Chrome developer tools I was able to check network traffic on Google map and discovered that the data for all Fiber enabled apartments was being stored in a JSON file. This JSON file was used by Google to build the apartment map on page load.&lt;/p&gt;
 
-&lt;p&gt;I then created a front end for the new apartments in AngularJS. The site loads apartment data from the Heroku database and also lists important apartment information such as the name, address, and time the listing was added. The site works perfectly, and now we&amp;rsquo;re now up to date with new Fiber listings in our area.&lt;/p&gt;
+&lt;p&gt;Rather than use &lt;a href=&#34;https://en.wikipedia.org/wiki/Inline_linking&#34;&gt;inline linking&lt;/a&gt; for my webapp, I wrote a Go tool to fetch, parse, and store apartment data in a separate database on &lt;a href=&#34;https://www.heroku.com/&#34;&gt;Heroku&lt;/a&gt;. This prevented page loads from my app causing additional traffic on Google servers. Heroku&amp;rsquo;s background job scheduler runs the tool a few times a day, to avoid being the server stress mentioned earlier.&lt;/p&gt;
 
-&lt;p&gt;The current Austin Fiber site is still up &lt;a href=&#34;https://austin-fiber.herokuapp.com/#/&#34;&gt;here&lt;/a&gt;. Check out the code on &lt;a href=&#34;https://github.com/Jwsonic/fiber&#34;&gt;Github&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;For the front end of the webapp I used AngularJS. The front end uses an ajax request to query the Heroku back end for JSON apartment data. The apartment data is then loaded into a table listing important information such as the name, address, and time the listing was added. Using AngulaJs&amp;rsquo; built in data filtering, users can search for listings by name or address.&lt;/p&gt;
+
+&lt;h2 id=&#34;check-it-out:c60e498790513456114e62949061e65e&#34;&gt;Check it out&lt;/h2&gt;
+
+&lt;p&gt;The Austin Fiber site is still up &lt;a href=&#34;https://austin-fiber.herokuapp.com/#/&#34;&gt;here&lt;/a&gt;. The code is also available on &lt;a href=&#34;https://github.com/Jwsonic/fiber&#34;&gt;Github&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
@@ -62,11 +120,13 @@
 
 &lt;h2 id=&#34;roll-your-own-or-use-a-prebuilt-solution:0f908a3ed3ef8d9a531516dfad512d4d&#34;&gt;Roll your own or use a prebuilt solution?&lt;/h2&gt;
 
-&lt;p&gt;First I considered using an off the shelf solution such as Shopify or Magneto. Creating a content management system and ordering system from the ground up is quite a bit of work. Unfortunately, none of the existing systems I could find were able to satisfy all of the requirements.&lt;/p&gt;
+&lt;p&gt;First I considered using an off the shelf solution. Creating a content management system and ordering system from the ground up is quite a bit of work. I did research into existing &amp;ldquo;shopping cart solutions&amp;rdquo; such as Shopify or Magneto. Unfortunately, none of the existing systems I could find were able to satisfy all of the requirements. To use an off the shelf solution I would need to extend the code base with a plugin in the language chosen solution was written in. Rather than go down a rabbit hole of foreign application architecture, undocumented features, and learning a new language, I decided to build the Marie&amp;rsquo;s site from scratch.&lt;/p&gt;
 
-&lt;h2 id=&#34;development-hows-and-whys:0f908a3ed3ef8d9a531516dfad512d4d&#34;&gt;Development hows and whys&lt;/h2&gt;
+&lt;h2 id=&#34;front-end-structure:0f908a3ed3ef8d9a531516dfad512d4d&#34;&gt;Front End Structure&lt;/h2&gt;
 
-&lt;p&gt;The front end was built using AngularJS and Bootstrap 3. AngularJS&amp;rsquo;s strength lies in its two-way data binding as well as the large selection of third party libraries. Functionality such as filtering a list of menu items based on a query or by type is fairly trivial to do in AngularJS. Coupling AngularJS with Bootstrap allowed me to rapidly set up, try out, and iterate the front end. Bootstrap is also created to be customizable out of the box, so changing how everything looked was no problem.&lt;/p&gt;
+&lt;p&gt;The front end was built using AngularJS and Bootstrap 3. AngularJS&amp;rsquo;s strength lies in its two-way data binding as well as its large selection of third party libraries. Functionality such as filtering a list of menu items based on a search is fairly trivial to do in AngularJS. Coupling AngularJS with Bootstrap allowed me to rapidly set up, try out, and iterate different layouts. Bootstrap is designed to be customizable out of the box, so changing how everything looked was no problem.&lt;/p&gt;
+
+&lt;h2 id=&#34;why-go:0f908a3ed3ef8d9a531516dfad512d4d&#34;&gt;Why Go?&lt;/h2&gt;
 
 &lt;p&gt;For the back end I chose to use the &lt;a href=&#34;http://golang.org/&#34;&gt;Go&lt;/a&gt; programming language. I had been using Go in my side projects for a while and I wanted to leverage Go&amp;rsquo;s strengths of:&lt;/p&gt;
 
@@ -78,21 +138,20 @@
 &lt;li&gt;Official library support for &lt;a href=&#34;https://stripe.com/&#34;&gt;Stripe&lt;/a&gt;(our payment processor)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;I chose to use the &lt;a href=&#34;http://martini.codegangsta.io/&#34;&gt;Martini&lt;/a&gt; web framework after hearing about in on the &lt;a href=&#34;https://changelog.com/117/&#34;&gt;Changelog Podcast&lt;/a&gt;. Martini has several upgrades the from the built in Go web framework including improved routing and middleware support. I also chose to use &lt;a href=&#34;https://github.com/jinzhu/gorm&#34;&gt;GORM&lt;/a&gt; to connect to the database. Using an ORM library over manual SQL queries made sense here because development speed was more important than raw performance.&lt;/p&gt;
+&lt;p&gt;I chose to use the &lt;a href=&#34;http://martini.codegangsta.io/&#34;&gt;Martini&lt;/a&gt; web framework after hearing about in on the &lt;a href=&#34;https://changelog.com/117/&#34;&gt;Changelog Podcast&lt;/a&gt;. Martini has several upgrades the from the built in Go web framework that the Maries site would rely on. These include:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Middleware support for simple HTTP request/response modifications&lt;/li&gt;
+&lt;li&gt;Improved routing controls, making REST API endpoints easy to write&lt;/li&gt;
+&lt;li&gt;Dependency injection make sure that you always have access to the correct obejcts&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I also chose to use &lt;a href=&#34;https://github.com/jinzhu/gorm&#34;&gt;GORM&lt;/a&gt; to connect to the database. GORM allows you to declare normal Go structs that map directly to database tables. When you make a database query with GORM, it&amp;rsquo;s a series of methods that return an easy to use Go struct. Using an ORM library over manual SQL queries made sense for the Maries site as development speed was more important than raw performance.&lt;/p&gt;
 
 &lt;h2 id=&#34;still-going-strong:0f908a3ed3ef8d9a531516dfad512d4d&#34;&gt;Still going strong&lt;/h2&gt;
 
 &lt;p&gt;The site is still up and running today with both vendors and regular customers making online orders! You can check it out &lt;a href=&#34;https://www.mariesglutenfree.com&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>File Grabber</title>
-      <link>http://localhost:1313/projects/filegrabber/</link>
-      <pubDate>Mon, 10 Nov 2014 14:47:09 -0500</pubDate>
-      
-      <guid>http://localhost:1313/projects/filegrabber/</guid>
-      <description></description>
     </item>
     
     <item>
@@ -105,17 +164,31 @@
 
 &lt;h2 id=&#34;teacher-centric-lesson-planning:ab757769ebbb53ad30e94bbeb44946bb&#34;&gt;Teacher-centric lesson planning&lt;/h2&gt;
 
-&lt;p&gt;Common Ground, a companion webapp to &lt;a href=&#34;http://localhost:1313/projects/inscribe/&#34;&gt;Inscribe&lt;/a&gt;, enabled teachers with Inscribe accounts to create lesson plans for their current  courses. Teachers could also export their lesson plans and collaborate with other teachers on shared lesson plans.&lt;/p&gt;
+&lt;p&gt;Common Ground, a companion webapp to &lt;a href=&#34;http://localhost:1313/projects/inscribe/&#34;&gt;Inscribe&lt;/a&gt;, enabled teachers with Inscribe accounts to create lesson plans for their current  courses. Teachers could also export their lesson plans and collaborate with other teachers on shared lesson plans. Common Ground had the following requirements:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Share login and user data with &lt;a href=&#34;http://localhost:1313/projects/inscribe/&#34;&gt;Inscribe&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Teachers can create lesson plans for Inscribe courses&lt;/li&gt;
+&lt;li&gt;Lesson plans will show up on a calendar and are easily exportable to a variety of formats&lt;/li&gt;
+&lt;li&gt;Lesson plans can be shared and edited by multiple teachers&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h2 id=&#34;talking-to-inscribe:ab757769ebbb53ad30e94bbeb44946bb&#34;&gt;Talking to Inscribe&lt;/h2&gt;
 
-&lt;p&gt;For the back end I chose to use the &lt;a href=&#34;http://golang.org/&#34;&gt;Go&lt;/a&gt; programming language instead of &lt;a href=&#34;https://www.python.org/&#34;&gt;Python&lt;/a&gt;, which Inscribe was written in. I had been using Go in my side projects and I had come to appreciate its strengths of speed, simplicity, and robustness. I structured the back end as a series of REST endpoints for the front end to query when it needed data.&lt;/p&gt;
+&lt;p&gt;Although the back end for Common Ground was written in a different language than Inscribe(&lt;a href=&#34;http://golang.org/&#34;&gt;Go&lt;/a&gt; and &lt;a href=&#34;https://www.python.org/&#34;&gt;Python&lt;/a&gt; respectively) it was pretty easy to communicate over HTTPS between the two. When a user would login to Common Ground, the following process took place:&lt;/p&gt;
 
-&lt;p&gt;Common Ground used Inscribe as its Single Sign-On server. User login requests were passed to Inscribe and the user would be given a &lt;a href=&#34;https://self-issued.info/docs/draft-ietf-oauth-json-web-token.html&#34;&gt;JSON Web Token&lt;/a&gt; with their user information. This made it very easy to share user data across the two webapps.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Login request sent to Common Ground&lt;/li&gt;
+&lt;li&gt;Common Ground forwards the login request to Inscribe over HTTPS&lt;/li&gt;
+&lt;li&gt;Inscribe checks the user&amp;rsquo;s credentials and returns a &lt;a href=&#34;https://self-issued.info/docs/draft-ietf-oauth-json-web-token.html&#34;&gt;JSON Web Token&lt;/a&gt;(JWT)&lt;/li&gt;
+&lt;li&gt;Common Ground sends the JWT back to the user to be stored client side&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Common Ground and Inscribe shared the same JWT secret key, which is used to determine the validity of JWT claims. Sharing the JWT secret key between the two back ends made it so Common Ground could validate claims for Inscribe JWTs instead of checking with the Inscribe back end every time the user tried to do something.&lt;/p&gt;
 
 &lt;h2 id=&#34;front-end-lessons-from-inscribe:ab757769ebbb53ad30e94bbeb44946bb&#34;&gt;Front end lessons from Inscribe&lt;/h2&gt;
 
-&lt;p&gt;I immediately chose to use AngularJS for Common Ground&amp;rsquo;s front end to avoid the previous pain points experienced while iterating on Inscribe&amp;rsquo;s front end. Using the same front end framework across both Inscribe and Common Ground allowed me to reuse similar code pieces across the two projects.&lt;/p&gt;
+&lt;p&gt;After the &lt;a href=&#34;http://localhost:1313/projects/inscribe/#figuring-out-the-front-end:0eab5b6ef5fc6b3a1fc2a55d8d118484&#34;&gt;lessons I learned from Inscribe&lt;/a&gt;, I immediately chose to use AngularJS for Common Ground&amp;rsquo;s front end. Using the same front end framework across both Inscribe and Common Ground had the added benefit of allowing me to reuse code across the two projects. Being able to use the same code was a boost in Common Ground up and running quickly.&lt;/p&gt;
 
 &lt;h2 id=&#34;iterate-early-iterate-often:ab757769ebbb53ad30e94bbeb44946bb&#34;&gt;Iterate early, iterate often&lt;/h2&gt;
 

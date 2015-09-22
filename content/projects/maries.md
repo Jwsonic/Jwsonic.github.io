@@ -21,11 +21,13 @@ After working with the business owners, a designer, and speaking to product vend
 
 ## Roll your own or use a prebuilt solution?
 
-First I considered using an off the shelf solution such as Shopify or Magneto. Creating a content management system and ordering system from the ground up is quite a bit of work. Unfortunately, none of the existing systems I could find were able to satisfy all of the requirements.
+First I considered using an off the shelf solution. Creating a content management system and ordering system from the ground up is quite a bit of work. I did research into existing "shopping cart solutions" such as Shopify or Magneto. Unfortunately, none of the existing systems I could find were able to satisfy all of the requirements. To use an off the shelf solution I would need to extend the code base with a plugin in the language chosen solution was written in. Rather than go down a rabbit hole of foreign application architecture, undocumented features, and learning a new language, I decided to build the Marie's site from scratch.
 
-## Development hows and whys
+## Front End Structure
 
-The front end was built using AngularJS and Bootstrap 3. AngularJS's strength lies in its two-way data binding as well as the large selection of third party libraries. Functionality such as filtering a list of menu items based on a query or by type is fairly trivial to do in AngularJS. Coupling AngularJS with Bootstrap allowed me to rapidly set up, try out, and iterate the front end. Bootstrap is also created to be customizable out of the box, so changing how everything looked was no problem.
+The front end was built using AngularJS and Bootstrap 3. AngularJS's strength lies in its two-way data binding as well as its large selection of third party libraries. Functionality such as filtering a list of menu items based on a search is fairly trivial to do in AngularJS. Coupling AngularJS with Bootstrap allowed me to rapidly set up, try out, and iterate different layouts. Bootstrap is designed to be customizable out of the box, so changing how everything looked was no problem.
+
+## Why Go?
 
 For the back end I chose to use the [Go](http://golang.org/) programming language. I had been using Go in my side projects for a while and I wanted to leverage Go's strengths of:
 
@@ -35,7 +37,13 @@ For the back end I chose to use the [Go](http://golang.org/) programming languag
 * Built in concurrency
 * Official library support for [Stripe](https://stripe.com/)(our payment processor)
 
-I chose to use the [Martini](http://martini.codegangsta.io/) web framework after hearing about in on the [Changelog Podcast](https://changelog.com/117/). Martini has several upgrades the from the built in Go web framework including improved routing and middleware support. I also chose to use [GORM](https://github.com/jinzhu/gorm) to connect to the database. Using an ORM library over manual SQL queries made sense here because development speed was more important than raw performance.
+I chose to use the [Martini](http://martini.codegangsta.io/) web framework after hearing about in on the [Changelog Podcast](https://changelog.com/117/). Martini has several upgrades the from the built in Go web framework that the Maries site would rely on. These include:
+
+* Middleware support for simple HTTP request/response modifications
+* Improved routing controls, making REST API endpoints easy to write
+* Dependency injection make sure that you always have access to the correct obejcts
+
+ I also chose to use [GORM](https://github.com/jinzhu/gorm) to connect to the database. GORM allows you to declare normal Go structs that map directly to database tables. When you make a database query with GORM, it's a series of methods that return an easy to use Go struct. Using an ORM library over manual SQL queries made sense for the Maries site as development speed was more important than raw performance.
 
 ## Still going strong
 
