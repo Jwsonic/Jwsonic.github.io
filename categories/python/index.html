@@ -26,11 +26,11 @@
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-min.css">
     <!--<![endif]-->
 
-    <link rel="stylesheet" href="http://jwsonic.github.io//css/all.min.css">
-    <link rel="stylesheet" href="http://jwsonic.github.io//css/main.css">
+    <link rel="stylesheet" href="http://localhost:1313//css/all.min.css">
+    <link rel="stylesheet" href="http://localhost:1313//css/main.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
-    <link rel="alternate" type="application/rss+xml" title="John Palgut" href="http://jwsonic.github.io//index.xml" />
+    <link rel="alternate" type="application/rss+xml" title="John Palgut" href="http://localhost:1313//index.xml" />
 </head>
 <body>
 
@@ -39,7 +39,7 @@
     <div class="sidebar pure-u-1 pure-u-md-1-4">
     <div class="header">
         <hgroup>
-            <h1 class="brand-title"><a href="http://jwsonic.github.io/">John Palgut</a></h1>
+            <h1 class="brand-title"><a href="http://localhost:1313/">John Palgut</a></h1>
             <h2 class="brand-tagline"> Coder. Gamer. Husband. </h2>
         </hgroup>
 
@@ -78,36 +78,52 @@
             
             <div class="posts">
                 
-                <h1 class="content-subhead">10 Jan 2014, 14:47</h1>
+                <h1 class="content-subhead">10 Oct 2013, 14:47</h1>
                 <section class="post">
                     <header class="post-header">
 
-                        <a href="http://jwsonic.github.io/projects/inscribe/" class="post-title">Inscribe</a>
+                        <a href="http://localhost:1313/projects/inscribe/" class="post-title">Inscribe</a>
 
                         <p class="post-meta">
                             
                             
                                 under
                                 
-                                <a class="post-category post-category-HTML" href="http://jwsonic.github.io//categories/html">HTML</a><a class="post-category post-category-Python" href="http://jwsonic.github.io//categories/python">Python</a><a class="post-category post-category-AngularJS" href="http://jwsonic.github.io//categories/angularjs">AngularJS</a><a class="post-category post-category-Bootstrap" href="http://jwsonic.github.io//categories/bootstrap">Bootstrap</a><a class="post-category post-category-Heroku" href="http://jwsonic.github.io//categories/heroku">Heroku</a>
+                                <a class="post-category post-category-HTML" href="http://localhost:1313//categories/html">HTML</a><a class="post-category post-category-Python" href="http://localhost:1313//categories/python">Python</a><a class="post-category post-category-AngularJS" href="http://localhost:1313//categories/angularjs">AngularJS</a><a class="post-category post-category-JQuery" href="http://localhost:1313//categories/jquery">JQuery</a><a class="post-category post-category-Bootstrap" href="http://localhost:1313//categories/bootstrap">Bootstrap</a><a class="post-category post-category-Heroku" href="http://localhost:1313//categories/heroku">Heroku</a><a class="post-category post-category-Stripe" href="http://localhost:1313//categories/stripe">Stripe</a>
                             
                         </p>
                     </header>
 
                     <div class="post-description">
-                        <p>The Marie Antoinette&rsquo;s site had the following requirements:</p>
+                        
 
-<ul>
-<li>Display information about the bakery</li>
-<li>Allow customers to browse and search the in store menu</li>
-<li>Allow customers to place online orders</li>
-<li>Have a separate menu and order placement system for vendors</li>
-<li>Admin ability to edit menu items and approve new vendors</li>
-</ul>
+<h2 id="assignments-with-a-growth-mindset:0eab5b6ef5fc6b3a1fc2a55d8d118484">Assignments with a growth mindset</h2>
 
-<p>First I considered using an off the shelf solution such as Shopify or Magneto. Creating a content management system and
-ordering system from the ground up is quite a bit of work. Unfortunately, none of the existing systems I could find were able to
-satisfy all of the requirements.</p>
+<p>Inscribe is the first webapp I worked on for <a href="http://pomegranatelab.com/">Pomegranate Lab</a>. It&rsquo;s purpose was to help teachers connect with their students by providing in-depth feedback about the student&rsquo;s assignments and what the student could do to improve their grades.</p>
+
+<h2 id="python-to-the-rescue:0eab5b6ef5fc6b3a1fc2a55d8d118484">Python to the rescue</h2>
+
+<p>Inscribe&rsquo;s back end was written in <a href="https://www.python.org/">Python</a>. Python is one of my favorite programming languages and is well suited for web development, so it was a perfect fit as there were no technical constraints for the language. I researched at several different Python web frameworks before settling on <a href="http://flask.pocoo.org/">Flask</a>. Flask is designed to be as unobtrusive as possible, meaning it gives you the tools you need to build webapps of varying sizes, but Flask never tries to force decisions on you.</p>
+
+<h2 id="handling-user-data:0eab5b6ef5fc6b3a1fc2a55d8d118484">Handling user data</h2>
+
+<p>For the database, I used <a href="http://www.postgresql.org/">PostgreSQL</a>(part of the Heroku default plan) and connected to it with the <a href="http://www.sqlalchemy.org/">SQLAlchemy</a> ORM. SQLAlchemy made development much simpler by allowing me to treat database entries as Python objects.</p>
+
+<p>Inscribe&rsquo;s back end handled a variety of data including user login sessions, assignment data, grades, and rubrics. Student accounts were free, but teachers were required to pay a monthly fee. User authentication was handled through <a href="https://self-issued.info/docs/draft-ietf-oauth-json-web-token.html">JSON Web Tokens</a>(JWT) sent over a HTTP header and saved client side into a cookie. I chose to use JWT, over authentication methods, since it&rsquo;s a language agnostic specification that is robust and secure.</p>
+
+<h2 id="figuring-out-the-front-end:0eab5b6ef5fc6b3a1fc2a55d8d118484">Figuring out the front end</h2>
+
+<p>The front end of Inscribe went through several architecture iterations. Initially I built the front end for inscribe using <a href="http://jinja.pocoo.org/docs/dev/">Jinja2 templates</a> and <a href="https://jquery.com/">JQuery</a>. This worked well initially, however, as the site grew and the features became more complex, it became increasingly cumbersome to implement new features in JQuery alone. After researching different front end frameworks, I chose AngularJS for the next iteration of Inscribe&rsquo;s front end.</p>
+
+<p>AngularJS&rsquo;s two-way data binding makes it very easy to implement features that would have been fairly complicated to do with just JQuery. After only a couple of weeks rewriting Inscribe, the new AngularJS version was at feature parity with the old JQuery version. Additionally, rewriting the front end allowed me to simplify the back end into a series of REST API endpoints.</p>
+
+<h2 id="iterate-early-iterate-often:0eab5b6ef5fc6b3a1fc2a55d8d118484">Iterate early, iterate often</h2>
+
+<p>Today Inscribe is no longer in use. After extensive user testing, Pomegranate Lab determined that a different approach was needed to help teachers better connect with their students. This project later iterated into <a href="/projects/playbook/">The Playbook</a>.</p>
+
+<p>When it was around, Inscribe looked like this:</p>
+
+<p><img src="/img/inscribe-combined.png" alt="Inscribe Img" /></p>
 
                     </div>
                 </section>
@@ -122,7 +138,7 @@ satisfy all of the requirements.</p>
         </ul>
     </div>
 </div>
-<script src="http://jwsonic.github.io//js/all.min.js"></script>
+<script src="http://localhost:1313//js/all.min.js"></script>
         </div>
     </div>
 </div>
@@ -138,5 +154,8 @@ ga('send', 'pageview');
 
 </script>
 
-</body>
+<script data-no-instant>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
 </html>

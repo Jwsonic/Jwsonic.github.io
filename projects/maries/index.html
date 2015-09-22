@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marie Antoinette&#39;s Gluten-Free Bake Shoppe &middot; John Palgut</title>
 
-    <meta name="description" content="Website for Marie Antoinette&#39;s Gluten-Free Bake Shoppe built with Go and AngularJS.">
+    <meta name="description" content="Website for Marie Antoinette&#39;s Gluten-Free Bake Shoppe">
 
     <meta name="generator" content="Hugo 0.15-DEV" />
     <meta name="twitter:card" content="summary">
     
     <meta name="twitter:title" content="Marie Antoinette&#39;s Gluten-Free Bake Shoppe &middot; John Palgut">
-    <meta name="twitter:description" content="Website for Marie Antoinette&#39;s Gluten-Free Bake Shoppe built with Go and AngularJS.">
+    <meta name="twitter:description" content="Website for Marie Antoinette&#39;s Gluten-Free Bake Shoppe">
 
     <meta property="og:type" content="article">
     <meta property="og:title" content="Marie Antoinette&#39;s Gluten-Free Bake Shoppe &middot; John Palgut">
-    <meta property="og:description" content="Website for Marie Antoinette&#39;s Gluten-Free Bake Shoppe built with Go and AngularJS.">
+    <meta property="og:description" content="Website for Marie Antoinette&#39;s Gluten-Free Bake Shoppe">
 
     <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Oxygen:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css">
@@ -26,11 +26,11 @@
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-min.css">
     <!--<![endif]-->
 
-    <link rel="stylesheet" href="http://jwsonic.github.io//css/all.min.css">
-    <link rel="stylesheet" href="http://jwsonic.github.io//css/main.css">
+    <link rel="stylesheet" href="http://localhost:1313//css/all.min.css">
+    <link rel="stylesheet" href="http://localhost:1313//css/main.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
-    <link rel="alternate" type="application/rss+xml" title="John Palgut" href="http://jwsonic.github.io//index.xml" />
+    <link rel="alternate" type="application/rss+xml" title="John Palgut" href="http://localhost:1313//index.xml" />
 </head>
 <body>
 
@@ -39,7 +39,7 @@
     <div class="sidebar pure-u-1 pure-u-md-1-4">
     <div class="header">
         <hgroup>
-            <h1 class="brand-title"><a href="http://jwsonic.github.io/">John Palgut</a></h1>
+            <h1 class="brand-title"><a href="http://localhost:1313/">John Palgut</a></h1>
             <h2 class="brand-tagline"> Coder. Gamer. Husband. </h2>
         </hgroup>
 
@@ -81,35 +81,47 @@
                 <section class="post">
                     <header class="post-header">
 
-                        <a href="http://jwsonic.github.io/projects/maries/" class="post-title">Marie Antoinette&#39;s Gluten-Free Bake Shoppe</a>
+                        <a href="http://localhost:1313/projects/maries/" class="post-title">Marie Antoinette&#39;s Gluten-Free Bake Shoppe</a>
 
                         <p class="post-meta">
                             
                             
                                 under
                                 
-                                <a class="post-category post-category-HTML" href="http://jwsonic.github.io//categories/html">HTML</a><a class="post-category post-category-Go" href="http://jwsonic.github.io//categories/go">Go</a><a class="post-category post-category-AngularJS" href="http://jwsonic.github.io//categories/angularjs">AngularJS</a><a class="post-category post-category-Bootstrap" href="http://jwsonic.github.io//categories/bootstrap">Bootstrap</a><a class="post-category post-category-Heroku" href="http://jwsonic.github.io//categories/heroku">Heroku</a><a class="post-category post-category-Stripe" href="http://jwsonic.github.io//categories/stripe">Stripe</a>
+                                <a class="post-category post-category-HTML" href="http://localhost:1313//categories/html">HTML</a><a class="post-category post-category-Go" href="http://localhost:1313//categories/go">Go</a><a class="post-category post-category-AngularJS" href="http://localhost:1313//categories/angularjs">AngularJS</a><a class="post-category post-category-Bootstrap" href="http://localhost:1313//categories/bootstrap">Bootstrap</a><a class="post-category post-category-Heroku" href="http://localhost:1313//categories/heroku">Heroku</a><a class="post-category post-category-Stripe" href="http://localhost:1313//categories/stripe">Stripe</a>
                             
                         </p>
                     </header>
 
                     <div class="post-description">
-                        <p>The Marie Antoinette&rsquo;s site had the following requirements:</p>
+                        
+
+<h2 id="from-restaurant-to-manufacturer:0f908a3ed3ef8d9a531516dfad512d4d">From restaurant to manufacturer</h2>
+
+<p>I&rsquo;ve worked with Marie Antoinette&rsquo;s Gluten-Free Bake Shoppe, as their Lead Developer, since the company was founded. In late 2014, the company decided to shift their business strategy. The owners closed their restaurant and chose to focus and grow their manufacturing and distribution business by selling directly to vendors instead.</p>
+
+<h2 id="requirements:0f908a3ed3ef8d9a531516dfad512d4d">Requirements</h2>
+
+<p>After working with the business owners, a designer, and speaking to product vendors, the following list of requirements was created:</p>
 
 <ul>
-<li>Display information about the bakery(contact, hours, etc)</li>
-<li>Allow customers to browse and search the in store menu</li>
-<li>Allow customers to place online orders</li>
+<li>Display information about the bakery (contact, hours, etc)</li>
+<li>Allow customers to browse and search the bakery menu</li>
+<li>Allow customers to place online orders, which could be shipped or picked up</li>
 <li>Have a separate menu and order placement system for vendors</li>
-<li>Admin ability to edit menu items and approve new vendors</li>
+<li>Admin ability to edit menu items, create vendor invoices, and approve new vendor accounts</li>
 <li>Quick development is preferable as the current site lacks functionality</li>
 </ul>
 
+<h2 id="roll-your-own-or-use-a-prebuilt-solution:0f908a3ed3ef8d9a531516dfad512d4d">Roll your own or use a prebuilt solution?</h2>
+
 <p>First I considered using an off the shelf solution such as Shopify or Magneto. Creating a content management system and ordering system from the ground up is quite a bit of work. Unfortunately, none of the existing systems I could find were able to satisfy all of the requirements.</p>
 
-<p>The front end was built using AngularJS and Bootstrap 3. AngularJS strength lies in its two way data binding as well as the large selection of third party libraries. Functionality such as filtering a list of menu items based on a query or by type is fairly trivial to do with AngularJS. Coupling AngularJS with Bootstrap allowed me to rapidly set up, try out, and iterate the front end. Bootstrap is also created to be customizable out of the box, so changing how everything looked was no problem.</p>
+<h2 id="development-hows-and-whys:0f908a3ed3ef8d9a531516dfad512d4d">Development hows and whys</h2>
 
-<p>For the back end I chose to use the <a href="http://golang.org/">Go</a> programming language. I had been using Go in my side projects for a while and I had come to appreciate its strengths:</p>
+<p>The front end was built using AngularJS and Bootstrap 3. AngularJS&rsquo;s strength lies in its two-way data binding as well as the large selection of third party libraries. Functionality such as filtering a list of menu items based on a query or by type is fairly trivial to do in AngularJS. Coupling AngularJS with Bootstrap allowed me to rapidly set up, try out, and iterate the front end. Bootstrap is also created to be customizable out of the box, so changing how everything looked was no problem.</p>
+
+<p>For the back end I chose to use the <a href="http://golang.org/">Go</a> programming language. I had been using Go in my side projects for a while and I wanted to leverage Go&rsquo;s strengths of:</p>
 
 <ul>
 <li>A robust standard library</li>
@@ -119,9 +131,11 @@
 <li>Official library support for <a href="https://stripe.com/">Stripe</a>(our payment processor)</li>
 </ul>
 
-<p>I chose to use the <a href="http://martini.codegangsta.io/">Martini</a> web framework after hearing about in on the <a href="https://changelog.com/117/">Changelog Podcast</a>. Martini has several upgrades the from the built in Go web framework including improved routing and middleware support. I also chose to use <a href="https://github.com/jinzhu/gorm">GORM</a> to connect to the database. Using an ORM library over manual SQL queries made sense here since development speed was more important than raw performance.</p>
+<p>I chose to use the <a href="http://martini.codegangsta.io/">Martini</a> web framework after hearing about in on the <a href="https://changelog.com/117/">Changelog Podcast</a>. Martini has several upgrades the from the built in Go web framework including improved routing and middleware support. I also chose to use <a href="https://github.com/jinzhu/gorm">GORM</a> to connect to the database. Using an ORM library over manual SQL queries made sense here because development speed was more important than raw performance.</p>
 
-<p>The site is still up and running today! You can check it out <a href="https://www.mariesglutenfree.com">here</a>.</p>
+<h2 id="still-going-strong:0f908a3ed3ef8d9a531516dfad512d4d">Still going strong</h2>
+
+<p>The site is still up and running today with both vendors and regular customers making online orders! You can check it out <a href="https://www.mariesglutenfree.com">here</a>.</p>
 
                     </div>
                     
@@ -134,7 +148,7 @@
         </ul>
     </div>
 </div>
-<script src="http://jwsonic.github.io//js/all.min.js"></script>
+<script src="http://localhost:1313//js/all.min.js"></script>
         </div>
     </div>
 </div>
@@ -151,5 +165,8 @@ ga('send', 'pageview');
 
 </script>
 
-</body>
+<script data-no-instant>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
 </html>
