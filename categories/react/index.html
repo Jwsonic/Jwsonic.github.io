@@ -51,6 +51,9 @@
                 <li class="nav-item">
                     <a class="pure-button" href="/projects"><i class="fa fa-folder-open-o"></i> Projects</a>
                 </li>
+                <li class="nav-item">
+                    <a class="pure-button" href="/about"><i class="fa fa-male"></i> About Me</a>
+                </li>
             </ul>
         </nav>
 
@@ -125,7 +128,33 @@
 <pre><code>(state, action) =&gt; newState
 </code></pre>
 
+<p>A sample state for file grabber could look something like:</p>
+
+<pre><code>{
+  ui: {
+    deleteModal: {
+      open: true,
+      fileName: 'photo.jpg'
+    }
+  },
+  fileData: {
+    files: [{
+      name: 'photo.jpg',
+      size: 100000
+      modTime: 19219319191,
+      isDir: false
+      }],
+    path: '/'
+  },
+  server: {
+    connected: true
+  }
+}
+</code></pre>
+
 <h2 id="talking-to-the-backend:5d4b5b538fe8b07ed03522cce78aaef9">Talking to the backend</h2>
+
+<p>In order to get updates in real time, File Grabber utilizes <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API">WebSockets</a></p>
 
 <h2 id="deploying-a-single-binary:5d4b5b538fe8b07ed03522cce78aaef9">Deploying a single binary</h2>
 

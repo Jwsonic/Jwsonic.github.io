@@ -45,7 +45,33 @@
 &lt;pre&gt;&lt;code&gt;(state, action) =&amp;gt; newState
 &lt;/code&gt;&lt;/pre&gt;
 
+&lt;p&gt;A sample state for file grabber could look something like:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{
+  ui: {
+    deleteModal: {
+      open: true,
+      fileName: &#39;photo.jpg&#39;
+    }
+  },
+  fileData: {
+    files: [{
+      name: &#39;photo.jpg&#39;,
+      size: 100000
+      modTime: 19219319191,
+      isDir: false
+      }],
+    path: &#39;/&#39;
+  },
+  server: {
+    connected: true
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
 &lt;h2 id=&#34;talking-to-the-backend:5d4b5b538fe8b07ed03522cce78aaef9&#34;&gt;Talking to the backend&lt;/h2&gt;
+
+&lt;p&gt;In order to get updates in real time, File Grabber utilizes &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API&#34;&gt;WebSockets&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;deploying-a-single-binary:5d4b5b538fe8b07ed03522cce78aaef9&#34;&gt;Deploying a single binary&lt;/h2&gt;
 
@@ -231,6 +257,15 @@
 
 &lt;p&gt;The site is still up and running today with both vendors and regular customers making online orders! You can check it out &lt;a href=&#34;https://www.mariesglutenfree.com&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>Common Ground</title>
+      <link>http://localhost:1313/about/about/</link>
+      <pubDate>Fri, 25 Jul 2014 14:47:09 -0500</pubDate>
+      
+      <guid>http://localhost:1313/about/about/</guid>
+      <description></description>
     </item>
     
     <item>

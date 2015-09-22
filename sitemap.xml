@@ -28,6 +28,11 @@
   </url>
   
   <url>
+    <loc>http://localhost:1313/about/about/</loc>
+    <lastmod>2014-07-25T14:47:09-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://localhost:1313/projects/commonground/</loc>
     <lastmod>2014-07-25T14:47:09-05:00</lastmod>
   </url>

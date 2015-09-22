@@ -51,6 +51,9 @@
                 <li class="nav-item">
                     <a class="pure-button" href="/projects"><i class="fa fa-folder-open-o"></i> Projects</a>
                 </li>
+                <li class="nav-item">
+                    <a class="pure-button" href="/about"><i class="fa fa-male"></i> About Me</a>
+                </li>
             </ul>
         </nav>
 
@@ -125,7 +128,33 @@
 <pre><code>(state, action) =&gt; newState
 </code></pre>
 
+<p>A sample state for file grabber could look something like:</p>
+
+<pre><code>{
+  ui: {
+    deleteModal: {
+      open: true,
+      fileName: 'photo.jpg'
+    }
+  },
+  fileData: {
+    files: [{
+      name: 'photo.jpg',
+      size: 100000
+      modTime: 19219319191,
+      isDir: false
+      }],
+    path: '/'
+  },
+  server: {
+    connected: true
+  }
+}
+</code></pre>
+
 <h2 id="talking-to-the-backend:5d4b5b538fe8b07ed03522cce78aaef9">Talking to the backend</h2>
+
+<p>In order to get updates in real time, File Grabber utilizes <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API">WebSockets</a></p>
 
 <h2 id="deploying-a-single-binary:5d4b5b538fe8b07ed03522cce78aaef9">Deploying a single binary</h2>
 
@@ -347,6 +376,27 @@
 
 <p>The site is still up and running today with both vendors and regular customers making online orders! You can check it out <a href="https://www.mariesglutenfree.com">here</a>.</p>
 
+                    </div>
+                </section>
+                
+                <h1 class="content-subhead">25 Jul 2014, 14:47</h1>
+                <section class="post">
+                    <header class="post-header">
+
+                        <a href="http://localhost:1313/about/about/" class="post-title">Common Ground</a>
+
+                        <p class="post-meta">
+                            
+                            
+                                under
+                                
+                                <a class="post-category post-category-HTML" href="http://localhost:1313//categories/html">HTML</a><a class="post-category post-category-Go" href="http://localhost:1313//categories/go">Go</a><a class="post-category post-category-AngularJS" href="http://localhost:1313//categories/angularjs">AngularJS</a><a class="post-category post-category-Bootstrap" href="http://localhost:1313//categories/bootstrap">Bootstrap</a><a class="post-category post-category-Heroku" href="http://localhost:1313//categories/heroku">Heroku</a><a class="post-category post-category-Stripe" href="http://localhost:1313//categories/stripe">Stripe</a>
+                            
+                        </p>
+                    </header>
+
+                    <div class="post-description">
+                        
                     </div>
                 </section>
                 
