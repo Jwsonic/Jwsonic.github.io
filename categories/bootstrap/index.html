@@ -78,56 +78,6 @@
             
             <div class="posts">
                 
-                <h1 class="content-subhead">07 Jul 2015, 14:47</h1>
-                <section class="post">
-                    <header class="post-header">
-
-                        <a href="http://localhost:1313/projects/playbook/" class="post-title">The Playbook</a>
-
-                        <p class="post-meta">
-                            
-                            
-                                under
-                                
-                                <a class="post-category post-category-HTML" href="http://localhost:1313//categories/html">HTML</a><a class="post-category post-category-React" href="http://localhost:1313//categories/react">React</a><a class="post-category post-category-webpack" href="http://localhost:1313//categories/webpack">webpack</a><a class="post-category post-category-JavaScript" href="http://localhost:1313//categories/javascript">JavaScript</a><a class="post-category post-category-ES6" href="http://localhost:1313//categories/es6">ES6</a><a class="post-category post-category-Parse" href="http://localhost:1313//categories/parse">Parse</a><a class="post-category post-category-Bootstrap" href="http://localhost:1313//categories/bootstrap">Bootstrap</a>
-                            
-                        </p>
-                    </header>
-
-                    <div class="post-description">
-                        
-
-<h2 id="a-practical-guide-to-the-growth-mindset:ae2e17d81343b352e5f8570697d79589">A practical guide to the Growth Mindset</h2>
-
-<p>The Playbook is a webapp I worked on for <a href="http://pomegranatelab.com/">Pomegranate Lab</a> with the purpose of helping teachers create and find lesson plans based on the <a href="http://mindsetonline.com/whatisit/about/">Growth Mindset</a>.</p>
-
-<h2 id="back-ends-with-parse:ae2e17d81343b352e5f8570697d79589">Back Ends with Parse</h2>
-
-<p>Development for The Playbook needed to begin quickly and to be in a semi usable state as fast as possible because Pomegranate Lab wanted it to help enhance their coaching sessions with teachers. Due to the expedited nature of the project, I decided to give <a href="https://www.parse.com/">Parse</a> a try. In simplified terms, Parse handles back end functionality for your app so you only have code the front end. Database tables, user functionality, emails, and hosting are all handled by Parse. Parse provides libraries for several platforms and/or languages that allow you to interact with your app&rsquo;s &ldquo;back end&rdquo;. For The Playbook I wrote a <a href="https://en.wikipedia.org/wiki/Single-page_application">Single Page Application</a> that loaded the proper Parse data when each page opened.</p>
-
-<h2 id="using-react-for-an-easy-to-understand-ui:ae2e17d81343b352e5f8570697d79589">Using React for an easy to understand UI</h2>
-
-<p>To build the front end, I decided to use <a href="https://facebook.github.io/react/">React</a>. React is an excellent JavaScript library for building UIs. It encourages you to separate functionality into &lsquo;components&rsquo;, which are then used like traditional HTML tags. Since code is treated as separate units, this makes code easier to organize and very easy for humans to read. For instance the HTML to display the collapsible menu is:</p>
-
-<pre><code>&lt;SlideMenu&gt;
-  &lt;MenuItems&gt;&lt;/MenuItems&gt;
-  &lt;MenuPanel &gt;{this.props.children}&lt;/MenuPanel&gt;
-&lt;/SlideMenu&gt;
-</code></pre>
-
-<p>But it rendered as:</p>
-
-<p><img src="/img/menu-demo.gif" alt="Menu Image" /></p>
-
-<h2 id="es6-bringing-javascript-development-to-the-21st-century:ae2e17d81343b352e5f8570697d79589">ES6 bringing JavaScript development to the 21st Century</h2>
-
-<p>Unfortunately most browsers don&rsquo;t support the newest JavaScript functionality out of the box, and there are same <a href="https://github.com/lukehoban/es6features">great improvements</a> coming in future versions ofJavaScript. With this in mind, I decided to use the <a href="https://babeljs.io/">Babel</a> transpiler to write the new ES6 JavaScript for The Playbook and convert it the current JavaScript that most browsers expect. The let me use modern JavaScript features such as promises, lambdas, and classes. Since the entire front end was essentially a single page JavaScript webapp, I used <a href="https://webpack.github.io/">webpack</a> to bundle all the assets into static files that could be served from the Parse servers.</p>
-
-<p><a href="https://playbook.parseapp.com">The Playbook</a> is still in use, however it is in closed beta for teachers.</p>
-
-                    </div>
-                </section>
-                
                 <h1 class="content-subhead">01 Jan 2015, 14:47</h1>
                 <section class="post">
                     <header class="post-header">
