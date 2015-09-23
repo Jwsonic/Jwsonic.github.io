@@ -211,30 +211,30 @@ for {
                     <div class="post-description">
                         
 
-<h2 id="a-practical-guide-to-the-growth-mindset:ae2e17d81343b352e5f8570697d79589">A practical guide to the Growth Mindset</h2>
+<h2 id="a-practical-guide-to-the-growth-mindset:ae2e17d81343b352e5f8570697d79589">A practical guide to the growth mindset</h2>
 
-<p>The Playbook is a webapp I worked on for <a href="http://pomegranatelab.com/">Pomegranate Lab</a>. Its purpose it to enable teachers studying the <a href="http://mindsetonline.com/whatisit/about/">Growth Mindset</a> to find and shard Growth Mindset based lesson content. The Playbook had the following set of requirements:</p>
+<p>The Playbook is a webapp I worked on for <a href="http://pomegranatelab.com/">Pomegranate Lab</a>. Its purpose is to enable teachers studying the <a href="http://mindsetonline.com/whatisit/about/">Growth Mindset</a> to find and shard Growth Mindset-based lesson content. The Playbook had the following set of requirements:</p>
 
 <ul>
-<li>Have a landing page explaining the Growth Mindset</li>
-<li>Allow teachers to create an account</li>
-<li>Teachers could submit &ldquo;Plays&rdquo; which are essentially lesson plans targeting specific Growth Mindset elements</li>
-<li>Plays need to be search-able by teachers, either through full text search or a variety of categories</li>
-<li>Teachers could add Plays to their &ldquo;Playbook&rdquo; for quick access later on</li>
-<li>Admins would be able to curate the front page content as well as approve Plays and new users</li>
+<li>create a landing page explaining the Growth Mindset</li>
+<li>allow teachers to create an account</li>
+<li>allow teachers to submit &ldquo;Plays&rdquo;, which are essentially lesson plans targeting specific Growth Mindset elements</li>
+<li>plays need to be search-able by teachers, either through full-text search or a variety of categories</li>
+<li>enable teachers to add Plays to their &ldquo;Playbook&rdquo; for quick access later</li>
+<li>allow admins to curate the front-page content, approve Plays, and add new users</li>
 </ul>
 
-<h2 id="back-ends-with-parse:ae2e17d81343b352e5f8570697d79589">Back Ends with Parse</h2>
+<h2 id="back-ends-with-parse:ae2e17d81343b352e5f8570697d79589">Back ends with Parse</h2>
 
-<p>Pomegranate Lab wanted to use the playbook for its Growth Mindset coaching sessions, so development needed to begin quickly. Due to the expedited nature of the project, I decided to use <a href="https://www.parse.com/">Parse</a> to cut out a majority of the work in back end development. According to Parse&rsquo;s documentation: &ldquo;<a href="https://www.parse.com/docs/js/guide#getting-started">Our goal is to totally eliminate the need for writing server code or maintaining servers</a>&rdquo;.</p>
+<p>Pomegranate Lab wanted to use the Playbook for its Growth Mindset coaching sessions, so development needed to begin quickly. Due to the expedited nature of the project, I decided to use <a href="https://www.parse.com/">Parse</a> to cut out a majority of the work in back end development. According to Parse&rsquo;s documentation: &ldquo;<a href="https://www.parse.com/docs/js/guide#getting-started">Our goal is to totally eliminate the need for writing server code or maintaining servers</a>&rdquo;.</p>
 
-<p>Database tables, user authentication/permissions, emails, and hosting are all set up using the Parse configuration console. In the rare case you do need to do something special for your back end, Parse has &ldquo;Cloud Code&rdquo; functions. Cloud Code is in reality just a node.js environment to run your code on Parse servers. Parse provides libraries for several platforms and/or languages that allow you to interact with your app&rsquo;s &ldquo;back end&rdquo;. Parse also had support for React, which will come into play later.</p>
+<p>Database tables, user authentication/permissions, emails, and hosting are all set up using the Parse configuration console. In the rare case you do need to do something special for your back end, Parse has &ldquo;Cloud Code&rdquo; functions. Cloud Code is, in reality, just a node.js environment to run your code on Parse servers. Parse provides libraries for several platforms and/or languages that allow you to interact with your app&rsquo;s &ldquo;back end&rdquo;. Parse also had support for React, which will come into play later.</p>
 
-<p>Setting up all tables(or classes as Parse calls them) and their relations was a snap. Add/dropping columns was only a few clicks which enabled me to quickly build and iterate on The Playbook&rsquo;s various features. Data permissions are set by assigning users roles and then giving those roles <a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD</a> permissions for different data classes.</p>
+<p>Setting up all tables (or classes as Parse calls them) and their relations was a snap. Add/dropping columns only took a few clicks, which enabled me to quickly build and iterate on The Playbook&rsquo;s various features. Data permissions are set by assigning user roles and then giving those roles <a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD</a> permissions for different data classes.</p>
 
 <h2 id="using-react-for-an-easy-to-understand-ui:ae2e17d81343b352e5f8570697d79589">Using React for an easy to understand UI</h2>
 
-<p>To build the front end, I decided to use a library I had been hearing a lot about called <a href="https://facebook.github.io/react/">React</a>. React is &ldquo;<a href="https://facebook.github.io/react/">A JavaScript library for building user interfaces</a>&rdquo; created by Facebook. It encourages you to separate UI functionality into small pieces called &lsquo;components&rsquo;. Components take application state as parameters and returns what should be displayed. Since code is separated into units usually focused around a single functionality, components are very easy to test and are human readable. For example the code to display The Playbook&rsquo;s collapsible menu is:</p>
+<p>To build the front end, I decided to use a library I had been hearing a lot about called <a href="https://facebook.github.io/react/">React</a>. React is &ldquo;<a href="https://facebook.github.io/react/">A JavaScript library for building user interfaces</a>&rdquo; created by Facebook. It encourages you to separate UI functionality into small pieces called &lsquo;components&rsquo;. Components take application state as parameters and returns what should be displayed. Since code is separated into units usually focused around a single functionality, components are very easy to test and human readable. For example the code to display The Playbook&rsquo;s collapsible menu is:</p>
 
 <pre><code>&lt;SlideMenu&gt;
   &lt;MenuItems&gt;&lt;/MenuItems&gt;
@@ -248,27 +248,27 @@ for {
 
 <p>This kind of logical project structure and readability was something I dreamed about when working on other projects.</p>
 
-<h2 id="es6-bringing-javascript-development-to-the-21st-century:ae2e17d81343b352e5f8570697d79589">ES6 bringing JavaScript development to the 21st Century</h2>
+<h2 id="es6-bringing-javascript-development-to-the-21st-century:ae2e17d81343b352e5f8570697d79589">ES6 bringing JavaScript development to the 21st century</h2>
 
-<p>Unfortunately most browsers don&rsquo;t support the newest JavaScript functionality out of the box, and there are same <a href="https://github.com/lukehoban/es6features">great improvements</a> coming in future versions of JavaScript.For example a simple function to add 5 to a number might look like this in the current version of JavaScript:</p>
+<p>Unfortunately most browsers do not support the newest JavaScript functionality out of the box, and there are same <a href="https://github.com/lukehoban/es6features">great improvements</a> coming in future versions of JavaScript. For example a simple function to add 5 to a number might look like this in the current version of JavaScript:</p>
 
 <pre><code>function addFive(num) {
   return num + 5;
 }
 </code></pre>
 
-<p>But with the newer versions of JavaScript it could be condensed down into mode readable code such as:</p>
+<p>But with the newer versions of JavaScript, the code could be condensed down into something more readable like:</p>
 
 <pre><code>let addFive = (num) =&gt; num + 5;
 </code></pre>
 
-<p>With this in mind, I decided to use the <a href="https://babeljs.io/">Babel</a> transpiler to write the front end code The Playbook in ES6 JavaScript. Babel takes your ES6 JavaScript code and converts in into ES5(the current standard) JavaScript that browsers today expect. This let me use modern JavaScript features such as promises, lambdas, and classes in the development of The Playbook.</p>
+<p>With this in mind, I decided to use the <a href="https://babeljs.io/">Babel</a> transpiler to write the front end code in ES6 JavaScript. Babel takes your ES6 JavaScript code and converts it into ES5 (the current standard) JavaScript that browsers today expect. This let me use modern JavaScript features such as promises, lambdas, and classes in the development of The Playbook.</p>
 
 <h2 id="putting-it-all-together-with-webpack:ae2e17d81343b352e5f8570697d79589">Putting it all together with webpack</h2>
 
-<p>Building a single page webapp with JavaScript is a bit different that building a traditional webapp. You have lots of small(mostly js) files that cause pages to load slowly since it starts a new request for each file. Ideally you could combine files of similar types during your build process and make your webapp load much faster. This is where webpack comes in.</p>
+<p>Building a single page webapp with JavaScript is a bit different that building a traditional webapp. You have lots of small (mostly js) files that cause pages to load slowly, since it starts a new request for each file. Ideally you could combine files of similar types during your build process and make your webapp load much faster. This is where webpack comes in.</p>
 
-<p><a href="https://webpack.github.io/">webpack</a> is a module bundler that bundles all your webapp&rsquo;s files and condenses them into static files for easy hosting. JavaScript is concatenated and minified(most whitespace and newlines are removed) into as single js file that is loaded by a main.html file. webpack also gives you the ability to install npm libraries as project dependencies and use them in your front end. It also plays well with font end only libraries, React and Parse in our case, trimming unused code and shrinking your overall project size.</p>
+<p><a href="https://webpack.github.io/">webpack</a> is a module bundler that bundles all your webapp&rsquo;s files and condenses them into static files for easy hosting. JavaScript is concatenated and minified (most whitespace and newlines are removed) into a single js file that is loaded by a main.html file. webpack also gives you the ability to install npm libraries as project dependencies and use them in your front end. It also plays well with font end only libraries, React and Parse in our case, trimming unused code and shrinking your overall project size.</p>
 
 <p>Configuring webpack can be a bit of a challenge the first time, but once set up the build process for The Playbook was very simple:</p>
 
@@ -278,7 +278,7 @@ for {
 <li>You&rsquo;re done!</li>
 </ul>
 
-<p><a href="https://playbook.parseapp.com">The Playbook</a> is still in use, however it is in closed beta for teachers.</p>
+<p><a href="https://playbook.parseapp.com">The Playbook</a> is still in use, however, it is in closed beta for teachers.</p>
 
                     </div>
                 </section>
@@ -308,11 +308,11 @@ for {
 
 <h2 id="the-fiber-reality:c60e498790513456114e62949061e65e">The Fiber reality</h2>
 
-<p>After scouring apartment listings in Austin and doing a bit of research it became clear that there were a few problems with my Google Fiber dream:</p>
+<p>After scouring apartment listings in Austin, and doing a bit of research, it became clear that there were a few problems with my Google Fiber dream:</p>
 
 <ul>
-<li>Roll-out is only scheduled for specific areas of Austin</li>
-<li>None of these areas is a reasonable commute distance from where Jesyka&rsquo;s would be working</li>
+<li>Roll-out was only scheduled for specific areas of Austin</li>
+<li>None of the areas were a reasonable commute distance from Jesyka&rsquo;s work</li>
 <li>New areas were being added slowly</li>
 </ul>
 
@@ -320,11 +320,11 @@ for {
 
 <h2 id="reverse-engineering-google-fiber-listings:c60e498790513456114e62949061e65e">Reverse engineering Google Fiber listings</h2>
 
-<p>Using Chrome developer tools I was able to check network traffic on Google map and discovered that the data for all Fiber enabled apartments was being stored in a JSON file. This JSON file was used by Google to build the apartment map on page load.</p>
+<p>Using Chrome Developer Tools, I was able to check network traffic on the Google Fiber map and discovered that the data for all Fiber enabled apartments was being stored in a JSON file. This JSON file was used by Google to build the apartment map on page load.</p>
 
-<p>Rather than use <a href="https://en.wikipedia.org/wiki/Inline_linking">inline linking</a> for my webapp, I wrote a Go tool to fetch, parse, and store apartment data in a separate database on <a href="https://www.heroku.com/">Heroku</a>. This prevented page loads from my app causing additional traffic on Google servers. Heroku&rsquo;s background job scheduler runs the tool a few times a day, to avoid being the server stress mentioned earlier.</p>
+<p>Rather than use <a href="https://en.wikipedia.org/wiki/Inline_linking">inline linking</a> for my webapp, I wrote a Go tool to fetch, parse, and store apartment data in a separate database on <a href="https://www.heroku.com/">Heroku</a>. This prevents page loads from my app causing additional traffic on Google servers. Heroku&rsquo;s background job scheduler runs the tool a few times a day, to avoid the server stress mentioned earlier.</p>
 
-<p>For the front end of the webapp I used AngularJS. The front end uses an ajax request to query the Heroku back end for JSON apartment data. The apartment data is then loaded into a table listing important information such as the name, address, and time the listing was added. Using AngulaJs&rsquo; built in data filtering, users can search for listings by name or address.</p>
+<p>For the front end of the webapp, I used AngularJS. The front end uses an AJAX request to query the Heroku back end for JSON apartment data. The apartment data is then loaded into a table, which lists important information such as the name of the apartment complex, address of the apartment, and time the listing was added. Using AngularJS&rsquo; built-in data filtering, users can search for listings by apartment name or address.</p>
 
 <h2 id="check-it-out:c60e498790513456114e62949061e65e">Check it out</h2>
 
@@ -358,50 +358,50 @@ for {
 
 <h2 id="requirements:0f908a3ed3ef8d9a531516dfad512d4d">Requirements</h2>
 
-<p>After working with the business owners, a designer, and speaking to product vendors, the following list of requirements was created:</p>
+<p>After working with the business owners, a designer, and speaking to product vendors, the following list of requirements for the new website was created:</p>
 
 <ul>
-<li>Display information about the bakery (contact, hours, etc)</li>
-<li>Allow customers to browse and search the bakery menu</li>
-<li>Allow customers to place online orders, which could be shipped or picked up</li>
-<li>Have a separate menu and order placement system for vendors</li>
-<li>Admin ability to edit menu items, create vendor invoices, and approve new vendor accounts</li>
-<li>Quick development is preferable as the current site lacks functionality</li>
+<li>display information about the bakery (contact, hours, etc)</li>
+<li>allow customers to browse and search the bakery menu</li>
+<li>allow customers to place online orders, which could be shipped or picked up</li>
+<li>create a separate menu and order placement system for vendors</li>
+<li>admin ability to edit menu items, create vendor invoices, and approve new vendor accounts</li>
+<li>quick development is preferable as the current site lacks functionality</li>
 </ul>
 
 <h2 id="roll-your-own-or-use-a-prebuilt-solution:0f908a3ed3ef8d9a531516dfad512d4d">Roll your own or use a prebuilt solution?</h2>
 
-<p>First I considered using an off the shelf solution. Creating a content management system and ordering system from the ground up is quite a bit of work. I did research into existing &ldquo;shopping cart solutions&rdquo; such as Shopify or Magneto. Unfortunately, none of the existing systems I could find were able to satisfy all of the requirements. To use an off the shelf solution I would need to extend the code base with a plugin in the language chosen solution was written in. Rather than go down a rabbit hole of foreign application architecture, undocumented features, and learning a new language, I decided to build the Marie&rsquo;s site from scratch.</p>
+<p>First I considered using an off the shelf solution. Creating a content management system and ordering system from the ground up is quite a bit of work. I did research into existing &ldquo;shopping cart solutions&rdquo; such as Shopify or Magneto. Unfortunately, none of the existing systems I could find were able to satisfy all of the requirements. To use an off the shelf solution, I would need to extend the code base with a plugin in the language &ldquo;chosen solution&rdquo; was written in. Rather than go down a rabbit hole of foreign application architecture, undocumented features, and learning a new language, I decided to rebuild the Marie&rsquo;s site from scratch.</p>
 
-<h2 id="front-end-structure:0f908a3ed3ef8d9a531516dfad512d4d">Front End Structure</h2>
+<h2 id="front-end-structure:0f908a3ed3ef8d9a531516dfad512d4d">Front end structure</h2>
 
-<p>The front end was built using AngularJS and Bootstrap 3. AngularJS&rsquo;s strength lies in its two-way data binding as well as its large selection of third party libraries. Functionality such as filtering a list of menu items based on a search is fairly trivial to do in AngularJS. Coupling AngularJS with Bootstrap allowed me to rapidly set up, try out, and iterate different layouts. Bootstrap is designed to be customizable out of the box, so changing how everything looked was no problem.</p>
+<p>The front end was built using AngularJS and Bootstrap 3. AngularJS&rsquo;s strength lies in its two-way data binding as well as its large selection of third party libraries. Functionality, such as filtering a list of menu items based on a search, is fairly trivial to do in AngularJS. Coupling AngularJS with Bootstrap allowed me to rapidly set up, try out, and iterate different layouts with the designer. Bootstrap is designed to be customizable out of the box, so changing how everything looked was no problem.</p>
 
 <h2 id="why-go:0f908a3ed3ef8d9a531516dfad512d4d">Why Go?</h2>
 
 <p>For the back end I chose to use the <a href="http://golang.org/">Go</a> programming language. I had been using Go in my side projects for a while and I wanted to leverage Go&rsquo;s strengths of:</p>
 
 <ul>
-<li>A robust standard library</li>
-<li>Easy to deploy to a variety of platforms, I chose <a href="https://www.heroku.com/">Heroku</a></li>
-<li>Excellent performance</li>
-<li>Built in concurrency</li>
-<li>Official library support for <a href="https://stripe.com/">Stripe</a>(our payment processor)</li>
+<li>a robust standard library</li>
+<li>easy to deploy to a variety of platforms (I chose <a href="https://www.heroku.com/">Heroku</a>)</li>
+<li>excellent performance</li>
+<li>built in concurrency</li>
+<li>official library support for <a href="https://stripe.com/">Stripe</a> (our payment processor)</li>
 </ul>
 
-<p>I chose to use the <a href="http://martini.codegangsta.io/">Martini</a> web framework after hearing about in on the <a href="https://changelog.com/117/">Changelog Podcast</a>. Martini has several upgrades the from the built in Go web framework that the Maries site would rely on. These include:</p>
+<p>I chose to use the <a href="http://martini.codegangsta.io/">Martini</a> web framework after hearing about in on the <a href="https://changelog.com/117/">Changelog Podcast</a>. Martini has several upgrades the from the built-in Go web framework that the Marie&rsquo;s site would rely on. These include:</p>
 
 <ul>
-<li>Middleware support for simple HTTP request/response modifications</li>
-<li>Improved routing controls, making REST API endpoints easy to write</li>
-<li>Dependency injection make sure that you always have access to the correct obejcts</li>
+<li>middleware support for simple HTTP request/response modifications</li>
+<li>improved routing controls, making REST API endpoints easy to write</li>
+<li>dependency injection make sure that you always have access to the correct objects</li>
 </ul>
 
-<p>I also chose to use <a href="https://github.com/jinzhu/gorm">GORM</a> to connect to the database. GORM allows you to declare normal Go structs that map directly to database tables. When you make a database query with GORM, it&rsquo;s a series of methods that return an easy to use Go struct. Using an ORM library over manual SQL queries made sense for the Maries site as development speed was more important than raw performance.</p>
+<p>I also chose to use <a href="https://github.com/jinzhu/gorm">GORM</a> to connect to the database. GORM allows you to declare normal Go structs that map directly to database tables. When you make a database query with GORM, it&rsquo;s a series of methods that return an easy to use Go struct. Using an ORM library, over manual SQL queries, made sense for the Maries site as development speed was more important than raw performance.</p>
 
 <h2 id="still-going-strong:0f908a3ed3ef8d9a531516dfad512d4d">Still going strong</h2>
 
-<p>The site is still up and running today with both vendors and regular customers making online orders! You can check it out <a href="https://www.mariesglutenfree.com">here</a>.</p>
+<p>The Marie&rsquo;s website is still up and running today with both vendors and regular customers making online orders! You can check it out <a href="https://www.mariesglutenfree.com">here</a>.</p>
 
                     </div>
                 </section>
@@ -448,31 +448,32 @@ for {
 
 <h2 id="teacher-centric-lesson-planning:ab757769ebbb53ad30e94bbeb44946bb">Teacher-centric lesson planning</h2>
 
-<p>Common Ground, a companion webapp to <a href="/projects/inscribe/">Inscribe</a>, enabled teachers with Inscribe accounts to create lesson plans for their current  courses. Teachers could also export their lesson plans and collaborate with other teachers on shared lesson plans. Common Ground had the following requirements:</p>
+<p>Common Ground, a companion webapp to <a href="/projects/inscribe/">Inscribe</a>, enabled teachers with Inscribe accounts to create lesson plans for their current courses. Teachers could also export lesson plans and collaborate with other teachers on shared lesson plans. Common Ground had the following requirements:</p>
 
 <ul>
-<li>Share login and user data with <a href="/projects/inscribe/">Inscribe</a></li>
-<li>Teachers can create lesson plans for Inscribe courses</li>
-<li>Lesson plans will show up on a calendar and are easily exportable to a variety of formats</li>
-<li>Lesson plans can be shared and edited by multiple teachers</li>
+<li>share login and user data with <a href="/projects/inscribe/">Inscribe</a></li>
+<li>allow teachers to create lesson plans for Inscribe courses</li>
+<li>populate lesson plans on a calendar</li>
+<li>ability to easily export lesson plans to a variety of formats</li>
+<li>enable sharing of lesson plans and editing by multiple teachers</li>
 </ul>
 
 <h2 id="talking-to-inscribe:ab757769ebbb53ad30e94bbeb44946bb">Talking to Inscribe</h2>
 
-<p>Although the back end for Common Ground was written in a different language than Inscribe(<a href="http://golang.org/">Go</a> and <a href="https://www.python.org/">Python</a> respectively) it was pretty easy to communicate over HTTPS between the two. When a user would login to Common Ground, the following process took place:</p>
+<p>Although the back end for Common Ground was written in a different language than Inscribe (<a href="http://golang.org/">Go</a> and <a href="https://www.python.org/">Python</a>, respectively) it was pretty easy to communicate over HTTPS between the two. When a user would login to Common Ground, the following process took place:</p>
 
 <ul>
-<li>Login request sent to Common Ground</li>
-<li>Common Ground forwards the login request to Inscribe over HTTPS</li>
-<li>Inscribe checks the user&rsquo;s credentials and returns a <a href="https://self-issued.info/docs/draft-ietf-oauth-json-web-token.html">JSON Web Token</a>(JWT)</li>
-<li>Common Ground sends the JWT back to the user to be stored client side</li>
+<li>login request sent to Common Ground</li>
+<li>Common Ground forwarded the login request to Inscribe over HTTPS</li>
+<li>Inscribe checked the user&rsquo;s credentials and returned a <a href="https://self-issued.info/docs/draft-ietf-oauth-json-web-token.html">JSON Web Token</a>(JWT)</li>
+<li>Common Ground sent the JWT back to the user to be stored client side</li>
 </ul>
 
-<p>Common Ground and Inscribe shared the same JWT secret key, which is used to determine the validity of JWT claims. Sharing the JWT secret key between the two back ends made it so Common Ground could validate claims for Inscribe JWTs instead of checking with the Inscribe back end every time the user tried to do something.</p>
+<p>Common Ground and Inscribe shared the same JWT secret key, which is used to determine the validity of JWT claims. Sharing the JWT secret key between the two back ends made it so Common Ground could validate claims for Inscribe JWTs, instead of checking with the Inscribe back end every time the user tried to do something.</p>
 
 <h2 id="front-end-lessons-from-inscribe:ab757769ebbb53ad30e94bbeb44946bb">Front end lessons from Inscribe</h2>
 
-<p>After the <a href="/projects/inscribe/#figuring-out-the-front-end:0eab5b6ef5fc6b3a1fc2a55d8d118484">lessons I learned from Inscribe</a>, I immediately chose to use AngularJS for Common Ground&rsquo;s front end. Using the same front end framework across both Inscribe and Common Ground had the added benefit of allowing me to reuse code across the two projects. Being able to use the same code was a boost in Common Ground up and running quickly.</p>
+<p>After the <a href="/projects/inscribe/#figuring-out-the-front-end:0eab5b6ef5fc6b3a1fc2a55d8d118484">lessons I learned from Inscribe</a>, I immediately chose to use AngularJS for Common Ground&rsquo;s front end. Using the same front end framework across both Inscribe and Common Ground had the added benefit of allowing me to reuse code across the two projects. This enabled the team to quickly get Common Ground up and running.</p>
 
 <h2 id="iterate-early-iterate-often:ab757769ebbb53ad30e94bbeb44946bb">Iterate early, iterate often</h2>
 
@@ -504,22 +505,22 @@ for {
                     <div class="post-description">
                         
 
-<h2 id="assignments-with-a-growth-mindset:0eab5b6ef5fc6b3a1fc2a55d8d118484">Assignments with a growth mindset</h2>
+<h2 id="assignments-with-a-growth-mindset:0eab5b6ef5fc6b3a1fc2a55d8d118484">Assignments with a Growth Mindset</h2>
 
-<p>Inscribe is the first webapp I worked on for <a href="http://pomegranatelab.com/">Pomegranate Lab</a>. It&rsquo;s purpose was to help teachers connect with their students by providing in-depth feedback about the student&rsquo;s assignments and what the student could do to improve their grades. Inscribe had the following requirements:</p>
+<p>Inscribe is the first webapp I worked on for <a href="http://pomegranatelab.com/">Pomegranate Lab</a>. It&rsquo;s purpose was to help teachers connect with their students by providing in-depth feedback about the student&rsquo;s assignments, and additionally provide context around what the student could do to improve their grades. Inscribe had the following requirements:</p>
 
 <ul>
-<li>Teachers can create courses and manage which students are enrolled in their courses</li>
-<li>Teachers can create assignments from scratch or based on an existing rubric</li>
-<li>Students can complete assignments online</li>
-<li>Teachers can grade turned in student assignments and give detailed feedback on how they can improve</li>
+<li>teachers can create courses and manage which students are enrolled in their courses</li>
+<li>teachers can create assignments from scratch or based on an existing rubric</li>
+<li>students can complete assignments online</li>
+<li>teachers can grade submitted student assignments and provide detailed feedback on how they can improve</li>
 </ul>
 
 <h2 id="python-to-the-rescue:0eab5b6ef5fc6b3a1fc2a55d8d118484">Python to the rescue</h2>
 
-<p>As Inscribe was one of the first webapps I had ever worked on I wanted to make sure I chose a language I was already familiar with as to not slow down development. <a href="https://www.python.org/">Python</a> is one of my favorite programming languages and is well equipped for web development, so it was a perfect fit.</p>
+<p>Because Inscribe was one of the first webapps I had ever worked on, I wanted to make sure I chose a language I was familiar with, in order to not slow down development. <a href="https://www.python.org/">Python</a> is one of my favorite programming languages and is well equipped for web development, so it was a perfect fit.</p>
 
-<p>Being new to web development, I researched at several different Python web frameworks before settling on <a href="http://flask.pocoo.org/">Flask</a>. Flask is designed to be as unobtrusive to your development process as possible. The Flask core library gives basic functionality for a webapp and extras like user authentication or database connections are implemented in easy to install plugins.</p>
+<p>Being new to web development, I researched several different Python web frameworks before settling on <a href="http://flask.pocoo.org/">Flask</a>. Flask is designed to be as unobtrusive to your development process as possible. The Flask core library gives basic functionality for a webapp, and extra functionality like user authentication or database connections can easily be implemented with plugins.</p>
 
 <h2 id="hosting-with-heroku:0eab5b6ef5fc6b3a1fc2a55d8d118484">Hosting with Heroku</h2>
 
@@ -528,28 +529,28 @@ for {
 <ul>
 <li>Set up was much easier than something like a VPS.</li>
 <li>Deployment was git based and I was already using git for version control.</li>
-<li>The development tier was free and would cover our initial needs. The ability to automatically scale was there if we needed more resources as well.</li>
-<li>Heroku offered easy to use add ons like databases, email services, logging, and more.</li>
+<li>The development tier was free and would cover our initial business needs. The ability to automatically scale was there if we needed more resources.</li>
+<li>Heroku offered easy to use add-ons like databases, email services, logging, and more.</li>
 </ul>
 
-<p>For the database, I used <a href="http://www.postgresql.org/">PostgreSQL</a> with Heroku provided an excellent free tier for. Since development speed was more of a concern than raw database performance, I chose to use the <a href="http://www.sqlalchemy.org/">SQLAlchemy</a> ORM. SQLAlchemy lets you treat database entries as python objects. This allows you to keep your mental focus on Python code, rather than bouncing back and forth between SQL queries and Python.</p>
+<p>In terms of a database I used <a href="http://www.postgresql.org/">PostgreSQL</a>, for which Heroku provided an excellent free tier. Since development speed was more of a concern than raw database performance, I chose to use the <a href="http://www.sqlalchemy.org/">SQLAlchemy</a> ORM. SQLAlchemy lets you treat database entries as python objects. This allows you to keep your mental focus on Python code, rather than bouncing back and forth between SQL queries and Python.</p>
 
 <h2 id="handling-data-on-the-back-end:0eab5b6ef5fc6b3a1fc2a55d8d118484">Handling data on the back end</h2>
 
-<p>Inscribe&rsquo;s back end handled a variety of data operations including user login sessions, assignment data, grades, and rubrics.  User authentication was handled through <a href="https://self-issued.info/docs/draft-ietf-oauth-json-web-token.html">JSON Web Tokens</a>(JWT) sent over a HTTP header and saved client side into a cookie. I chose to use JWT over other authentication methods, since it&rsquo;s a language agnostic specification that is robust and secure. When a user tried to update or create data the back end could check their JWT and make sure that:</p>
+<p>Inscribe&rsquo;s back end handled a variety of data operations including user login sessions, assignment data, grades, and rubrics. User authentication was handled through <a href="https://self-issued.info/docs/draft-ietf-oauth-json-web-token.html">JSON Web Tokens</a> (JWT) sent over a HTTP header and saved client side into a cookie. I chose to use JWT over other authentication methods, since it&rsquo;s a language agnostic specification that is robust and secure. When a user tried to update or create data the back end could check their JWT and make sure that:</p>
 
 <ul>
-<li>They&rsquo;re a valid user</li>
-<li>They have permission to create or edit the data</li>
+<li>they are a valid user</li>
+<li>they have permission to create or edit the data</li>
 </ul>
 
-<p>Student accounts for Inscribe were free, but teachers were required to pay a monthly fee. Rather than charge teacher credit cards directly, I chose to use <a href="https://stripe.com/">Stripe</a> to handle all payment processing. Credit card numbers we sent directly to Stripe servers from the browser. Stripe then returns a token that could be used to make a charge to the teacher&rsquo;s card from the Inscribe back end. While this is a bit of extra coding up front, it removed all the extra security hassle that comes with handling credit card numbers directly.</p>
+<p>Student accounts for Inscribe were free, but teachers were required to pay a monthly fee. Rather than charge teacher credit cards directly, I chose to use <a href="https://stripe.com/">Stripe</a> to handle all payment processing. Credit card numbers we sent directly to Stripe servers from the browser. Stripe then returned a token that could be used to make a charge to the teacher&rsquo;s card from the Inscribe back end. While this is a bit of extra coding up front, it removed all the extra security hassle that comes with handling credit card numbers directly.</p>
 
 <h2 id="figuring-out-the-front-end:0eab5b6ef5fc6b3a1fc2a55d8d118484">Figuring out the front end</h2>
 
-<p>The front end of Inscribe went through several different architecture iterations. Initially I built the front end for inscribe using <a href="http://jinja.pocoo.org/docs/dev/">Jinja2 templates</a> and <a href="https://jquery.com/">JQuery</a>. When a browser requested a page, the backend would load the proper data for a page from the database and generate the html based on that page&rsquo;s template file. This method worked quite well initially. However, as the site grew and the features became more complex, organizing code and keeping pages organized became complicated. After researching different solutions and consulting with the rest of Pomegranate Lab, I chose AngularJS for the next iteration of Inscribe&rsquo;s front end.</p>
+<p>The front end of Inscribe went through several architecture iterations. Initially I built the front end for Inscribe using <a href="http://jinja.pocoo.org/docs/dev/">Jinja2 templates</a> and <a href="https://jquery.com/">JQuery</a>. When a browser requested a page, the back end would load the proper data for a page from the database and generate the HTML based on that page&rsquo;s template file. This method worked quite well initially. However, as the site grew and the features became more complex, organizing both the code and the pages became complicated. After researching different solutions and consulting with the rest of Pomegranate Lab, I chose AngularJS for the next iteration of Inscribe&rsquo;s front end.</p>
 
-<p>The main feature that drew me to AngularJS&rsquo;s is its two-way data binding. Two-way data binding makes it very easy to implement features in AngularJS that would have been fairly complicated to do with just JQuery. After only a couple of weeks rewriting Inscribe, the new AngularJS version was at feature parity with the old JQuery version. Additionally, rewriting the front end allowed me to simplify the back end. No longer would the back end have to fetch data and render each page. Now the back end was for the most part a collection of REST API endpoints.</p>
+<p>The main feature that drew me to AngularJS&rsquo;s is its two-way data binding. Two-way data binding makes it very easy to implement features in AngularJS that would have been fairly complicated to do with just JQuery. After only a couple of weeks rewriting Inscribe, the new AngularJS version was at feature parity with the old JQuery version. Additionally, rewriting the front end allowed me to simplify the back end. No longer would the back end have to fetch data and render each page. Now the back end was, for the most part, a collection of REST API endpoints.</p>
 
 <h2 id="iterate-early-iterate-often:0eab5b6ef5fc6b3a1fc2a55d8d118484">Iterate early, iterate often</h2>
 

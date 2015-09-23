@@ -217,11 +217,11 @@ for {
 
 <h2 id="the-fiber-reality:c60e498790513456114e62949061e65e">The Fiber reality</h2>
 
-<p>After scouring apartment listings in Austin and doing a bit of research it became clear that there were a few problems with my Google Fiber dream:</p>
+<p>After scouring apartment listings in Austin, and doing a bit of research, it became clear that there were a few problems with my Google Fiber dream:</p>
 
 <ul>
-<li>Roll-out is only scheduled for specific areas of Austin</li>
-<li>None of these areas is a reasonable commute distance from where Jesyka&rsquo;s would be working</li>
+<li>Roll-out was only scheduled for specific areas of Austin</li>
+<li>None of the areas were a reasonable commute distance from Jesyka&rsquo;s work</li>
 <li>New areas were being added slowly</li>
 </ul>
 
@@ -229,11 +229,11 @@ for {
 
 <h2 id="reverse-engineering-google-fiber-listings:c60e498790513456114e62949061e65e">Reverse engineering Google Fiber listings</h2>
 
-<p>Using Chrome developer tools I was able to check network traffic on Google map and discovered that the data for all Fiber enabled apartments was being stored in a JSON file. This JSON file was used by Google to build the apartment map on page load.</p>
+<p>Using Chrome Developer Tools, I was able to check network traffic on the Google Fiber map and discovered that the data for all Fiber enabled apartments was being stored in a JSON file. This JSON file was used by Google to build the apartment map on page load.</p>
 
-<p>Rather than use <a href="https://en.wikipedia.org/wiki/Inline_linking">inline linking</a> for my webapp, I wrote a Go tool to fetch, parse, and store apartment data in a separate database on <a href="https://www.heroku.com/">Heroku</a>. This prevented page loads from my app causing additional traffic on Google servers. Heroku&rsquo;s background job scheduler runs the tool a few times a day, to avoid being the server stress mentioned earlier.</p>
+<p>Rather than use <a href="https://en.wikipedia.org/wiki/Inline_linking">inline linking</a> for my webapp, I wrote a Go tool to fetch, parse, and store apartment data in a separate database on <a href="https://www.heroku.com/">Heroku</a>. This prevents page loads from my app causing additional traffic on Google servers. Heroku&rsquo;s background job scheduler runs the tool a few times a day, to avoid the server stress mentioned earlier.</p>
 
-<p>For the front end of the webapp I used AngularJS. The front end uses an ajax request to query the Heroku back end for JSON apartment data. The apartment data is then loaded into a table listing important information such as the name, address, and time the listing was added. Using AngulaJs&rsquo; built in data filtering, users can search for listings by name or address.</p>
+<p>For the front end of the webapp, I used AngularJS. The front end uses an AJAX request to query the Heroku back end for JSON apartment data. The apartment data is then loaded into a table, which lists important information such as the name of the apartment complex, address of the apartment, and time the listing was added. Using AngularJS&rsquo; built-in data filtering, users can search for listings by apartment name or address.</p>
 
 <h2 id="check-it-out:c60e498790513456114e62949061e65e">Check it out</h2>
 
@@ -267,50 +267,50 @@ for {
 
 <h2 id="requirements:0f908a3ed3ef8d9a531516dfad512d4d">Requirements</h2>
 
-<p>After working with the business owners, a designer, and speaking to product vendors, the following list of requirements was created:</p>
+<p>After working with the business owners, a designer, and speaking to product vendors, the following list of requirements for the new website was created:</p>
 
 <ul>
-<li>Display information about the bakery (contact, hours, etc)</li>
-<li>Allow customers to browse and search the bakery menu</li>
-<li>Allow customers to place online orders, which could be shipped or picked up</li>
-<li>Have a separate menu and order placement system for vendors</li>
-<li>Admin ability to edit menu items, create vendor invoices, and approve new vendor accounts</li>
-<li>Quick development is preferable as the current site lacks functionality</li>
+<li>display information about the bakery (contact, hours, etc)</li>
+<li>allow customers to browse and search the bakery menu</li>
+<li>allow customers to place online orders, which could be shipped or picked up</li>
+<li>create a separate menu and order placement system for vendors</li>
+<li>admin ability to edit menu items, create vendor invoices, and approve new vendor accounts</li>
+<li>quick development is preferable as the current site lacks functionality</li>
 </ul>
 
 <h2 id="roll-your-own-or-use-a-prebuilt-solution:0f908a3ed3ef8d9a531516dfad512d4d">Roll your own or use a prebuilt solution?</h2>
 
-<p>First I considered using an off the shelf solution. Creating a content management system and ordering system from the ground up is quite a bit of work. I did research into existing &ldquo;shopping cart solutions&rdquo; such as Shopify or Magneto. Unfortunately, none of the existing systems I could find were able to satisfy all of the requirements. To use an off the shelf solution I would need to extend the code base with a plugin in the language chosen solution was written in. Rather than go down a rabbit hole of foreign application architecture, undocumented features, and learning a new language, I decided to build the Marie&rsquo;s site from scratch.</p>
+<p>First I considered using an off the shelf solution. Creating a content management system and ordering system from the ground up is quite a bit of work. I did research into existing &ldquo;shopping cart solutions&rdquo; such as Shopify or Magneto. Unfortunately, none of the existing systems I could find were able to satisfy all of the requirements. To use an off the shelf solution, I would need to extend the code base with a plugin in the language &ldquo;chosen solution&rdquo; was written in. Rather than go down a rabbit hole of foreign application architecture, undocumented features, and learning a new language, I decided to rebuild the Marie&rsquo;s site from scratch.</p>
 
-<h2 id="front-end-structure:0f908a3ed3ef8d9a531516dfad512d4d">Front End Structure</h2>
+<h2 id="front-end-structure:0f908a3ed3ef8d9a531516dfad512d4d">Front end structure</h2>
 
-<p>The front end was built using AngularJS and Bootstrap 3. AngularJS&rsquo;s strength lies in its two-way data binding as well as its large selection of third party libraries. Functionality such as filtering a list of menu items based on a search is fairly trivial to do in AngularJS. Coupling AngularJS with Bootstrap allowed me to rapidly set up, try out, and iterate different layouts. Bootstrap is designed to be customizable out of the box, so changing how everything looked was no problem.</p>
+<p>The front end was built using AngularJS and Bootstrap 3. AngularJS&rsquo;s strength lies in its two-way data binding as well as its large selection of third party libraries. Functionality, such as filtering a list of menu items based on a search, is fairly trivial to do in AngularJS. Coupling AngularJS with Bootstrap allowed me to rapidly set up, try out, and iterate different layouts with the designer. Bootstrap is designed to be customizable out of the box, so changing how everything looked was no problem.</p>
 
 <h2 id="why-go:0f908a3ed3ef8d9a531516dfad512d4d">Why Go?</h2>
 
 <p>For the back end I chose to use the <a href="http://golang.org/">Go</a> programming language. I had been using Go in my side projects for a while and I wanted to leverage Go&rsquo;s strengths of:</p>
 
 <ul>
-<li>A robust standard library</li>
-<li>Easy to deploy to a variety of platforms, I chose <a href="https://www.heroku.com/">Heroku</a></li>
-<li>Excellent performance</li>
-<li>Built in concurrency</li>
-<li>Official library support for <a href="https://stripe.com/">Stripe</a>(our payment processor)</li>
+<li>a robust standard library</li>
+<li>easy to deploy to a variety of platforms (I chose <a href="https://www.heroku.com/">Heroku</a>)</li>
+<li>excellent performance</li>
+<li>built in concurrency</li>
+<li>official library support for <a href="https://stripe.com/">Stripe</a> (our payment processor)</li>
 </ul>
 
-<p>I chose to use the <a href="http://martini.codegangsta.io/">Martini</a> web framework after hearing about in on the <a href="https://changelog.com/117/">Changelog Podcast</a>. Martini has several upgrades the from the built in Go web framework that the Maries site would rely on. These include:</p>
+<p>I chose to use the <a href="http://martini.codegangsta.io/">Martini</a> web framework after hearing about in on the <a href="https://changelog.com/117/">Changelog Podcast</a>. Martini has several upgrades the from the built-in Go web framework that the Marie&rsquo;s site would rely on. These include:</p>
 
 <ul>
-<li>Middleware support for simple HTTP request/response modifications</li>
-<li>Improved routing controls, making REST API endpoints easy to write</li>
-<li>Dependency injection make sure that you always have access to the correct obejcts</li>
+<li>middleware support for simple HTTP request/response modifications</li>
+<li>improved routing controls, making REST API endpoints easy to write</li>
+<li>dependency injection make sure that you always have access to the correct objects</li>
 </ul>
 
-<p>I also chose to use <a href="https://github.com/jinzhu/gorm">GORM</a> to connect to the database. GORM allows you to declare normal Go structs that map directly to database tables. When you make a database query with GORM, it&rsquo;s a series of methods that return an easy to use Go struct. Using an ORM library over manual SQL queries made sense for the Maries site as development speed was more important than raw performance.</p>
+<p>I also chose to use <a href="https://github.com/jinzhu/gorm">GORM</a> to connect to the database. GORM allows you to declare normal Go structs that map directly to database tables. When you make a database query with GORM, it&rsquo;s a series of methods that return an easy to use Go struct. Using an ORM library, over manual SQL queries, made sense for the Maries site as development speed was more important than raw performance.</p>
 
 <h2 id="still-going-strong:0f908a3ed3ef8d9a531516dfad512d4d">Still going strong</h2>
 
-<p>The site is still up and running today with both vendors and regular customers making online orders! You can check it out <a href="https://www.mariesglutenfree.com">here</a>.</p>
+<p>The Marie&rsquo;s website is still up and running today with both vendors and regular customers making online orders! You can check it out <a href="https://www.mariesglutenfree.com">here</a>.</p>
 
                     </div>
                 </section>
@@ -357,31 +357,32 @@ for {
 
 <h2 id="teacher-centric-lesson-planning:ab757769ebbb53ad30e94bbeb44946bb">Teacher-centric lesson planning</h2>
 
-<p>Common Ground, a companion webapp to <a href="/projects/inscribe/">Inscribe</a>, enabled teachers with Inscribe accounts to create lesson plans for their current  courses. Teachers could also export their lesson plans and collaborate with other teachers on shared lesson plans. Common Ground had the following requirements:</p>
+<p>Common Ground, a companion webapp to <a href="/projects/inscribe/">Inscribe</a>, enabled teachers with Inscribe accounts to create lesson plans for their current courses. Teachers could also export lesson plans and collaborate with other teachers on shared lesson plans. Common Ground had the following requirements:</p>
 
 <ul>
-<li>Share login and user data with <a href="/projects/inscribe/">Inscribe</a></li>
-<li>Teachers can create lesson plans for Inscribe courses</li>
-<li>Lesson plans will show up on a calendar and are easily exportable to a variety of formats</li>
-<li>Lesson plans can be shared and edited by multiple teachers</li>
+<li>share login and user data with <a href="/projects/inscribe/">Inscribe</a></li>
+<li>allow teachers to create lesson plans for Inscribe courses</li>
+<li>populate lesson plans on a calendar</li>
+<li>ability to easily export lesson plans to a variety of formats</li>
+<li>enable sharing of lesson plans and editing by multiple teachers</li>
 </ul>
 
 <h2 id="talking-to-inscribe:ab757769ebbb53ad30e94bbeb44946bb">Talking to Inscribe</h2>
 
-<p>Although the back end for Common Ground was written in a different language than Inscribe(<a href="http://golang.org/">Go</a> and <a href="https://www.python.org/">Python</a> respectively) it was pretty easy to communicate over HTTPS between the two. When a user would login to Common Ground, the following process took place:</p>
+<p>Although the back end for Common Ground was written in a different language than Inscribe (<a href="http://golang.org/">Go</a> and <a href="https://www.python.org/">Python</a>, respectively) it was pretty easy to communicate over HTTPS between the two. When a user would login to Common Ground, the following process took place:</p>
 
 <ul>
-<li>Login request sent to Common Ground</li>
-<li>Common Ground forwards the login request to Inscribe over HTTPS</li>
-<li>Inscribe checks the user&rsquo;s credentials and returns a <a href="https://self-issued.info/docs/draft-ietf-oauth-json-web-token.html">JSON Web Token</a>(JWT)</li>
-<li>Common Ground sends the JWT back to the user to be stored client side</li>
+<li>login request sent to Common Ground</li>
+<li>Common Ground forwarded the login request to Inscribe over HTTPS</li>
+<li>Inscribe checked the user&rsquo;s credentials and returned a <a href="https://self-issued.info/docs/draft-ietf-oauth-json-web-token.html">JSON Web Token</a>(JWT)</li>
+<li>Common Ground sent the JWT back to the user to be stored client side</li>
 </ul>
 
-<p>Common Ground and Inscribe shared the same JWT secret key, which is used to determine the validity of JWT claims. Sharing the JWT secret key between the two back ends made it so Common Ground could validate claims for Inscribe JWTs instead of checking with the Inscribe back end every time the user tried to do something.</p>
+<p>Common Ground and Inscribe shared the same JWT secret key, which is used to determine the validity of JWT claims. Sharing the JWT secret key between the two back ends made it so Common Ground could validate claims for Inscribe JWTs, instead of checking with the Inscribe back end every time the user tried to do something.</p>
 
 <h2 id="front-end-lessons-from-inscribe:ab757769ebbb53ad30e94bbeb44946bb">Front end lessons from Inscribe</h2>
 
-<p>After the <a href="/projects/inscribe/#figuring-out-the-front-end:0eab5b6ef5fc6b3a1fc2a55d8d118484">lessons I learned from Inscribe</a>, I immediately chose to use AngularJS for Common Ground&rsquo;s front end. Using the same front end framework across both Inscribe and Common Ground had the added benefit of allowing me to reuse code across the two projects. Being able to use the same code was a boost in Common Ground up and running quickly.</p>
+<p>After the <a href="/projects/inscribe/#figuring-out-the-front-end:0eab5b6ef5fc6b3a1fc2a55d8d118484">lessons I learned from Inscribe</a>, I immediately chose to use AngularJS for Common Ground&rsquo;s front end. Using the same front end framework across both Inscribe and Common Ground had the added benefit of allowing me to reuse code across the two projects. This enabled the team to quickly get Common Ground up and running.</p>
 
 <h2 id="iterate-early-iterate-often:ab757769ebbb53ad30e94bbeb44946bb">Iterate early, iterate often</h2>
 
