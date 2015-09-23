@@ -6,7 +6,7 @@ description = "Assignments with a growth mindset"
 categories = ["HTML", "Python", "AngularJS", "JQuery", "Bootstrap", "Heroku", "Stripe"]
 +++
 
-## Assignments with a growth mindset
+## Assignments with a Growth Mindset
 
 Inscribe is the first webapp I worked on for [Pomegranate Lab](http://pomegranatelab.com/). It's purpose was to help teachers connect with their students by providing in-depth feedback about the student's assignments, and additionally provide context around what the student could do to improve their grades. Inscribe had the following requirements:
 

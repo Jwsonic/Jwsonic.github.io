@@ -116,30 +116,30 @@ for {
       <guid>http://localhost:1313/projects/playbook/</guid>
       <description>
 
-&lt;h2 id=&#34;a-practical-guide-to-the-growth-mindset:ae2e17d81343b352e5f8570697d79589&#34;&gt;A practical guide to the Growth Mindset&lt;/h2&gt;
+&lt;h2 id=&#34;a-practical-guide-to-the-growth-mindset:ae2e17d81343b352e5f8570697d79589&#34;&gt;A practical guide to the growth mindset&lt;/h2&gt;
 
-&lt;p&gt;The Playbook is a webapp I worked on for &lt;a href=&#34;http://pomegranatelab.com/&#34;&gt;Pomegranate Lab&lt;/a&gt;. Its purpose it to enable teachers studying the &lt;a href=&#34;http://mindsetonline.com/whatisit/about/&#34;&gt;Growth Mindset&lt;/a&gt; to find and shard Growth Mindset based lesson content. The Playbook had the following set of requirements:&lt;/p&gt;
+&lt;p&gt;The Playbook is a webapp I worked on for &lt;a href=&#34;http://pomegranatelab.com/&#34;&gt;Pomegranate Lab&lt;/a&gt;. Its purpose is to enable teachers studying the &lt;a href=&#34;http://mindsetonline.com/whatisit/about/&#34;&gt;Growth Mindset&lt;/a&gt; to find and shard Growth Mindset-based lesson content. The Playbook had the following set of requirements:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Have a landing page explaining the Growth Mindset&lt;/li&gt;
-&lt;li&gt;Allow teachers to create an account&lt;/li&gt;
-&lt;li&gt;Teachers could submit &amp;ldquo;Plays&amp;rdquo; which are essentially lesson plans targeting specific Growth Mindset elements&lt;/li&gt;
-&lt;li&gt;Plays need to be search-able by teachers, either through full text search or a variety of categories&lt;/li&gt;
-&lt;li&gt;Teachers could add Plays to their &amp;ldquo;Playbook&amp;rdquo; for quick access later on&lt;/li&gt;
-&lt;li&gt;Admins would be able to curate the front page content as well as approve Plays and new users&lt;/li&gt;
+&lt;li&gt;create a landing page explaining the Growth Mindset&lt;/li&gt;
+&lt;li&gt;allow teachers to create an account&lt;/li&gt;
+&lt;li&gt;allow teachers to submit &amp;ldquo;Plays&amp;rdquo;, which are essentially lesson plans targeting specific Growth Mindset elements&lt;/li&gt;
+&lt;li&gt;plays need to be search-able by teachers, either through full-text search or a variety of categories&lt;/li&gt;
+&lt;li&gt;enable teachers to add Plays to their &amp;ldquo;Playbook&amp;rdquo; for quick access later&lt;/li&gt;
+&lt;li&gt;allow admins to curate the front-page content, approve Plays, and add new users&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;back-ends-with-parse:ae2e17d81343b352e5f8570697d79589&#34;&gt;Back Ends with Parse&lt;/h2&gt;
+&lt;h2 id=&#34;back-ends-with-parse:ae2e17d81343b352e5f8570697d79589&#34;&gt;Back ends with Parse&lt;/h2&gt;
 
-&lt;p&gt;Pomegranate Lab wanted to use the playbook for its Growth Mindset coaching sessions, so development needed to begin quickly. Due to the expedited nature of the project, I decided to use &lt;a href=&#34;https://www.parse.com/&#34;&gt;Parse&lt;/a&gt; to cut out a majority of the work in back end development. According to Parse&amp;rsquo;s documentation: &amp;ldquo;&lt;a href=&#34;https://www.parse.com/docs/js/guide#getting-started&#34;&gt;Our goal is to totally eliminate the need for writing server code or maintaining servers&lt;/a&gt;&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;Pomegranate Lab wanted to use the Playbook for its Growth Mindset coaching sessions, so development needed to begin quickly. Due to the expedited nature of the project, I decided to use &lt;a href=&#34;https://www.parse.com/&#34;&gt;Parse&lt;/a&gt; to cut out a majority of the work in back end development. According to Parse&amp;rsquo;s documentation: &amp;ldquo;&lt;a href=&#34;https://www.parse.com/docs/js/guide#getting-started&#34;&gt;Our goal is to totally eliminate the need for writing server code or maintaining servers&lt;/a&gt;&amp;rdquo;.&lt;/p&gt;
 
-&lt;p&gt;Database tables, user authentication/permissions, emails, and hosting are all set up using the Parse configuration console. In the rare case you do need to do something special for your back end, Parse has &amp;ldquo;Cloud Code&amp;rdquo; functions. Cloud Code is in reality just a node.js environment to run your code on Parse servers. Parse provides libraries for several platforms and/or languages that allow you to interact with your app&amp;rsquo;s &amp;ldquo;back end&amp;rdquo;. Parse also had support for React, which will come into play later.&lt;/p&gt;
+&lt;p&gt;Database tables, user authentication/permissions, emails, and hosting are all set up using the Parse configuration console. In the rare case you do need to do something special for your back end, Parse has &amp;ldquo;Cloud Code&amp;rdquo; functions. Cloud Code is, in reality, just a node.js environment to run your code on Parse servers. Parse provides libraries for several platforms and/or languages that allow you to interact with your app&amp;rsquo;s &amp;ldquo;back end&amp;rdquo;. Parse also had support for React, which will come into play later.&lt;/p&gt;
 
-&lt;p&gt;Setting up all tables(or classes as Parse calls them) and their relations was a snap. Add/dropping columns was only a few clicks which enabled me to quickly build and iterate on The Playbook&amp;rsquo;s various features. Data permissions are set by assigning users roles and then giving those roles &lt;a href=&#34;https://en.wikipedia.org/wiki/Create,_read,_update_and_delete&#34;&gt;CRUD&lt;/a&gt; permissions for different data classes.&lt;/p&gt;
+&lt;p&gt;Setting up all tables (or classes as Parse calls them) and their relations was a snap. Add/dropping columns only took a few clicks, which enabled me to quickly build and iterate on The Playbook&amp;rsquo;s various features. Data permissions are set by assigning user roles and then giving those roles &lt;a href=&#34;https://en.wikipedia.org/wiki/Create,_read,_update_and_delete&#34;&gt;CRUD&lt;/a&gt; permissions for different data classes.&lt;/p&gt;
 
 &lt;h2 id=&#34;using-react-for-an-easy-to-understand-ui:ae2e17d81343b352e5f8570697d79589&#34;&gt;Using React for an easy to understand UI&lt;/h2&gt;
 
-&lt;p&gt;To build the front end, I decided to use a library I had been hearing a lot about called &lt;a href=&#34;https://facebook.github.io/react/&#34;&gt;React&lt;/a&gt;. React is &amp;ldquo;&lt;a href=&#34;https://facebook.github.io/react/&#34;&gt;A JavaScript library for building user interfaces&lt;/a&gt;&amp;rdquo; created by Facebook. It encourages you to separate UI functionality into small pieces called &amp;lsquo;components&amp;rsquo;. Components take application state as parameters and returns what should be displayed. Since code is separated into units usually focused around a single functionality, components are very easy to test and are human readable. For example the code to display The Playbook&amp;rsquo;s collapsible menu is:&lt;/p&gt;
+&lt;p&gt;To build the front end, I decided to use a library I had been hearing a lot about called &lt;a href=&#34;https://facebook.github.io/react/&#34;&gt;React&lt;/a&gt;. React is &amp;ldquo;&lt;a href=&#34;https://facebook.github.io/react/&#34;&gt;A JavaScript library for building user interfaces&lt;/a&gt;&amp;rdquo; created by Facebook. It encourages you to separate UI functionality into small pieces called &amp;lsquo;components&amp;rsquo;. Components take application state as parameters and returns what should be displayed. Since code is separated into units usually focused around a single functionality, components are very easy to test and human readable. For example the code to display The Playbook&amp;rsquo;s collapsible menu is:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;&amp;lt;SlideMenu&amp;gt;
   &amp;lt;MenuItems&amp;gt;&amp;lt;/MenuItems&amp;gt;
@@ -153,27 +153,27 @@ for {
 
 &lt;p&gt;This kind of logical project structure and readability was something I dreamed about when working on other projects.&lt;/p&gt;
 
-&lt;h2 id=&#34;es6-bringing-javascript-development-to-the-21st-century:ae2e17d81343b352e5f8570697d79589&#34;&gt;ES6 bringing JavaScript development to the 21st Century&lt;/h2&gt;
+&lt;h2 id=&#34;es6-bringing-javascript-development-to-the-21st-century:ae2e17d81343b352e5f8570697d79589&#34;&gt;ES6 bringing JavaScript development to the 21st century&lt;/h2&gt;
 
-&lt;p&gt;Unfortunately most browsers don&amp;rsquo;t support the newest JavaScript functionality out of the box, and there are same &lt;a href=&#34;https://github.com/lukehoban/es6features&#34;&gt;great improvements&lt;/a&gt; coming in future versions of JavaScript.For example a simple function to add 5 to a number might look like this in the current version of JavaScript:&lt;/p&gt;
+&lt;p&gt;Unfortunately most browsers do not support the newest JavaScript functionality out of the box, and there are same &lt;a href=&#34;https://github.com/lukehoban/es6features&#34;&gt;great improvements&lt;/a&gt; coming in future versions of JavaScript. For example a simple function to add 5 to a number might look like this in the current version of JavaScript:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;function addFive(num) {
   return num + 5;
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;But with the newer versions of JavaScript it could be condensed down into mode readable code such as:&lt;/p&gt;
+&lt;p&gt;But with the newer versions of JavaScript, the code could be condensed down into something more readable like:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;let addFive = (num) =&amp;gt; num + 5;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;With this in mind, I decided to use the &lt;a href=&#34;https://babeljs.io/&#34;&gt;Babel&lt;/a&gt; transpiler to write the front end code The Playbook in ES6 JavaScript. Babel takes your ES6 JavaScript code and converts in into ES5(the current standard) JavaScript that browsers today expect. This let me use modern JavaScript features such as promises, lambdas, and classes in the development of The Playbook.&lt;/p&gt;
+&lt;p&gt;With this in mind, I decided to use the &lt;a href=&#34;https://babeljs.io/&#34;&gt;Babel&lt;/a&gt; transpiler to write the front end code in ES6 JavaScript. Babel takes your ES6 JavaScript code and converts it into ES5 (the current standard) JavaScript that browsers today expect. This let me use modern JavaScript features such as promises, lambdas, and classes in the development of The Playbook.&lt;/p&gt;
 
 &lt;h2 id=&#34;putting-it-all-together-with-webpack:ae2e17d81343b352e5f8570697d79589&#34;&gt;Putting it all together with webpack&lt;/h2&gt;
 
-&lt;p&gt;Building a single page webapp with JavaScript is a bit different that building a traditional webapp. You have lots of small(mostly js) files that cause pages to load slowly since it starts a new request for each file. Ideally you could combine files of similar types during your build process and make your webapp load much faster. This is where webpack comes in.&lt;/p&gt;
+&lt;p&gt;Building a single page webapp with JavaScript is a bit different that building a traditional webapp. You have lots of small (mostly js) files that cause pages to load slowly, since it starts a new request for each file. Ideally you could combine files of similar types during your build process and make your webapp load much faster. This is where webpack comes in.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://webpack.github.io/&#34;&gt;webpack&lt;/a&gt; is a module bundler that bundles all your webapp&amp;rsquo;s files and condenses them into static files for easy hosting. JavaScript is concatenated and minified(most whitespace and newlines are removed) into as single js file that is loaded by a main.html file. webpack also gives you the ability to install npm libraries as project dependencies and use them in your front end. It also plays well with font end only libraries, React and Parse in our case, trimming unused code and shrinking your overall project size.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://webpack.github.io/&#34;&gt;webpack&lt;/a&gt; is a module bundler that bundles all your webapp&amp;rsquo;s files and condenses them into static files for easy hosting. JavaScript is concatenated and minified (most whitespace and newlines are removed) into a single js file that is loaded by a main.html file. webpack also gives you the ability to install npm libraries as project dependencies and use them in your front end. It also plays well with font end only libraries, React and Parse in our case, trimming unused code and shrinking your overall project size.&lt;/p&gt;
 
 &lt;p&gt;Configuring webpack can be a bit of a challenge the first time, but once set up the build process for The Playbook was very simple:&lt;/p&gt;
 
@@ -183,7 +183,7 @@ for {
 &lt;li&gt;You&amp;rsquo;re done!&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://playbook.parseapp.com&#34;&gt;The Playbook&lt;/a&gt; is still in use, however it is in closed beta for teachers.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://playbook.parseapp.com&#34;&gt;The Playbook&lt;/a&gt; is still in use, however, it is in closed beta for teachers.&lt;/p&gt;
 </description>
     </item>
     

@@ -101,31 +101,32 @@
 
 <h2 id="teacher-centric-lesson-planning:ab757769ebbb53ad30e94bbeb44946bb">Teacher-centric lesson planning</h2>
 
-<p>Common Ground, a companion webapp to <a href="/projects/inscribe/">Inscribe</a>, enabled teachers with Inscribe accounts to create lesson plans for their current  courses. Teachers could also export their lesson plans and collaborate with other teachers on shared lesson plans. Common Ground had the following requirements:</p>
+<p>Common Ground, a companion webapp to <a href="/projects/inscribe/">Inscribe</a>, enabled teachers with Inscribe accounts to create lesson plans for their current courses. Teachers could also export lesson plans and collaborate with other teachers on shared lesson plans. Common Ground had the following requirements:</p>
 
 <ul>
-<li>Share login and user data with <a href="/projects/inscribe/">Inscribe</a></li>
-<li>Teachers can create lesson plans for Inscribe courses</li>
-<li>Lesson plans will show up on a calendar and are easily exportable to a variety of formats</li>
-<li>Lesson plans can be shared and edited by multiple teachers</li>
+<li>share login and user data with <a href="/projects/inscribe/">Inscribe</a></li>
+<li>allow teachers to create lesson plans for Inscribe courses</li>
+<li>populate lesson plans on a calendar</li>
+<li>ability to easily export lesson plans to a variety of formats</li>
+<li>enable sharing of lesson plans and editing by multiple teachers</li>
 </ul>
 
 <h2 id="talking-to-inscribe:ab757769ebbb53ad30e94bbeb44946bb">Talking to Inscribe</h2>
 
-<p>Although the back end for Common Ground was written in a different language than Inscribe(<a href="http://golang.org/">Go</a> and <a href="https://www.python.org/">Python</a> respectively) it was pretty easy to communicate over HTTPS between the two. When a user would login to Common Ground, the following process took place:</p>
+<p>Although the back end for Common Ground was written in a different language than Inscribe (<a href="http://golang.org/">Go</a> and <a href="https://www.python.org/">Python</a>, respectively) it was pretty easy to communicate over HTTPS between the two. When a user would login to Common Ground, the following process took place:</p>
 
 <ul>
-<li>Login request sent to Common Ground</li>
-<li>Common Ground forwards the login request to Inscribe over HTTPS</li>
-<li>Inscribe checks the user&rsquo;s credentials and returns a <a href="https://self-issued.info/docs/draft-ietf-oauth-json-web-token.html">JSON Web Token</a>(JWT)</li>
-<li>Common Ground sends the JWT back to the user to be stored client side</li>
+<li>login request sent to Common Ground</li>
+<li>Common Ground forwarded the login request to Inscribe over HTTPS</li>
+<li>Inscribe checked the user&rsquo;s credentials and returned a <a href="https://self-issued.info/docs/draft-ietf-oauth-json-web-token.html">JSON Web Token</a>(JWT)</li>
+<li>Common Ground sent the JWT back to the user to be stored client side</li>
 </ul>
 
-<p>Common Ground and Inscribe shared the same JWT secret key, which is used to determine the validity of JWT claims. Sharing the JWT secret key between the two back ends made it so Common Ground could validate claims for Inscribe JWTs instead of checking with the Inscribe back end every time the user tried to do something.</p>
+<p>Common Ground and Inscribe shared the same JWT secret key, which is used to determine the validity of JWT claims. Sharing the JWT secret key between the two back ends made it so Common Ground could validate claims for Inscribe JWTs, instead of checking with the Inscribe back end every time the user tried to do something.</p>
 
 <h2 id="front-end-lessons-from-inscribe:ab757769ebbb53ad30e94bbeb44946bb">Front end lessons from Inscribe</h2>
 
-<p>After the <a href="/projects/inscribe/#figuring-out-the-front-end:0eab5b6ef5fc6b3a1fc2a55d8d118484">lessons I learned from Inscribe</a>, I immediately chose to use AngularJS for Common Ground&rsquo;s front end. Using the same front end framework across both Inscribe and Common Ground had the added benefit of allowing me to reuse code across the two projects. Being able to use the same code was a boost in Common Ground up and running quickly.</p>
+<p>After the <a href="/projects/inscribe/#figuring-out-the-front-end:0eab5b6ef5fc6b3a1fc2a55d8d118484">lessons I learned from Inscribe</a>, I immediately chose to use AngularJS for Common Ground&rsquo;s front end. Using the same front end framework across both Inscribe and Common Ground had the added benefit of allowing me to reuse code across the two projects. This enabled the team to quickly get Common Ground up and running.</p>
 
 <h2 id="iterate-early-iterate-often:ab757769ebbb53ad30e94bbeb44946bb">Iterate early, iterate often</h2>
 
