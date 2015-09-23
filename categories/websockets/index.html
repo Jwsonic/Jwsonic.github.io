@@ -26,11 +26,11 @@
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-min.css">
     <!--<![endif]-->
 
-    <link rel="stylesheet" href="http://localhost:1313//css/all.min.css">
-    <link rel="stylesheet" href="http://localhost:1313//css/main.css">
+    <link rel="stylesheet" href="http://jwsonic.github.io//css/all.min.css">
+    <link rel="stylesheet" href="http://jwsonic.github.io//css/main.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
-    <link rel="alternate" type="application/rss+xml" title="John Palgut" href="http://localhost:1313//index.xml" />
+    <link rel="alternate" type="application/rss+xml" title="John Palgut" href="http://jwsonic.github.io//index.xml" />
 </head>
 <body>
 
@@ -39,7 +39,7 @@
     <div class="sidebar pure-u-1 pure-u-md-1-4">
     <div class="header">
         <hgroup>
-            <h1 class="brand-title"><a href="http://localhost:1313/">John Palgut</a></h1>
+            <h1 class="brand-title"><a href="http://jwsonic.github.io/">John Palgut</a></h1>
             <h2 class="brand-tagline"> Coder. Gamer. Husband. </h2>
         </hgroup>
 
@@ -85,14 +85,14 @@
                 <section class="post">
                     <header class="post-header">
 
-                        <a href="http://localhost:1313/projects/filegrabber/" class="post-title">File Grabber</a>
+                        <a href="http://jwsonic.github.io/projects/filegrabber/" class="post-title">File Grabber</a>
 
                         <p class="post-meta">
                             
                             
                                 under
                                 
-                                <a class="post-category post-category-HTML" href="http://localhost:1313//categories/html">HTML</a><a class="post-category post-category-Go" href="http://localhost:1313//categories/go">Go</a><a class="post-category post-category-React" href="http://localhost:1313//categories/react">React</a><a class="post-category post-category-Bootstrap" href="http://localhost:1313//categories/bootstrap">Bootstrap</a><a class="post-category post-category-websockets" href="http://localhost:1313//categories/websockets">websockets</a>
+                                <a class="post-category post-category-HTML" href="http://jwsonic.github.io//categories/html">HTML</a><a class="post-category post-category-Go" href="http://jwsonic.github.io//categories/go">Go</a><a class="post-category post-category-React" href="http://jwsonic.github.io//categories/react">React</a><a class="post-category post-category-Bootstrap" href="http://jwsonic.github.io//categories/bootstrap">Bootstrap</a><a class="post-category post-category-websockets" href="http://jwsonic.github.io//categories/websockets">websockets</a>
                             
                         </p>
                     </header>
@@ -100,20 +100,20 @@
                     <div class="post-description">
                         
 
-<h2 id="the-why:5d4b5b538fe8b07ed03522cce78aaef9">The Why</h2>
+<h2 id="the-why:5d4b5b538fe8b07ed03522cce78aaef9">The why</h2>
 
-<p>My wife, Jesyka, and I have a small server in our apartment that we back up photos and documents to. The server runs Ubuntu and its pretty easy to access our files through FTP or SSH. However, sometimes we like to download photos or files to our phones and most Android FTP clients are cumbersome or lacking features. After looking around I found <a href="https://github.com/itang/gohttp">gohttp</a> which is very close to what I wanted. I took this as an opportunity to build a webapp similar to gohttp that would fit our exact needs and let me learn some new tricks along the way.</p>
+<p>There is a small server in our apartment that my wife and I use to back-up photos and documents. The server runs Ubuntu and it&rsquo;s pretty easy to access our files through FTP or SSH. However, sometimes we like to download photos or files to our mobile devices and most Android FTP clients are cumbersome or lacking features. After a bit of research, I found <a href="https://github.com/itang/gohttp">gohttp</a>, which is very close to what we wanted, but not quite. I took this as an opportunity to build a webapp similar to gohttp that would fit our exact needs and allow me to learn some new tricks along the way.</p>
 
 <h2 id="requirements:5d4b5b538fe8b07ed03522cce78aaef9">Requirements</h2>
 
 <p>The initial requirements for File Grabber were:</p>
 
 <ul>
-<li>Ability to view, download, and delete files and folders.</li>
-<li>Real time updates(ie if a file is deleted on the server, it is immediately removed from the browser)</li>
-<li>Single binary installation like gohttp</li>
-<li>Has to run on Ubuntu</li>
-<li>Be fully <a href="https://en.wikipedia.org/wiki/Responsive_web_design">responsive</a></li>
+<li>ability to view, download, and delete files and folders</li>
+<li>real-time updates (i.e. if a file is deleted on the server, it is immediately removed from the browser)</li>
+<li>single binary installation like gohttp</li>
+<li>has to run on Ubuntu</li>
+<li>be fully <a href="https://en.wikipedia.org/wiki/Responsive_web_design">responsive</a></li>
 </ul>
 
 <!--
@@ -123,7 +123,7 @@ Jes designed stuff. Show design mocks here. -->
 
 <h2 id="front-end-with-react-and-redux:5d4b5b538fe8b07ed03522cce78aaef9">Front end with React and Redux</h2>
 
-<p>After using <a href="https://facebook.github.io/react/">React</a> to build <a href="/projects/playbook/#using-react-for-an-easy-to-understand-ui:ae2e17d81343b352e5f8570697d79589">The Playbook</a> it has quickly become my favorite way to build webapp front ends. One thing React is not designed for is managing your application state. Facebook(the creator of React) recommends using the <a href="https://facebook.github.io/flux/">Flux</a> architecture for React apps. When I did more research on Flux, I found out that there are <a href="https://github.com/voronianski/flux-comparison">many flux implementations</a> to choose from. Eventually I decided to use a method similar to Flux called <a href="http://rackt.github.io/redux/">Redux</a>. Redux in its own words is &ldquo;<a href="http://rackt.github.io/redux/">&hellip;a predictable state container for JavaScript apps.</a>&rdquo;.</p>
+<p>After using <a href="https://facebook.github.io/react/">React</a> to build <a href="/projects/playbook/#using-react-for-an-easy-to-understand-ui:ae2e17d81343b352e5f8570697d79589">The Playbook</a> it has quickly become my favorite way to build webapp front ends. One thing React is not designed for is managing your application state. Facebook (the creator of React) recommends using the <a href="https://facebook.github.io/flux/">Flux</a> architecture for React apps. When I did more research on Flux, I found out that there are <a href="https://github.com/voronianski/flux-comparison">many flux implementations</a> to choose from. Eventually I decided to use a method similar to Flux called <a href="http://rackt.github.io/redux/">Redux</a>. Redux, in its own words, is &ldquo;<a href="http://rackt.github.io/redux/">&hellip;a predictable state container for JavaScript apps.</a>&rdquo;.</p>
 
 <p>The core idea behind Redux is that your application state is stored as a read only data structure. Updates to application state are done via <a href="https://en.wikipedia.org/wiki/Pure_function">pure functions</a> called reducers. Reducers take a state and an action as parameters and return an updated application state:</p>
 
@@ -156,13 +156,13 @@ Jes designed stuff. Show design mocks here. -->
 
 <h2 id="javascript-talking-to-go:5d4b5b538fe8b07ed03522cce78aaef9">JavaScript talking to Go</h2>
 
-<p>In order to get updates in real time, File Grabber uses <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API">WebSockets</a> to send messages between the front end in the browser and the back end on the server. When File Grabber is first loaded into the browser it attempts to connect to the File Grabber websocket server. Once a connection has been established between the front and back ends the message passing can begin. The back end will send CREATE/UPDATE/DELETE messages whenever changes are made to the watched folder. The front end will send DELTE/FILES messages to the server as the user interacts with the files in the UI.</p>
+<p>In order to get updates in real-time, File Grabber uses <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API">WebSockets</a> to send messages between the front end in the browser and the back end on the server. When File Grabber is first loaded into the browser it attempts to connect to the File Grabber websocket server. Once a connection has been established between the front and back ends the message passing can begin. The back end will send CREATE/UPDATE/DELETE messages whenever changes are made to the watched folder. The front end will send DELETE/FILES messages to the server as the user interacts with the files in the UI.</p>
 
 <h2 id="careful-inotify-is-watching-you:5d4b5b538fe8b07ed03522cce78aaef9">Careful, inotify is watching you</h2>
 
-<p>Since only linux is currently supported for the File Grabber back end, we use <a href="https://en.wikipedia.org/wiki/Inotify">inotify</a> to watch the file system for changes. The Go standard library contains <a href="https://godoc.org/golang.org/x/exp/inotify">wrapper for inotify</a>, but out of the box it doesn&rsquo;t watch folders recursively. Since the server is not aware of each browser&rsquo;s current path it needs to watch for changes at every level of the watched file tree.</p>
+<p>Since only linux is currently supported for the File Grabber back end, we use <a href="https://en.wikipedia.org/wiki/Inotify">inotify</a> to watch the file system for changes. The Go standard library contains a <a href="https://godoc.org/golang.org/x/exp/inotify">wrapper for inotify</a>, but out of the box it doesn&rsquo;t watch folders recursively. Since the server is not aware of each browser&rsquo;s current path it needs to watch for changes at every level of the watched file tree.</p>
 
-<p>To solve this problem I wrote my own wrapper of the Go inotify called RecursiveWatcher. RecursiveWatcher also simplifies inotify&rsquo;s events down to simply Create, Modify, and Delete. Watching for file events on a RecursiveWatcher uses a Go channel just like the normal inotify wrapper. Watching the current directory could look something like:</p>
+<p>To solve this problem I wrote my own wrapper of the Go inotify called RecursiveWatcher. RecursiveWatcher also simplifies inotify&rsquo;s events down to just Create, Modify, and Delete. Watching for file events on a RecursiveWatcher uses a Go channel just like the normal inotify wrapper. For instance, watching the current directory could look something like:</p>
 
 <pre><code>rWatcher, _ := watcher.NewRecursiveWatcher(&quot;.&quot;)
 events := rWatcher.Watch()
@@ -202,7 +202,7 @@ for {
         </ul>
     </div>
 </div>
-<script src="http://localhost:1313//js/all.min.js"></script>
+<script src="http://jwsonic.github.io//js/all.min.js"></script>
         </div>
     </div>
 </div>
@@ -218,8 +218,5 @@ ga('send', 'pageview');
 
 </script>
 
-<script data-no-instant>document.write('<script src="http://'
-        + (location.host || 'localhost').split(':')[0]
-		+ ':1313/livereload.js?mindelay=10"></'
-        + 'script>')</script></body>
+</body>
 </html>
