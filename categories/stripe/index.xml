@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Stripe on John Palgut</title>
-    <link>http://localhost:1313/categories/stripe/</link>
+    <link>http://jwsonic.github.io/categories/stripe/</link>
     <description>Recent content in Stripe on John Palgut</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 18 Dec 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/stripe/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://jwsonic.github.io/categories/stripe/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Marie Antoinette&#39;s Gluten-Free Bake Shoppe</title>
-      <link>http://localhost:1313/projects/maries/</link>
+      <link>http://jwsonic.github.io/projects/maries/</link>
       <pubDate>Thu, 18 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/projects/maries/</guid>
+      <guid>http://jwsonic.github.io/projects/maries/</guid>
       <description>
 
 &lt;h2 id=&#34;from-restaurant-to-manufacturer:0f908a3ed3ef8d9a531516dfad512d4d&#34;&gt;From restaurant to manufacturer&lt;/h2&gt;
@@ -72,18 +72,18 @@
     
     <item>
       <title>Common Ground</title>
-      <link>http://localhost:1313/projects/commonground/</link>
+      <link>http://jwsonic.github.io/projects/commonground/</link>
       <pubDate>Fri, 25 Jul 2014 14:47:09 -0500</pubDate>
       
-      <guid>http://localhost:1313/projects/commonground/</guid>
+      <guid>http://jwsonic.github.io/projects/commonground/</guid>
       <description>
 
 &lt;h2 id=&#34;teacher-centric-lesson-planning:ab757769ebbb53ad30e94bbeb44946bb&#34;&gt;Teacher-centric lesson planning&lt;/h2&gt;
 
-&lt;p&gt;Common Ground, a companion webapp to &lt;a href=&#34;http://localhost:1313/projects/inscribe/&#34;&gt;Inscribe&lt;/a&gt;, enabled teachers with Inscribe accounts to create lesson plans for their current courses. Teachers could also export lesson plans and collaborate with other teachers on shared lesson plans. Common Ground had the following requirements:&lt;/p&gt;
+&lt;p&gt;Common Ground, a companion webapp to &lt;a href=&#34;http://jwsonic.github.io/projects/inscribe/&#34;&gt;Inscribe&lt;/a&gt;, enabled teachers with Inscribe accounts to create lesson plans for their current courses. Teachers could also export lesson plans and collaborate with other teachers on shared lesson plans. Common Ground had the following requirements:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;share login and user data with &lt;a href=&#34;http://localhost:1313/projects/inscribe/&#34;&gt;Inscribe&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;share login and user data with &lt;a href=&#34;http://jwsonic.github.io/projects/inscribe/&#34;&gt;Inscribe&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;allow teachers to create lesson plans for Inscribe courses&lt;/li&gt;
 &lt;li&gt;populate lesson plans on a calendar&lt;/li&gt;
 &lt;li&gt;ability to easily export lesson plans to a variety of formats&lt;/li&gt;
@@ -105,24 +105,24 @@
 
 &lt;h2 id=&#34;front-end-lessons-from-inscribe:ab757769ebbb53ad30e94bbeb44946bb&#34;&gt;Front end lessons from Inscribe&lt;/h2&gt;
 
-&lt;p&gt;After the &lt;a href=&#34;http://localhost:1313/projects/inscribe/#figuring-out-the-front-end:0eab5b6ef5fc6b3a1fc2a55d8d118484&#34;&gt;lessons I learned from Inscribe&lt;/a&gt;, I immediately chose to use AngularJS for Common Ground&amp;rsquo;s front end. Using the same front end framework across both Inscribe and Common Ground had the added benefit of allowing me to reuse code across the two projects. This enabled the team to quickly get Common Ground up and running.&lt;/p&gt;
+&lt;p&gt;After the &lt;a href=&#34;http://jwsonic.github.io/projects/inscribe/#figuring-out-the-front-end:0eab5b6ef5fc6b3a1fc2a55d8d118484&#34;&gt;lessons I learned from Inscribe&lt;/a&gt;, I immediately chose to use AngularJS for Common Ground&amp;rsquo;s front end. Using the same front end framework across both Inscribe and Common Ground had the added benefit of allowing me to reuse code across the two projects. This enabled the team to quickly get Common Ground up and running.&lt;/p&gt;
 
 &lt;h2 id=&#34;iterate-early-iterate-often:ab757769ebbb53ad30e94bbeb44946bb&#34;&gt;Iterate early, iterate often&lt;/h2&gt;
 
-&lt;p&gt;Today Common Ground is no longer in use. After extensive user testing, Pomegranate Lab determined that a different approach was needed to help teachers better connect with their students. This project later iterated into &lt;a href=&#34;http://localhost:1313/projects/playbook/&#34;&gt;The Playbook&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Today Common Ground is no longer in use. After extensive user testing, Pomegranate Lab determined that a different approach was needed to help teachers better connect with their students. This project later iterated into &lt;a href=&#34;http://jwsonic.github.io/projects/playbook/&#34;&gt;The Playbook&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;When it was around, Common Ground looked like this:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/cg-combined.png&#34; alt=&#34;Inscribe Img&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://jwsonic.github.io/img/cg-combined.png&#34; alt=&#34;Inscribe Img&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Inscribe</title>
-      <link>http://localhost:1313/projects/inscribe/</link>
+      <link>http://jwsonic.github.io/projects/inscribe/</link>
       <pubDate>Thu, 10 Oct 2013 14:47:09 -0500</pubDate>
       
-      <guid>http://localhost:1313/projects/inscribe/</guid>
+      <guid>http://jwsonic.github.io/projects/inscribe/</guid>
       <description>
 
 &lt;h2 id=&#34;assignments-with-a-growth-mindset:0eab5b6ef5fc6b3a1fc2a55d8d118484&#34;&gt;Assignments with a Growth Mindset&lt;/h2&gt;
@@ -174,11 +174,11 @@
 
 &lt;h2 id=&#34;iterate-early-iterate-often:0eab5b6ef5fc6b3a1fc2a55d8d118484&#34;&gt;Iterate early, iterate often&lt;/h2&gt;
 
-&lt;p&gt;Today Inscribe is no longer in use. After extensive user testing, Pomegranate Lab determined that a different approach was needed to help teachers better connect with their students. This project later iterated into &lt;a href=&#34;http://localhost:1313/projects/playbook/&#34;&gt;The Playbook&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Today Inscribe is no longer in use. After extensive user testing, Pomegranate Lab determined that a different approach was needed to help teachers better connect with their students. This project later iterated into &lt;a href=&#34;http://jwsonic.github.io/projects/playbook/&#34;&gt;The Playbook&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;When it was around, Inscribe looked like this:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/inscribe-combined.png&#34; alt=&#34;Inscribe Img&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://jwsonic.github.io/img/inscribe-combined.png&#34; alt=&#34;Inscribe Img&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     

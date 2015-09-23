@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Node.Js on John Palgut</title>
-    <link>http://localhost:1313/categories/node/index.js/</link>
+    <link>http://jwsonic.github.io/categories/node/index.js/</link>
     <description>Recent content in Node.Js on John Palgut</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 07 Jul 2015 14:47:09 -0500</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/node.js/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://jwsonic.github.io/categories/node.js/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>The Playbook</title>
-      <link>http://localhost:1313/projects/playbook/</link>
+      <link>http://jwsonic.github.io/projects/playbook/</link>
       <pubDate>Tue, 07 Jul 2015 14:47:09 -0500</pubDate>
       
-      <guid>http://localhost:1313/projects/playbook/</guid>
+      <guid>http://jwsonic.github.io/projects/playbook/</guid>
       <description>
 
 &lt;h2 id=&#34;a-practical-guide-to-the-growth-mindset:ae2e17d81343b352e5f8570697d79589&#34;&gt;A practical guide to the growth mindset&lt;/h2&gt;
@@ -50,7 +50,7 @@
 
 &lt;p&gt;Which renders as the following:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/menu-demo.gif&#34; alt=&#34;Menu Image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://jwsonic.github.io/img/menu-demo.gif&#34; alt=&#34;Menu Image&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;This kind of logical project structure and readability was something I dreamed about when working on other projects.&lt;/p&gt;
 
