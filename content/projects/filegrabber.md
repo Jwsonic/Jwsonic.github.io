@@ -20,10 +20,10 @@ The initial requirements for File Grabber were:
 * Has to run on Ubuntu
 * Be fully [responsive](https://en.wikipedia.org/wiki/Responsive_web_design)
 
+<!--
 ## Behind every good developer is a designer
 
-Jes designed stuff. Show design mocks here.
-
+Jes designed stuff. Show design mocks here. -->
 
 ## Front end with React and Redux
 

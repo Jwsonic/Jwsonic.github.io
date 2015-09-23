@@ -33,9 +33,10 @@
 &lt;li&gt;Be fully &lt;a href=&#34;https://en.wikipedia.org/wiki/Responsive_web_design&#34;&gt;responsive&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;behind-every-good-developer-is-a-designer:5d4b5b538fe8b07ed03522cce78aaef9&#34;&gt;Behind every good developer is a designer&lt;/h2&gt;
+&lt;!--
+## Behind every good developer is a designer
 
-&lt;p&gt;Jes designed stuff. Show design mocks here.&lt;/p&gt;
+Jes designed stuff. Show design mocks here. --&gt;
 
 &lt;h2 id=&#34;front-end-with-react-and-redux:5d4b5b538fe8b07ed03522cce78aaef9&#34;&gt;Front end with React and Redux&lt;/h2&gt;
 
