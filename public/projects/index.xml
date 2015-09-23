@@ -2,35 +2,35 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects on John Palgut</title>
-    <link>http://localhost:1313/projects/</link>
+    <link>http://jwsonic.github.io/projects/</link>
     <description>Recent content in Projects on John Palgut</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 01 Sep 2015 14:47:09 -0500</lastBuildDate>
-    <atom:link href="http://localhost:1313/projects/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://jwsonic.github.io/projects/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>File Grabber</title>
-      <link>http://localhost:1313/projects/filegrabber/</link>
+      <link>http://jwsonic.github.io/projects/filegrabber/</link>
       <pubDate>Tue, 01 Sep 2015 14:47:09 -0500</pubDate>
       
-      <guid>http://localhost:1313/projects/filegrabber/</guid>
+      <guid>http://jwsonic.github.io/projects/filegrabber/</guid>
       <description>
 
-&lt;h2 id=&#34;the-why:5d4b5b538fe8b07ed03522cce78aaef9&#34;&gt;The Why&lt;/h2&gt;
+&lt;h2 id=&#34;the-why:5d4b5b538fe8b07ed03522cce78aaef9&#34;&gt;The why&lt;/h2&gt;
 
-&lt;p&gt;My wife, Jesyka, and I have a small server in our apartment that we back up photos and documents to. The server runs Ubuntu and its pretty easy to access our files through FTP or SSH. However, sometimes we like to download photos or files to our phones and most Android FTP clients are cumbersome or lacking features. After looking around I found &lt;a href=&#34;https://github.com/itang/gohttp&#34;&gt;gohttp&lt;/a&gt; which is very close to what I wanted. I took this as an opportunity to build a webapp similar to gohttp that would fit our exact needs and let me learn some new tricks along the way.&lt;/p&gt;
+&lt;p&gt;There is a small server in our apartment that my wife and I use to back-up photos and documents. The server runs Ubuntu and it&amp;rsquo;s pretty easy to access our files through FTP or SSH. However, sometimes we like to download photos or files to our mobile devices and most Android FTP clients are cumbersome or lacking features. After a bit of research, I found &lt;a href=&#34;https://github.com/itang/gohttp&#34;&gt;gohttp&lt;/a&gt;, which is very close to what we wanted, but not quite. I took this as an opportunity to build a webapp similar to gohttp that would fit our exact needs and allow me to learn some new tricks along the way.&lt;/p&gt;
 
 &lt;h2 id=&#34;requirements:5d4b5b538fe8b07ed03522cce78aaef9&#34;&gt;Requirements&lt;/h2&gt;
 
 &lt;p&gt;The initial requirements for File Grabber were:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Ability to view, download, and delete files and folders.&lt;/li&gt;
-&lt;li&gt;Real time updates(ie if a file is deleted on the server, it is immediately removed from the browser)&lt;/li&gt;
-&lt;li&gt;Single binary installation like gohttp&lt;/li&gt;
-&lt;li&gt;Has to run on Ubuntu&lt;/li&gt;
-&lt;li&gt;Be fully &lt;a href=&#34;https://en.wikipedia.org/wiki/Responsive_web_design&#34;&gt;responsive&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;ability to view, download, and delete files and folders&lt;/li&gt;
+&lt;li&gt;real-time updates (i.e. if a file is deleted on the server, it is immediately removed from the browser)&lt;/li&gt;
+&lt;li&gt;single binary installation like gohttp&lt;/li&gt;
+&lt;li&gt;has to run on Ubuntu&lt;/li&gt;
+&lt;li&gt;be fully &lt;a href=&#34;https://en.wikipedia.org/wiki/Responsive_web_design&#34;&gt;responsive&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;!--
@@ -40,7 +40,7 @@ Jes designed stuff. Show design mocks here. --&gt;
 
 &lt;h2 id=&#34;front-end-with-react-and-redux:5d4b5b538fe8b07ed03522cce78aaef9&#34;&gt;Front end with React and Redux&lt;/h2&gt;
 
-&lt;p&gt;After using &lt;a href=&#34;https://facebook.github.io/react/&#34;&gt;React&lt;/a&gt; to build &lt;a href=&#34;http://localhost:1313/projects/playbook/#using-react-for-an-easy-to-understand-ui:ae2e17d81343b352e5f8570697d79589&#34;&gt;The Playbook&lt;/a&gt; it has quickly become my favorite way to build webapp front ends. One thing React is not designed for is managing your application state. Facebook(the creator of React) recommends using the &lt;a href=&#34;https://facebook.github.io/flux/&#34;&gt;Flux&lt;/a&gt; architecture for React apps. When I did more research on Flux, I found out that there are &lt;a href=&#34;https://github.com/voronianski/flux-comparison&#34;&gt;many flux implementations&lt;/a&gt; to choose from. Eventually I decided to use a method similar to Flux called &lt;a href=&#34;http://rackt.github.io/redux/&#34;&gt;Redux&lt;/a&gt;. Redux in its own words is &amp;ldquo;&lt;a href=&#34;http://rackt.github.io/redux/&#34;&gt;&amp;hellip;a predictable state container for JavaScript apps.&lt;/a&gt;&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;After using &lt;a href=&#34;https://facebook.github.io/react/&#34;&gt;React&lt;/a&gt; to build &lt;a href=&#34;http://jwsonic.github.io/projects/playbook/#using-react-for-an-easy-to-understand-ui:ae2e17d81343b352e5f8570697d79589&#34;&gt;The Playbook&lt;/a&gt; it has quickly become my favorite way to build webapp front ends. One thing React is not designed for is managing your application state. Facebook (the creator of React) recommends using the &lt;a href=&#34;https://facebook.github.io/flux/&#34;&gt;Flux&lt;/a&gt; architecture for React apps. When I did more research on Flux, I found out that there are &lt;a href=&#34;https://github.com/voronianski/flux-comparison&#34;&gt;many flux implementations&lt;/a&gt; to choose from. Eventually I decided to use a method similar to Flux called &lt;a href=&#34;http://rackt.github.io/redux/&#34;&gt;Redux&lt;/a&gt;. Redux, in its own words, is &amp;ldquo;&lt;a href=&#34;http://rackt.github.io/redux/&#34;&gt;&amp;hellip;a predictable state container for JavaScript apps.&lt;/a&gt;&amp;rdquo;.&lt;/p&gt;
 
 &lt;p&gt;The core idea behind Redux is that your application state is stored as a read only data structure. Updates to application state are done via &lt;a href=&#34;https://en.wikipedia.org/wiki/Pure_function&#34;&gt;pure functions&lt;/a&gt; called reducers. Reducers take a state and an action as parameters and return an updated application state:&lt;/p&gt;
 
@@ -73,13 +73,13 @@ Jes designed stuff. Show design mocks here. --&gt;
 
 &lt;h2 id=&#34;javascript-talking-to-go:5d4b5b538fe8b07ed03522cce78aaef9&#34;&gt;JavaScript talking to Go&lt;/h2&gt;
 
-&lt;p&gt;In order to get updates in real time, File Grabber uses &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API&#34;&gt;WebSockets&lt;/a&gt; to send messages between the front end in the browser and the back end on the server. When File Grabber is first loaded into the browser it attempts to connect to the File Grabber websocket server. Once a connection has been established between the front and back ends the message passing can begin. The back end will send CREATE/UPDATE/DELETE messages whenever changes are made to the watched folder. The front end will send DELTE/FILES messages to the server as the user interacts with the files in the UI.&lt;/p&gt;
+&lt;p&gt;In order to get updates in real-time, File Grabber uses &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API&#34;&gt;WebSockets&lt;/a&gt; to send messages between the front end in the browser and the back end on the server. When File Grabber is first loaded into the browser it attempts to connect to the File Grabber websocket server. Once a connection has been established between the front and back ends the message passing can begin. The back end will send CREATE/UPDATE/DELETE messages whenever changes are made to the watched folder. The front end will send DELETE/FILES messages to the server as the user interacts with the files in the UI.&lt;/p&gt;
 
 &lt;h2 id=&#34;careful-inotify-is-watching-you:5d4b5b538fe8b07ed03522cce78aaef9&#34;&gt;Careful, inotify is watching you&lt;/h2&gt;
 
-&lt;p&gt;Since only linux is currently supported for the File Grabber back end, we use &lt;a href=&#34;https://en.wikipedia.org/wiki/Inotify&#34;&gt;inotify&lt;/a&gt; to watch the file system for changes. The Go standard library contains &lt;a href=&#34;https://godoc.org/golang.org/x/exp/inotify&#34;&gt;wrapper for inotify&lt;/a&gt;, but out of the box it doesn&amp;rsquo;t watch folders recursively. Since the server is not aware of each browser&amp;rsquo;s current path it needs to watch for changes at every level of the watched file tree.&lt;/p&gt;
+&lt;p&gt;Since only linux is currently supported for the File Grabber back end, we use &lt;a href=&#34;https://en.wikipedia.org/wiki/Inotify&#34;&gt;inotify&lt;/a&gt; to watch the file system for changes. The Go standard library contains a &lt;a href=&#34;https://godoc.org/golang.org/x/exp/inotify&#34;&gt;wrapper for inotify&lt;/a&gt;, but out of the box it doesn&amp;rsquo;t watch folders recursively. Since the server is not aware of each browser&amp;rsquo;s current path it needs to watch for changes at every level of the watched file tree.&lt;/p&gt;
 
-&lt;p&gt;To solve this problem I wrote my own wrapper of the Go inotify called RecursiveWatcher. RecursiveWatcher also simplifies inotify&amp;rsquo;s events down to simply Create, Modify, and Delete. Watching for file events on a RecursiveWatcher uses a Go channel just like the normal inotify wrapper. Watching the current directory could look something like:&lt;/p&gt;
+&lt;p&gt;To solve this problem I wrote my own wrapper of the Go inotify called RecursiveWatcher. RecursiveWatcher also simplifies inotify&amp;rsquo;s events down to just Create, Modify, and Delete. Watching for file events on a RecursiveWatcher uses a Go channel just like the normal inotify wrapper. For instance, watching the current directory could look something like:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;rWatcher, _ := watcher.NewRecursiveWatcher(&amp;quot;.&amp;quot;)
 events := rWatcher.Watch()
@@ -110,10 +110,10 @@ for {
     
     <item>
       <title>The Playbook</title>
-      <link>http://localhost:1313/projects/playbook/</link>
+      <link>http://jwsonic.github.io/projects/playbook/</link>
       <pubDate>Tue, 07 Jul 2015 14:47:09 -0500</pubDate>
       
-      <guid>http://localhost:1313/projects/playbook/</guid>
+      <guid>http://jwsonic.github.io/projects/playbook/</guid>
       <description>
 
 &lt;h2 id=&#34;a-practical-guide-to-the-growth-mindset:ae2e17d81343b352e5f8570697d79589&#34;&gt;A practical guide to the growth mindset&lt;/h2&gt;
@@ -149,7 +149,7 @@ for {
 
 &lt;p&gt;Which renders as the following:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/menu-demo.gif&#34; alt=&#34;Menu Image&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://jwsonic.github.io/img/menu-demo.gif&#34; alt=&#34;Menu Image&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;This kind of logical project structure and readability was something I dreamed about when working on other projects.&lt;/p&gt;
 
@@ -189,10 +189,10 @@ for {
     
     <item>
       <title>Austin Google Fiber</title>
-      <link>http://localhost:1313/projects/fiber/</link>
+      <link>http://jwsonic.github.io/projects/fiber/</link>
       <pubDate>Thu, 01 Jan 2015 14:47:09 -0500</pubDate>
       
-      <guid>http://localhost:1313/projects/fiber/</guid>
+      <guid>http://jwsonic.github.io/projects/fiber/</guid>
       <description>
 
 &lt;h2 id=&#34;the-fiber-dream:c60e498790513456114e62949061e65e&#34;&gt;The Fiber dream&lt;/h2&gt;
@@ -227,10 +227,10 @@ for {
     
     <item>
       <title>Marie Antoinette&#39;s Gluten-Free Bake Shoppe</title>
-      <link>http://localhost:1313/projects/maries/</link>
+      <link>http://jwsonic.github.io/projects/maries/</link>
       <pubDate>Thu, 18 Dec 2014 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/projects/maries/</guid>
+      <guid>http://jwsonic.github.io/projects/maries/</guid>
       <description>
 
 &lt;h2 id=&#34;from-restaurant-to-manufacturer:0f908a3ed3ef8d9a531516dfad512d4d&#34;&gt;From restaurant to manufacturer&lt;/h2&gt;
@@ -288,18 +288,18 @@ for {
     
     <item>
       <title>Common Ground</title>
-      <link>http://localhost:1313/projects/commonground/</link>
+      <link>http://jwsonic.github.io/projects/commonground/</link>
       <pubDate>Fri, 25 Jul 2014 14:47:09 -0500</pubDate>
       
-      <guid>http://localhost:1313/projects/commonground/</guid>
+      <guid>http://jwsonic.github.io/projects/commonground/</guid>
       <description>
 
 &lt;h2 id=&#34;teacher-centric-lesson-planning:ab757769ebbb53ad30e94bbeb44946bb&#34;&gt;Teacher-centric lesson planning&lt;/h2&gt;
 
-&lt;p&gt;Common Ground, a companion webapp to &lt;a href=&#34;http://localhost:1313/projects/inscribe/&#34;&gt;Inscribe&lt;/a&gt;, enabled teachers with Inscribe accounts to create lesson plans for their current courses. Teachers could also export lesson plans and collaborate with other teachers on shared lesson plans. Common Ground had the following requirements:&lt;/p&gt;
+&lt;p&gt;Common Ground, a companion webapp to &lt;a href=&#34;http://jwsonic.github.io/projects/inscribe/&#34;&gt;Inscribe&lt;/a&gt;, enabled teachers with Inscribe accounts to create lesson plans for their current courses. Teachers could also export lesson plans and collaborate with other teachers on shared lesson plans. Common Ground had the following requirements:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;share login and user data with &lt;a href=&#34;http://localhost:1313/projects/inscribe/&#34;&gt;Inscribe&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;share login and user data with &lt;a href=&#34;http://jwsonic.github.io/projects/inscribe/&#34;&gt;Inscribe&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;allow teachers to create lesson plans for Inscribe courses&lt;/li&gt;
 &lt;li&gt;populate lesson plans on a calendar&lt;/li&gt;
 &lt;li&gt;ability to easily export lesson plans to a variety of formats&lt;/li&gt;
@@ -321,24 +321,24 @@ for {
 
 &lt;h2 id=&#34;front-end-lessons-from-inscribe:ab757769ebbb53ad30e94bbeb44946bb&#34;&gt;Front end lessons from Inscribe&lt;/h2&gt;
 
-&lt;p&gt;After the &lt;a href=&#34;http://localhost:1313/projects/inscribe/#figuring-out-the-front-end:0eab5b6ef5fc6b3a1fc2a55d8d118484&#34;&gt;lessons I learned from Inscribe&lt;/a&gt;, I immediately chose to use AngularJS for Common Ground&amp;rsquo;s front end. Using the same front end framework across both Inscribe and Common Ground had the added benefit of allowing me to reuse code across the two projects. This enabled the team to quickly get Common Ground up and running.&lt;/p&gt;
+&lt;p&gt;After the &lt;a href=&#34;http://jwsonic.github.io/projects/inscribe/#figuring-out-the-front-end:0eab5b6ef5fc6b3a1fc2a55d8d118484&#34;&gt;lessons I learned from Inscribe&lt;/a&gt;, I immediately chose to use AngularJS for Common Ground&amp;rsquo;s front end. Using the same front end framework across both Inscribe and Common Ground had the added benefit of allowing me to reuse code across the two projects. This enabled the team to quickly get Common Ground up and running.&lt;/p&gt;
 
 &lt;h2 id=&#34;iterate-early-iterate-often:ab757769ebbb53ad30e94bbeb44946bb&#34;&gt;Iterate early, iterate often&lt;/h2&gt;
 
-&lt;p&gt;Today Common Ground is no longer in use. After extensive user testing, Pomegranate Lab determined that a different approach was needed to help teachers better connect with their students. This project later iterated into &lt;a href=&#34;http://localhost:1313/projects/playbook/&#34;&gt;The Playbook&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Today Common Ground is no longer in use. After extensive user testing, Pomegranate Lab determined that a different approach was needed to help teachers better connect with their students. This project later iterated into &lt;a href=&#34;http://jwsonic.github.io/projects/playbook/&#34;&gt;The Playbook&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;When it was around, Common Ground looked like this:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/cg-combined.png&#34; alt=&#34;Inscribe Img&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://jwsonic.github.io/img/cg-combined.png&#34; alt=&#34;Inscribe Img&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Inscribe</title>
-      <link>http://localhost:1313/projects/inscribe/</link>
+      <link>http://jwsonic.github.io/projects/inscribe/</link>
       <pubDate>Thu, 10 Oct 2013 14:47:09 -0500</pubDate>
       
-      <guid>http://localhost:1313/projects/inscribe/</guid>
+      <guid>http://jwsonic.github.io/projects/inscribe/</guid>
       <description>
 
 &lt;h2 id=&#34;assignments-with-a-growth-mindset:0eab5b6ef5fc6b3a1fc2a55d8d118484&#34;&gt;Assignments with a Growth Mindset&lt;/h2&gt;
@@ -390,11 +390,11 @@ for {
 
 &lt;h2 id=&#34;iterate-early-iterate-often:0eab5b6ef5fc6b3a1fc2a55d8d118484&#34;&gt;Iterate early, iterate often&lt;/h2&gt;
 
-&lt;p&gt;Today Inscribe is no longer in use. After extensive user testing, Pomegranate Lab determined that a different approach was needed to help teachers better connect with their students. This project later iterated into &lt;a href=&#34;http://localhost:1313/projects/playbook/&#34;&gt;The Playbook&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Today Inscribe is no longer in use. After extensive user testing, Pomegranate Lab determined that a different approach was needed to help teachers better connect with their students. This project later iterated into &lt;a href=&#34;http://jwsonic.github.io/projects/playbook/&#34;&gt;The Playbook&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;When it was around, Inscribe looked like this:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/img/inscribe-combined.png&#34; alt=&#34;Inscribe Img&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://jwsonic.github.io/img/inscribe-combined.png&#34; alt=&#34;Inscribe Img&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
