@@ -2,7 +2,7 @@
 date = "2015-09-01T14:47:09-05:00"
 draft = false
 title = "File Grabber"
-description = "Grabbing files from your server directly in your browser"
+description = "Grabbing files from your server directly in-browser"
 categories = ["HTML", "Go", "React", "Bootstrap", "websockets"]
 +++
 
