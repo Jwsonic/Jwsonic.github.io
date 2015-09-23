@@ -6,19 +6,19 @@ description = "Grabbing files from your server directly in your browser"
 categories = ["HTML", "Go", "React", "Bootstrap", "websockets"]
 +++
 
-## The Why
+## The why
 
-My wife, Jesyka, and I have a small server in our apartment that we back up photos and documents to. The server runs Ubuntu and its pretty easy to access our files through FTP or SSH. However, sometimes we like to download photos or files to our phones and most Android FTP clients are cumbersome or lacking features. After looking around I found [gohttp](https://github.com/itang/gohttp) which is very close to what I wanted. I took this as an opportunity to build a webapp similar to gohttp that would fit our exact needs and let me learn some new tricks along the way.
+There is a small server in our apartment that my wife and I use to back-up photos and documents. The server runs Ubuntu and it's pretty easy to access our files through FTP or SSH. However, sometimes we like to download photos or files to our mobile devices and most Android FTP clients are cumbersome or lacking features. After a bit of research, I found [gohttp](https://github.com/itang/gohttp), which is very close to what we wanted, but not quite. I took this as an opportunity to build a webapp similar to gohttp that would fit our exact needs and allow me to learn some new tricks along the way.
 
 ## Requirements
 
 The initial requirements for File Grabber were:
 
-* Ability to view, download, and delete files and folders.
-* Real time updates(ie if a file is deleted on the server, it is immediately removed from the browser)
-* Single binary installation like gohttp
-* Has to run on Ubuntu
-* Be fully [responsive](https://en.wikipedia.org/wiki/Responsive_web_design)
+* ability to view, download, and delete files and folders
+* real-time updates (i.e. if a file is deleted on the server, it is immediately removed from the browser)
+* single binary installation like gohttp
+* has to run on Ubuntu
+* be fully [responsive](https://en.wikipedia.org/wiki/Responsive_web_design)
 
 <!--
 ## Behind every good developer is a designer
@@ -27,7 +27,7 @@ Jes designed stuff. Show design mocks here. -->
 
 ## Front end with React and Redux
 
-After using [React](https://facebook.github.io/react/) to build [The Playbook]({{< relref "projects/playbook.md#using-react-for-an-easy-to-understand-ui" >}}) it has quickly become my favorite way to build webapp front ends. One thing React is not designed for is managing your application state. Facebook(the creator of React) recommends using the [Flux](https://facebook.github.io/flux/) architecture for React apps. When I did more research on Flux, I found out that there are [many flux implementations](https://github.com/voronianski/flux-comparison) to choose from. Eventually I decided to use a method similar to Flux called [Redux](http://rackt.github.io/redux/). Redux in its own words is "[...a predictable state container for JavaScript apps.](http://rackt.github.io/redux/)".
+After using [React](https://facebook.github.io/react/) to build [The Playbook]({{< relref "projects/playbook.md#using-react-for-an-easy-to-understand-ui" >}}) it has quickly become my favorite way to build webapp front ends. One thing React is not designed for is managing your application state. Facebook (the creator of React) recommends using the [Flux](https://facebook.github.io/flux/) architecture for React apps. When I did more research on Flux, I found out that there are [many flux implementations](https://github.com/voronianski/flux-comparison) to choose from. Eventually I decided to use a method similar to Flux called [Redux](http://rackt.github.io/redux/). Redux, in its own words, is "[...a predictable state container for JavaScript apps.](http://rackt.github.io/redux/)".
 
 The core idea behind Redux is that your application state is stored as a read only data structure. Updates to application state are done via [pure functions](https://en.wikipedia.org/wiki/Pure_function) called reducers. Reducers take a state and an action as parameters and return an updated application state:
 
@@ -62,13 +62,13 @@ A sample state for file grabber could look something like:
 
 ## JavaScript talking to Go
 
-In order to get updates in real time, File Grabber uses [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) to send messages between the front end in the browser and the back end on the server. When File Grabber is first loaded into the browser it attempts to connect to the File Grabber websocket server. Once a connection has been established between the front and back ends the message passing can begin. The back end will send CREATE/UPDATE/DELETE messages whenever changes are made to the watched folder. The front end will send DELTE/FILES messages to the server as the user interacts with the files in the UI.
+In order to get updates in real-time, File Grabber uses [WebSockets](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API) to send messages between the front end in the browser and the back end on the server. When File Grabber is first loaded into the browser it attempts to connect to the File Grabber websocket server. Once a connection has been established between the front and back ends the message passing can begin. The back end will send CREATE/UPDATE/DELETE messages whenever changes are made to the watched folder. The front end will send DELETE/FILES messages to the server as the user interacts with the files in the UI.
 
 ## Careful, inotify is watching you
 
-Since only linux is currently supported for the File Grabber back end, we use [inotify](https://en.wikipedia.org/wiki/Inotify) to watch the file system for changes. The Go standard library contains [wrapper for inotify](https://godoc.org/golang.org/x/exp/inotify), but out of the box it doesn't watch folders recursively. Since the server is not aware of each browser's current path it needs to watch for changes at every level of the watched file tree.
+Since only linux is currently supported for the File Grabber back end, we use [inotify](https://en.wikipedia.org/wiki/Inotify) to watch the file system for changes. The Go standard library contains a [wrapper for inotify](https://godoc.org/golang.org/x/exp/inotify), but out of the box it doesn't watch folders recursively. Since the server is not aware of each browser's current path it needs to watch for changes at every level of the watched file tree.
 
-To solve this problem I wrote my own wrapper of the Go inotify called RecursiveWatcher. RecursiveWatcher also simplifies inotify's events down to simply Create, Modify, and Delete. Watching for file events on a RecursiveWatcher uses a Go channel just like the normal inotify wrapper. Watching the current directory could look something like:
+To solve this problem I wrote my own wrapper of the Go inotify called RecursiveWatcher. RecursiveWatcher also simplifies inotify's events down to just Create, Modify, and Delete. Watching for file events on a RecursiveWatcher uses a Go channel just like the normal inotify wrapper. For instance, watching the current directory could look something like:
 
 ```
 rWatcher, _ := watcher.NewRecursiveWatcher(".")
