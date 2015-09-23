@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Websockets on John Palgut</title>
-    <link>http://jwsonic.github.io/categories/websockets/</link>
+    <link>http://localhost:1313/categories/websockets/</link>
     <description>Recent content in Websockets on John Palgut</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 01 Sep 2015 14:47:09 -0500</lastBuildDate>
-    <atom:link href="http://jwsonic.github.io/categories/websockets/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/websockets/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>File Grabber</title>
-      <link>http://jwsonic.github.io/projects/filegrabber/</link>
+      <link>http://localhost:1313/projects/filegrabber/</link>
       <pubDate>Tue, 01 Sep 2015 14:47:09 -0500</pubDate>
       
-      <guid>http://jwsonic.github.io/projects/filegrabber/</guid>
+      <guid>http://localhost:1313/projects/filegrabber/</guid>
       <description>
 
 &lt;h2 id=&#34;the-why:5d4b5b538fe8b07ed03522cce78aaef9&#34;&gt;The why&lt;/h2&gt;
@@ -40,7 +40,7 @@ Jes designed stuff. Show design mocks here. --&gt;
 
 &lt;h2 id=&#34;front-end-with-react-and-redux:5d4b5b538fe8b07ed03522cce78aaef9&#34;&gt;Front end with React and Redux&lt;/h2&gt;
 
-&lt;p&gt;After using &lt;a href=&#34;https://facebook.github.io/react/&#34;&gt;React&lt;/a&gt; to build &lt;a href=&#34;http://jwsonic.github.io/projects/playbook/#using-react-for-an-easy-to-understand-ui:ae2e17d81343b352e5f8570697d79589&#34;&gt;The Playbook&lt;/a&gt; it has quickly become my favorite way to build webapp front ends. One thing React is not designed for is managing your application state. Facebook (the creator of React) recommends using the &lt;a href=&#34;https://facebook.github.io/flux/&#34;&gt;Flux&lt;/a&gt; architecture for React apps. When I did more research on Flux, I found out that there are &lt;a href=&#34;https://github.com/voronianski/flux-comparison&#34;&gt;many flux implementations&lt;/a&gt; to choose from. Eventually I decided to use a method similar to Flux called &lt;a href=&#34;http://rackt.github.io/redux/&#34;&gt;Redux&lt;/a&gt;. Redux, in its own words, is &amp;ldquo;&lt;a href=&#34;http://rackt.github.io/redux/&#34;&gt;&amp;hellip;a predictable state container for JavaScript apps.&lt;/a&gt;&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;After using &lt;a href=&#34;https://facebook.github.io/react/&#34;&gt;React&lt;/a&gt; to build &lt;a href=&#34;http://localhost:1313/projects/playbook/#using-react-for-an-easy-to-understand-ui:ae2e17d81343b352e5f8570697d79589&#34;&gt;The Playbook&lt;/a&gt; it has quickly become my favorite way to build webapp front ends. One thing React is not designed for is managing your application state. Facebook (the creator of React) recommends using the &lt;a href=&#34;https://facebook.github.io/flux/&#34;&gt;Flux&lt;/a&gt; architecture for React apps. When I did more research on Flux, I found out that there are &lt;a href=&#34;https://github.com/voronianski/flux-comparison&#34;&gt;many flux implementations&lt;/a&gt; to choose from. Eventually I decided to use a method similar to Flux called &lt;a href=&#34;http://rackt.github.io/redux/&#34;&gt;Redux&lt;/a&gt;. Redux, in its own words, is &amp;ldquo;&lt;a href=&#34;http://rackt.github.io/redux/&#34;&gt;&amp;hellip;a predictable state container for JavaScript apps.&lt;/a&gt;&amp;rdquo;.&lt;/p&gt;
 
 &lt;p&gt;The core idea behind Redux is that your application state is stored as a read only data structure. Updates to application state are done via &lt;a href=&#34;https://en.wikipedia.org/wiki/Pure_function&#34;&gt;pure functions&lt;/a&gt; called reducers. Reducers take a state and an action as parameters and return an updated application state:&lt;/p&gt;
 
