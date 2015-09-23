@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Abouts on John Palgut</title>
-    <link>http://localhost:1313/about/</link>
+    <link>http://jwsonic.github.io/about/</link>
     <description>Recent content in Abouts on John Palgut</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:1313/about/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://jwsonic.github.io/about/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title></title>
-      <link>http://localhost:1313/about/blank/</link>
+      <link>http://jwsonic.github.io/about/blank/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/about/blank/</guid>
+      <guid>http://jwsonic.github.io/about/blank/</guid>
       <description></description>
     </item>
     
