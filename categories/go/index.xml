@@ -29,6 +29,7 @@
 &lt;li&gt;Ability to view, download, and delete files and folders.&lt;/li&gt;
 &lt;li&gt;Real time updates(ie if a file is deleted on the server, it is immediately removed from the browser)&lt;/li&gt;
 &lt;li&gt;Single binary installation like gohttp&lt;/li&gt;
+&lt;li&gt;Has to run on Ubuntu&lt;/li&gt;
 &lt;li&gt;Be fully &lt;a href=&#34;https://en.wikipedia.org/wiki/Responsive_web_design&#34;&gt;responsive&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -69,13 +70,38 @@
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;talking-to-the-backend:5d4b5b538fe8b07ed03522cce78aaef9&#34;&gt;Talking to the backend&lt;/h2&gt;
+&lt;h2 id=&#34;javascript-talking-to-go:5d4b5b538fe8b07ed03522cce78aaef9&#34;&gt;JavaScript talking to Go&lt;/h2&gt;
 
-&lt;p&gt;In order to get updates in real time, File Grabber utilizes &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API&#34;&gt;WebSockets&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In order to get updates in real time, File Grabber uses &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API&#34;&gt;WebSockets&lt;/a&gt; to send messages between the front end in the browser and the back end on the server. When File Grabber is first loaded into the browser it attempts to connect to the File Grabber websocket server. Once a connection has been established between the front and back ends the message passing can begin. The back end will send CREATE/UPDATE/DELETE messages whenever changes are made to the watched folder. The front end will send DELTE/FILES messages to the server as the user interacts with the files in the UI.&lt;/p&gt;
 
-&lt;h2 id=&#34;deploying-a-single-binary:5d4b5b538fe8b07ed03522cce78aaef9&#34;&gt;Deploying a single binary&lt;/h2&gt;
+&lt;h2 id=&#34;careful-inotify-is-watching-you:5d4b5b538fe8b07ed03522cce78aaef9&#34;&gt;Careful, inotify is watching you&lt;/h2&gt;
 
-&lt;h2 id=&#34;check-out-the-code:5d4b5b538fe8b07ed03522cce78aaef9&#34;&gt;Check out the code&lt;/h2&gt;
+&lt;p&gt;Since only linux is currently supported for the File Grabber back end, we use &lt;a href=&#34;https://en.wikipedia.org/wiki/Inotify&#34;&gt;inotify&lt;/a&gt; to watch the file system for changes. The Go standard library contains &lt;a href=&#34;https://godoc.org/golang.org/x/exp/inotify&#34;&gt;wrapper for inotify&lt;/a&gt;, but out of the box it doesn&amp;rsquo;t watch folders recursively. Since the server is not aware of each browser&amp;rsquo;s current path it needs to watch for changes at every level of the watched file tree.&lt;/p&gt;
+
+&lt;p&gt;To solve this problem I wrote my own wrapper of the Go inotify called RecursiveWatcher. RecursiveWatcher also simplifies inotify&amp;rsquo;s events down to simply Create, Modify, and Delete. Watching for file events on a RecursiveWatcher uses a Go channel just like the normal inotify wrapper. Watching the current directory could look something like:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;rWatcher, _ := watcher.NewRecursiveWatcher(&amp;quot;.&amp;quot;)
+events := rWatcher.Watch()
+
+for {
+  event := &amp;lt;-events
+
+  switch event.Type {
+    case watcher.Delete:
+      fmt.Printf(&amp;quot;%s deleted\n&amp;quot;, event.Name)
+    case watcher.Modify:
+      fmt.Printf(&amp;quot;%s modified\n&amp;quot;, event.Name)
+    case watcher.Create:
+      fmt.Printf(&amp;quot;%s created\n&amp;quot;, event.Name)
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;deploying-as-a-single-binary:5d4b5b538fe8b07ed03522cce78aaef9&#34;&gt;Deploying as a single binary&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/jteeuwen/go-bindata&#34;&gt;go-bindata&lt;/a&gt; is an excellent library that takes a file or directory as input, compresses the data, and embeds the compressed bytes into a Go file. You can then access the compressed data through a function with the signature of &lt;code&gt;Asset(string) ([]byte, error)&lt;/code&gt;. For File Grabber I used the compiled go-bindata command line tool to compress all the front end files into a single Go file. The data from this asset file is then served over HTTP as the front end.&lt;/p&gt;
+
+&lt;h2 id=&#34;check-it-out:5d4b5b538fe8b07ed03522cce78aaef9&#34;&gt;Check it out&lt;/h2&gt;
 
 &lt;p&gt;The code for file grabber is available on &lt;a href=&#34;https://github.com/Jwsonic/file-grabber&#34;&gt;github&lt;/a&gt;.&lt;/p&gt;
 </description>

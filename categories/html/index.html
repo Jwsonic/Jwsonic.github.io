@@ -112,6 +112,7 @@
 <li>Ability to view, download, and delete files and folders.</li>
 <li>Real time updates(ie if a file is deleted on the server, it is immediately removed from the browser)</li>
 <li>Single binary installation like gohttp</li>
+<li>Has to run on Ubuntu</li>
 <li>Be fully <a href="https://en.wikipedia.org/wiki/Responsive_web_design">responsive</a></li>
 </ul>
 
@@ -152,13 +153,38 @@
 }
 </code></pre>
 
-<h2 id="talking-to-the-backend:5d4b5b538fe8b07ed03522cce78aaef9">Talking to the backend</h2>
+<h2 id="javascript-talking-to-go:5d4b5b538fe8b07ed03522cce78aaef9">JavaScript talking to Go</h2>
 
-<p>In order to get updates in real time, File Grabber utilizes <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API">WebSockets</a></p>
+<p>In order to get updates in real time, File Grabber uses <a href="https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API">WebSockets</a> to send messages between the front end in the browser and the back end on the server. When File Grabber is first loaded into the browser it attempts to connect to the File Grabber websocket server. Once a connection has been established between the front and back ends the message passing can begin. The back end will send CREATE/UPDATE/DELETE messages whenever changes are made to the watched folder. The front end will send DELTE/FILES messages to the server as the user interacts with the files in the UI.</p>
 
-<h2 id="deploying-a-single-binary:5d4b5b538fe8b07ed03522cce78aaef9">Deploying a single binary</h2>
+<h2 id="careful-inotify-is-watching-you:5d4b5b538fe8b07ed03522cce78aaef9">Careful, inotify is watching you</h2>
 
-<h2 id="check-out-the-code:5d4b5b538fe8b07ed03522cce78aaef9">Check out the code</h2>
+<p>Since only linux is currently supported for the File Grabber back end, we use <a href="https://en.wikipedia.org/wiki/Inotify">inotify</a> to watch the file system for changes. The Go standard library contains <a href="https://godoc.org/golang.org/x/exp/inotify">wrapper for inotify</a>, but out of the box it doesn&rsquo;t watch folders recursively. Since the server is not aware of each browser&rsquo;s current path it needs to watch for changes at every level of the watched file tree.</p>
+
+<p>To solve this problem I wrote my own wrapper of the Go inotify called RecursiveWatcher. RecursiveWatcher also simplifies inotify&rsquo;s events down to simply Create, Modify, and Delete. Watching for file events on a RecursiveWatcher uses a Go channel just like the normal inotify wrapper. Watching the current directory could look something like:</p>
+
+<pre><code>rWatcher, _ := watcher.NewRecursiveWatcher(&quot;.&quot;)
+events := rWatcher.Watch()
+
+for {
+  event := &lt;-events
+
+  switch event.Type {
+    case watcher.Delete:
+      fmt.Printf(&quot;%s deleted\n&quot;, event.Name)
+    case watcher.Modify:
+      fmt.Printf(&quot;%s modified\n&quot;, event.Name)
+    case watcher.Create:
+      fmt.Printf(&quot;%s created\n&quot;, event.Name)
+  }
+}
+</code></pre>
+
+<h2 id="deploying-as-a-single-binary:5d4b5b538fe8b07ed03522cce78aaef9">Deploying as a single binary</h2>
+
+<p><a href="https://github.com/jteeuwen/go-bindata">go-bindata</a> is an excellent library that takes a file or directory as input, compresses the data, and embeds the compressed bytes into a Go file. You can then access the compressed data through a function with the signature of <code>Asset(string) ([]byte, error)</code>. For File Grabber I used the compiled go-bindata command line tool to compress all the front end files into a single Go file. The data from this asset file is then served over HTTP as the front end.</p>
+
+<h2 id="check-it-out:5d4b5b538fe8b07ed03522cce78aaef9">Check it out</h2>
 
 <p>The code for file grabber is available on <a href="https://github.com/Jwsonic/file-grabber">github</a>.</p>
 
